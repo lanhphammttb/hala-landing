@@ -1,77 +1,135 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Link } from "lucide-react";
+import { useState, useEffect } from "react";
+import { ShoppingBag } from "lucide-react";
 
-const products = [
-  { id: 1, name: "Chậu Hoa Len Hồng Phấn", tone: "Cool", price: "150.000đ", image: "https://images.unsplash.com/photo-1544453086-444743c3d526?q=80&w=600&auto=format&fit=crop" },
-  { id: 2, name: "Chậu Hoa Hướng Dương Len", tone: "Warm", price: "180.000đ", image: "https://images.unsplash.com/photo-1517457210191-881c10d37e5e?q=80&w=600&auto=format&fit=crop" },
-  { id: 3, name: "Túi Len Đeo Chéo Nâu Đất", tone: "Warm", price: "350.000đ", image: "https://images.unsplash.com/photo-1591561954557-26941169b49e?q=80&w=600&auto=format&fit=crop" },
-  { id: 4, name: "Băng Đô Len Xanh Xám", tone: "Cool", price: "80.000đ", image: "https://images.unsplash.com/photo-1587375225330-10abf62df302?q=80&w=600&auto=format&fit=crop" },
-  { id: 5, name: "Móc Khoá Cún Bạc", tone: "Cool", price: "60.000đ", image: "https://images.unsplash.com/photo-1610486241372-acc653ea91bc?q=80&w=600&auto=format&fit=crop" },
-  { id: 6, name: "Set DIY Chậu Len Cam", tone: "Warm", price: "250.000đ", image: "https://plus.unsplash.com/premium_photo-1678120038891-0306eeebfed4?q=80&w=600&auto=format&fit=crop" },
-  { id: 7, name: "Túi Tote Viền Xanh Rêu", tone: "Warm", price: "400.000đ", image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=600&auto=format&fit=crop" },
-  { id: 8, name: "Mũ Len Be Nhạt", tone: "Cool", price: "220.000đ", image: "https://images.unsplash.com/photo-1576424458514-633055d21a22?q=80&w=600&auto=format&fit=crop" },
-];
+import { useRouter } from "next/navigation";
+
+type Product = {
+  id: number;
+  name: string;
+  tone: string;
+  base_price: number;
+  image: string;
+};
 
 export default function ProductGrid({ userTone }: { userTone: string }) {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+  const router = useRouter();
+
+  useEffect(() => {
+    async function fetchProducts() {
+      try {
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+        const res = await fetch(`${apiUrl}/public/products`);
+        if (res.ok) {
+          const data = await res.json();
+          setProducts(data.items.map((item: any) => ({
+            id: item.id,
+            name: item.name,
+            tone: item.tone,
+            base_price: item.base_price,
+            image: item.image,
+          })));
+        }
+      } catch (error) {
+        console.error("Failed to fetch products", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchProducts();
+  }, []);
+
   const filteredProducts = products.filter(p => userTone === "All" || p.tone === userTone);
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-6 max-w-6xl">
+    <section className="py-24 bg-white">
+      <div className="container mx-auto px-6 max-w-7xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-serif text-gray-800 mb-4 cursor-default">
-            Bộ sưu tập Hala Handmade
+          <h2 className="text-sm font-bold tracking-widest text-rose-500 uppercase mb-4">
+            Thiết kế giới hạn
           </h2>
-          <p className="text-gray-500 max-w-xl mx-auto">
-            Những thiết kế độc bản từ len, được tạo ra bằng sự tỉ mỉ của đôi tay.
+          <h3 className="text-4xl md:text-5xl font-serif text-gray-900 mb-6 cursor-default">
+            Bộ sưu tập Hala Handmade
+          </h3>
+          <div className="w-24 h-1 bg-rose-200 mx-auto rounded-full mb-6"></div>
+          <p className="text-gray-500 max-w-xl mx-auto text-lg font-light leading-relaxed">
+            Những tác phẩm độc bản từ len, được tạo ra bằng sự tỉ mỉ của đôi tay và mang theo câu chuyện của riêng bạn.
           </p>
         </div>
 
-        <motion.div
-          layout
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8"
-        >
-          {filteredProducts.map((product) => (
-            <motion.div
-              layout
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.3 }}
-              key={product.id}
-              className="group cursor-pointer"
-            >
-              <div className="relative aspect-square overflow-hidden rounded-2xl bg-gray-200 mb-4">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-gray-800 shadow-sm">
-                  {product.tone === "Warm" ? "Warm" : "Cool"} Tone
-                </div>
+        {loading ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[...Array(4)].map((_, i) => (
+              <div key={i} className="animate-pulse flex flex-col gap-4">
+                <div className="bg-gray-200 aspect-[4/5] rounded-[2rem] w-full"></div>
+                <div className="bg-gray-200 h-6 w-3/4 rounded-md"></div>
+                <div className="bg-gray-200 h-5 w-1/2 rounded-md"></div>
               </div>
-              <h3 className="text-lg font-medium text-gray-800 group-hover:text-rose-500 transition-colors">
-                {product.name}
-              </h3>
-              <p className="text-gray-500">{product.price}</p>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {filteredProducts.length === 0 && (
-          <div className="text-center py-20 text-gray-500">
-            Không tìm thấy sản phẩm phù hợp.
+            ))}
           </div>
+        ) : (
+          <motion.div
+            layout
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+          >
+            {filteredProducts.map((product) => (
+              <motion.div
+                layout
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.5 }}
+                key={product.id}
+                className="group cursor-pointer flex flex-col gap-4"
+              >
+                <div
+                  onClick={() => router.push(`/product/${product.id}`)}
+                  className="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-gray-100 shadow-sm border border-gray-100 group-hover:shadow-xl transition-all duration-500"
+                >
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
+                  />
+                  {/* Tags */}
+                  <div className="absolute top-4 left-4 flex flex-col gap-2">
+                    <div className="bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-xs font-bold text-gray-800 shadow-sm">
+                      {product.tone === "Warm" ? "☀️ Warm Tone" : product.tone === "Cool" ? "❄️ Cool Tone" : "✨ All Tone"}
+                    </div>
+                  </div>
+
+                  {/* Quick Add Button Overlay */}
+                  <div className="absolute bottom-4 inset-x-4 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <a href="#cta" className="flex items-center justify-center gap-2 bg-white/95 backdrop-blur text-gray-900 py-3 rounded-xl font-medium shadow-lg hover:bg-gray-900 hover:text-white transition-colors w-full">
+                      <ShoppingBag className="w-4 h-4" />
+                      Đặt hàng ngay
+                    </a>
+                  </div>
+                </div>
+
+                <div className="px-2">
+                  <h3 className="text-xl font-serif font-medium text-gray-900 group-hover:text-rose-500 transition-colors mb-2">
+                    {product.name}
+                  </h3>
+                  <p className="text-gray-600 font-medium">
+                    {new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(product.base_price)}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         )}
 
-        <div className="mt-16 text-center">
-          <button className="border border-rose-300 hover:border-rose-400 text-rose-500 hover:bg-rose-50 px-8 py-3 rounded-full font-medium transition-colors">
-            Xem tất cả sản phẩm
-          </button>
-        </div>
+        {!loading && filteredProducts.length === 0 && (
+          <div className="text-center py-20 text-gray-500 bg-gray-50 rounded-3xl">
+             <p className="text-xl mb-4 font-serif">Rất tiếc...</p>
+             <p>Chưa có sản phẩm nào phù hợp với bộ lọc hiện tại.</p>
+          </div>
+        )}
       </div>
     </section>
   );
