@@ -14,6 +14,10 @@ type Product = {
   image: string;
 };
 
+type ProductListResponse = {
+  items: Product[];
+};
+
 export default function ProductGrid({ userTone }: { userTone: string }) {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
@@ -22,11 +26,10 @@ export default function ProductGrid({ userTone }: { userTone: string }) {
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
-        const res = await fetch(`${apiUrl}/public/products`);
+        const res = await fetch(`/api/public/products`);
         if (res.ok) {
-          const data = await res.json();
-          setProducts(data.items.map((item: any) => ({
+          const data: ProductListResponse = await res.json();
+          setProducts(data.items.map((item) => ({
             id: item.id,
             name: item.name,
             tone: item.tone,

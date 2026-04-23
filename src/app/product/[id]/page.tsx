@@ -27,8 +27,7 @@ export default function ProductDetailPage() {
   useEffect(() => {
     async function fetchDetail() {
       try {
-        const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
-        const res = await fetch(`${apiUrl}/public/products/${params.id}`);
+        const res = await fetch(`/api/public/products/${params.id}`);
         if (res.ok) {
           const data = await res.json();
           setProduct(data);

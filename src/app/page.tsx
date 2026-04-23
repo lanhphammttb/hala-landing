@@ -14,8 +14,7 @@ export default function Home() {
   useEffect(() => {
     async function fetchLogo() {
       try {
-        const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
-        const res = await fetch(`${apiUrl}/public/products`);
+        const res = await fetch(`/api/public/products`);
         if (res.ok) {
           const data = await res.json();
           if (data.business_logo) {
