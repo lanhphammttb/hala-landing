@@ -34,7 +34,7 @@ export default function CTA() {
 
           <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
             <a
-              href="https://zalo.me"
+              href="https://zalo.me/halahandmade"
               target="_blank"
               rel="noreferrer"
               className="flex items-center justify-center gap-3 bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 w-full sm:w-auto shadow-lg hover:shadow-blue-500/25 group"

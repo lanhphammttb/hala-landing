@@ -1,11 +1,17 @@
 import { NextResponse } from "next/server";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export async function GET(
   _request: Request,
   context: { params: Promise<{ id: string }> },
 ) {
+  if (!API_URL) {
+    return NextResponse.json(
+      { detail: "NEXT_PUBLIC_API_URL is not configured" },
+      { status: 500 },
+    );
+  }
   const { id } = await context.params;
 
   try {

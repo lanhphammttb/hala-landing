@@ -1,10 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
 import { ShoppingBag } from "lucide-react";
-
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 type Product = {
   id: number;
@@ -14,38 +12,15 @@ type Product = {
   image: string;
 };
 
-type ProductListResponse = {
-  items: Product[];
-};
-
-export default function ProductGrid({ userTone }: { userTone: string }) {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState(true);
-  const router = useRouter();
-
-  useEffect(() => {
-    async function fetchProducts() {
-      try {
-        const res = await fetch(`/api/public/products`);
-        if (res.ok) {
-          const data: ProductListResponse = await res.json();
-          setProducts(data.items.map((item) => ({
-            id: item.id,
-            name: item.name,
-            tone: item.tone,
-            base_price: item.base_price,
-            image: item.image,
-          })));
-        }
-      } catch (error) {
-        console.error("Failed to fetch products", error);
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchProducts();
-  }, []);
-
+export default function ProductGrid({
+  userTone,
+  initialProducts,
+}: {
+  userTone: string;
+  initialProducts: Product[];
+}) {
+  const products = initialProducts || [];
+  const loading = false;
   const filteredProducts = products.filter(p => userTone === "All" || p.tone === userTone);
 
   return (
@@ -89,8 +64,8 @@ export default function ProductGrid({ userTone }: { userTone: string }) {
                 key={product.id}
                 className="group cursor-pointer flex flex-col gap-4"
               >
-                <div
-                  onClick={() => router.push(`/product/${product.id}`)}
+                <Link
+                  href={`/product/${product.id}`}
                   className="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-gray-100 shadow-sm border border-gray-100 group-hover:shadow-xl transition-all duration-500"
                 >
                   <img
@@ -107,12 +82,12 @@ export default function ProductGrid({ userTone }: { userTone: string }) {
 
                   {/* Quick Add Button Overlay */}
                   <div className="absolute bottom-4 inset-x-4 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                    <a href="#cta" className="flex items-center justify-center gap-2 bg-white/95 backdrop-blur text-gray-900 py-3 rounded-xl font-medium shadow-lg hover:bg-gray-900 hover:text-white transition-colors w-full">
+                    <span className="flex items-center justify-center gap-2 bg-white/95 backdrop-blur text-gray-900 py-3 rounded-xl font-medium shadow-lg hover:bg-gray-900 hover:text-white transition-colors w-full">
                       <ShoppingBag className="w-4 h-4" />
                       Đặt hàng ngay
-                    </a>
+                    </span>
                   </div>
-                </div>
+                </Link>
 
                 <div className="px-2">
                   <h3 className="text-xl font-serif font-medium text-gray-900 group-hover:text-rose-500 transition-colors mb-2">

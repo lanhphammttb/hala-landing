@@ -1,8 +1,14 @@
 import { NextResponse } from "next/server";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export async function GET(request: Request) {
+  if (!API_URL) {
+    return NextResponse.json(
+      { detail: "NEXT_PUBLIC_API_URL is not configured" },
+      { status: 500 },
+    );
+  }
   const url = new URL(request.url);
   const upstream = new URL(`${API_URL}/public/products`);
 
