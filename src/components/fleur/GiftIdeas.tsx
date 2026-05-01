@@ -53,7 +53,7 @@ export default function FleurGiftIdeas() {
               aspectRatio: "1",
               marginBottom: -110,
               boxShadow: "0 20px 60px rgba(42,26,14,0.2)",
-              border: "6px solid #EDE4D8",
+              border: "6px solid #F5F0EA",
             }}
           >
             <VintageImage

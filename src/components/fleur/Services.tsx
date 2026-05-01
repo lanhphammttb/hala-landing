@@ -23,7 +23,7 @@ const services = [
 
 export default function FleurServices() {
   return (
-    <section id="services" className="py-20 px-8" style={{ backgroundColor: "#EDE4D8" }}>
+    <section id="services" className="py-20 px-8" style={{ backgroundColor: "#F5F0EA" }}>
       <div className="max-w-5xl mx-auto">
 
         {/* Heading */}
@@ -46,10 +46,10 @@ export default function FleurServices() {
         </FadeIn>
 
         {/* 3 Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-7 items-stretch">
           {services.map((s, i) => (
-            <FadeIn key={s.title} delay={i * 0.12}>
-            <article className="flex flex-col group">
+            <FadeIn key={s.title} delay={i * 0.12} className="flex flex-col">
+            <article className="flex flex-col flex-1 group">
 
               {/* Arch — transparent so corners show section bg */}
               <div
@@ -62,7 +62,7 @@ export default function FleurServices() {
 
               {/* Text */}
               <div className="px-7 pt-6 pb-8 flex flex-col flex-1 text-center border-x border-b border-[#C4A882]/40"
-                style={{ backgroundColor: "#D8CCBC" }}>
+                style={{ backgroundColor: "#EDE8E0" }}>
                 <h3 className="font-serif text-xl text-[#2A1A0E] font-normal italic mb-3">{s.title}</h3>
                 <p className="text-xs text-[#5C4433] leading-relaxed flex-1 mb-5">{s.description}</p>
                 <div className="h-px w-8 bg-[#C4A882] mx-auto mb-3" />

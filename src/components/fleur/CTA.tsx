@@ -5,12 +5,12 @@ import FadeIn from "./FadeIn";
 
 export default function FleurCTA() {
   return (
-    <section id="contact" style={{ backgroundColor: "#EDE4D8", paddingBottom: 0 }}>
+    <section id="contact" style={{ backgroundColor: "#F5F0EA", paddingBottom: 0 }}>
       {/* Wide flat dome */}
       <div
         className="w-full text-center px-6"
         style={{
-          backgroundColor: "#C4A882",
+          backgroundColor: "#D4B896",
           borderRadius: "50% 50% 0 0 / 12% 12% 0 0",
           paddingTop: "5rem",
           paddingBottom: "5rem",

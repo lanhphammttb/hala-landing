@@ -28,7 +28,7 @@ export default function VintageImage({ src, alt = "", className = "", style }: P
         onError={handleError}
         className={`w-full h-full object-cover ${className}`}
         style={{
-          filter: "sepia(28%) saturate(80%) contrast(92%) brightness(97%)",
+          filter: "sepia(8%) saturate(95%) contrast(96%) brightness(101%)",
           ...style,
         }}
       />
@@ -36,7 +36,7 @@ export default function VintageImage({ src, alt = "", className = "", style }: P
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: "rgba(180, 140, 90, 0.18)",
+          background: "rgba(180, 140, 90, 0.06)",
           mixBlendMode: "multiply",
         }}
       />

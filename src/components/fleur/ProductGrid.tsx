@@ -13,7 +13,7 @@ const items = [
 
 export default function FleurProductGrid() {
   return (
-    <section id="popular" className="px-8 pb-20" style={{ backgroundColor: "#EDE4D8", paddingTop: 150 }}>
+    <section id="popular" className="px-8 pb-20" style={{ backgroundColor: "#F5F0EA", paddingTop: 150 }}>
       <div className="max-w-5xl mx-auto">
 
         {/* Heading */}
@@ -42,7 +42,7 @@ export default function FleurProductGrid() {
               <div className="group">
                 <div
                   className="aspect-square overflow-hidden mb-3 relative cursor-pointer"
-                  style={{ backgroundColor: "#C8B89A" }}
+                  style={{ backgroundColor: "#E8E0D5" }}
                 >
                   <VintageImage
                     src={p.img}
