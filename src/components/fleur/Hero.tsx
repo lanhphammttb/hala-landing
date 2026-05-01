@@ -8,7 +8,7 @@ export default function FleurHero() {
       {/* BG */}
       <div className="absolute inset-0">
         <VintageImage
-          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1600&auto=format&fit=crop"
+          src="/anh2.jpg"
           alt=""
         />
       </div>

@@ -1,22 +1,23 @@
 "use client";
 
 import VintageImage from "./VintageImage";
+import FadeIn from "./FadeIn";
 
 const services = [
   {
     title: "Túi Xách Móc Len",
     description: "Bạn có gu riêng? Chúng tôi tạo ra những chiếc túi móc len theo đúng màu sắc và phong cách bạn muốn.",
-    img: "https://images.unsplash.com/photo-1490750967868-88df5691cc28?q=80&w=600&auto=format&fit=crop",
+    img: "/anh1.jpg",
   },
   {
     title: "Thú Bông Handmade",
     description: "Thú bông móc tay dễ thương cho mọi dịp — quà tặng ý nghĩa, trang trí tinh tế.",
-    img: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=600&auto=format&fit=crop",
+    img: "/anh3.jpg",
   },
   {
     title: "Phụ Kiện Theo Yêu Cầu",
     description: "Từ mũ, khăn đến vòng tay — chúng tôi nhận order bất kỳ phụ kiện len nào theo ý bạn.",
-    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=600&auto=format&fit=crop",
+    img: "/anh4.jpg",
   },
 ];
 
@@ -26,6 +27,7 @@ export default function FleurServices() {
       <div className="max-w-5xl mx-auto">
 
         {/* Heading */}
+        <FadeIn>
         <div className="text-center mb-14">
           <div className="flex items-center justify-center gap-3 mb-3">
             <div className="h-px w-6 bg-[#A07850]" />
@@ -41,11 +43,13 @@ export default function FleurServices() {
             <div className="h-px w-16 bg-[#C4A882]" />
           </div>
         </div>
+        </FadeIn>
 
         {/* 3 Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
-          {services.map((s) => (
-            <article key={s.title} className="flex flex-col group">
+          {services.map((s, i) => (
+            <FadeIn key={s.title} delay={i * 0.12}>
+            <article className="flex flex-col group">
 
               {/* Arch — transparent so corners show section bg */}
               <div
@@ -69,6 +73,7 @@ export default function FleurServices() {
               </div>
 
             </article>
+            </FadeIn>
           ))}
         </div>
 

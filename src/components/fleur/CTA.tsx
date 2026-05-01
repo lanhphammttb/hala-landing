@@ -1,6 +1,7 @@
 "use client";
 
 import { MessageCircle, Send } from "lucide-react";
+import FadeIn from "./FadeIn";
 
 export default function FleurCTA() {
   return (
@@ -15,6 +16,7 @@ export default function FleurCTA() {
           paddingBottom: "5rem",
         }}
       >
+        <FadeIn>
         <div className="max-w-lg mx-auto">
           {/* Ornament */}
           <div className="flex items-center justify-center gap-3 mb-7">
@@ -63,6 +65,7 @@ export default function FleurCTA() {
             </a>
           </div>
         </div>
+        </FadeIn>
       </div>
     </section>
   );

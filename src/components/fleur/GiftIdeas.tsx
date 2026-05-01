@@ -1,6 +1,7 @@
 "use client";
 
 import VintageImage from "./VintageImage";
+import FadeIn from "./FadeIn";
 
 export default function FleurGiftIdeas() {
   return (
@@ -8,6 +9,7 @@ export default function FleurGiftIdeas() {
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
 
         {/* Left */}
+        <FadeIn>
         <div className="py-6">
           <div className="flex items-center gap-3 mb-4">
             <div className="h-px w-5 bg-[#A07850]" />
@@ -39,8 +41,10 @@ export default function FleurGiftIdeas() {
             Tư vấn ngay
           </a>
         </div>
+        </FadeIn>
 
         {/* Right — circle, bleeds into next section */}
+        <FadeIn delay={0.15}>
         <div className="flex justify-end items-start">
           <div
             className="rounded-full overflow-hidden shrink-0"
@@ -53,11 +57,12 @@ export default function FleurGiftIdeas() {
             }}
           >
             <VintageImage
-              src="https://images.unsplash.com/photo-1490750967868-88df5691cc28?q=80&w=800&auto=format&fit=crop"
+              src="/anh4.jpg"
               alt="Quà tặng handmade"
             />
           </div>
         </div>
+        </FadeIn>
 
       </div>
     </section>
