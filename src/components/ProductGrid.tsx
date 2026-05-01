@@ -1,135 +1,72 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
-import { ShoppingBag } from "lucide-react";
+import { Heart, MessageCircle, Share2 } from "lucide-react";
 
-import { useRouter } from "next/navigation";
+const items = [
+  {
+    id: 1,
+    img: "https://images.unsplash.com/photo-1487530811015-780aecb71c39?q=80&w=600&auto=format&fit=crop",
+    likes: 829,
+    comments: 120,
+  },
+  {
+    id: 2,
+    img: "https://images.unsplash.com/photo-1490750967868-88df5691cc28?q=80&w=600&auto=format&fit=crop",
+    likes: 540,
+    comments: 103,
+  },
+  {
+    id: 3,
+    img: "https://images.unsplash.com/photo-1562630186-b60a5e4d48c4?q=80&w=600&auto=format&fit=crop",
+    likes: 462,
+    comments: 782,
+  },
+  {
+    id: 4,
+    img: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=600&auto=format&fit=crop",
+    likes: 743,
+    comments: 109,
+  },
+];
 
-type Product = {
-  id: number;
-  name: string;
-  tone: string;
-  base_price: number;
-  image: string;
-};
-
-export default function ProductGrid({ userTone }: { userTone: string }) {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState(true);
-  const router = useRouter();
-
-  useEffect(() => {
-    async function fetchProducts() {
-      try {
-        const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
-        const res = await fetch(`${apiUrl}/public/products`);
-        if (res.ok) {
-          const data = await res.json();
-          setProducts(data.items.map((item: any) => ({
-            id: item.id,
-            name: item.name,
-            tone: item.tone,
-            base_price: item.base_price,
-            image: item.image,
-          })));
-        }
-      } catch (error) {
-        console.error("Failed to fetch products", error);
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchProducts();
-  }, []);
-
-  const filteredProducts = products.filter(p => userTone === "All" || p.tone === userTone);
-
+export default function ProductGrid() {
   return (
-    <section className="py-24 bg-white">
-      <div className="container mx-auto px-6 max-w-7xl">
-        <div className="text-center mb-16">
-          <h2 className="text-sm font-bold tracking-widest text-rose-500 uppercase mb-4">
-            Thiết kế giới hạn
-          </h2>
-          <h3 className="text-4xl md:text-5xl font-serif text-gray-900 mb-6 cursor-default">
-            Bộ sưu tập Hala Handmade
-          </h3>
-          <div className="w-24 h-1 bg-rose-200 mx-auto rounded-full mb-6"></div>
-          <p className="text-gray-500 max-w-xl mx-auto text-lg font-light leading-relaxed">
-            Những tác phẩm độc bản từ len, được tạo ra bằng sự tỉ mỉ của đôi tay và mang theo câu chuyện của riêng bạn.
-          </p>
-        </div>
+    <section id="popular" className="bg-[#f5f0e8] py-24 px-6">
+      <div className="max-w-6xl mx-auto">
+        <p className="text-center text-xs tracking-widest uppercase text-[#8b6f5e] mb-3">
+          Bộ sưu tập hoa khô
+        </p>
+        <h2 className="font-serif text-4xl md:text-5xl text-center text-[#2c2420] mb-16">
+          Sản Phẩm Nổi Bật
+        </h2>
 
-        {loading ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[...Array(4)].map((_, i) => (
-              <div key={i} className="animate-pulse flex flex-col gap-4">
-                <div className="bg-gray-200 aspect-[4/5] rounded-[2rem] w-full"></div>
-                <div className="bg-gray-200 h-6 w-3/4 rounded-md"></div>
-                <div className="bg-gray-200 h-5 w-1/2 rounded-md"></div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {items.map((p) => (
+            <div key={p.id} className="group cursor-pointer">
+              <div className="overflow-hidden bg-[#e8ddd0] aspect-square mb-3">
+                <img
+                  src={p.img}
+                  alt="Sản phẩm"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
-            ))}
-          </div>
-        ) : (
-          <motion.div
-            layout
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
-          >
-            {filteredProducts.map((product) => (
-              <motion.div
-                layout
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.5 }}
-                key={product.id}
-                className="group cursor-pointer flex flex-col gap-4"
-              >
-                <div
-                  onClick={() => router.push(`/product/${product.id}`)}
-                  className="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-gray-100 shadow-sm border border-gray-100 group-hover:shadow-xl transition-all duration-500"
-                >
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
-                  />
-                  {/* Tags */}
-                  <div className="absolute top-4 left-4 flex flex-col gap-2">
-                    <div className="bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-xs font-bold text-gray-800 shadow-sm">
-                      {product.tone === "Warm" ? "☀️ Warm Tone" : product.tone === "Cool" ? "❄️ Cool Tone" : "✨ All Tone"}
-                    </div>
-                  </div>
-
-                  {/* Quick Add Button Overlay */}
-                  <div className="absolute bottom-4 inset-x-4 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                    <a href="#cta" className="flex items-center justify-center gap-2 bg-white/95 backdrop-blur text-gray-900 py-3 rounded-xl font-medium shadow-lg hover:bg-gray-900 hover:text-white transition-colors w-full">
-                      <ShoppingBag className="w-4 h-4" />
-                      Đặt hàng ngay
-                    </a>
-                  </div>
-                </div>
-
-                <div className="px-2">
-                  <h3 className="text-xl font-serif font-medium text-gray-900 group-hover:text-rose-500 transition-colors mb-2">
-                    {product.name}
-                  </h3>
-                  <p className="text-gray-600 font-medium">
-                    {new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(product.base_price)}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        )}
-
-        {!loading && filteredProducts.length === 0 && (
-          <div className="text-center py-20 text-gray-500 bg-gray-50 rounded-3xl">
-             <p className="text-xl mb-4 font-serif">Rất tiếc...</p>
-             <p>Chưa có sản phẩm nào phù hợp với bộ lọc hiện tại.</p>
-          </div>
-        )}
+              <div className="flex items-center gap-4 text-xs text-[#8b6f5e]">
+                <span className="flex items-center gap-1">
+                  <Heart className="w-3 h-3" />
+                  {p.likes}
+                </span>
+                <span className="flex items-center gap-1">
+                  <MessageCircle className="w-3 h-3" />
+                  {p.comments}
+                </span>
+                <span className="flex items-center gap-1 ml-auto hover:text-[#2c2420] transition-colors">
+                  <Share2 className="w-3 h-3" />
+                  Chia sẻ
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
