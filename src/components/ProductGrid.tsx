@@ -29,7 +29,8 @@ const items = [
   },
 ];
 
-export default function ProductGrid() {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function ProductGrid(_props: any) {
   return (
     <section id="popular" className="bg-[#f5f0e8] py-24 px-6">
       <div className="max-w-6xl mx-auto">
