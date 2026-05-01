@@ -18,22 +18,13 @@ export default function FleurCTA() {
       >
         <FadeIn>
         <div className="max-w-lg mx-auto">
-          {/* Ornament */}
-          <div className="flex items-center justify-center gap-3 mb-7">
-            <div className="h-px w-10 bg-[#2A1A0E]/30" />
-            <span className="text-[#2A1A0E]/40 text-sm">✦</span>
-            <div className="h-px w-10 bg-[#2A1A0E]/30" />
-          </div>
+          <p className="text-[9px] tracking-[0.35em] uppercase text-[#2A1A0E]/50 mb-5">Liên hệ với chúng tôi</p>
 
-          <h2 className="font-serif text-4xl md:text-5xl text-[#2A1A0E] font-normal italic mb-4">
+          <h2 className="font-serif text-4xl md:text-5xl text-[#2A1A0E] font-normal italic mb-5">
             Nói Chuyện Với Chúng Tôi
           </h2>
 
-          <div className="flex items-center justify-center gap-2 mb-7">
-            <div className="h-px w-12 bg-[#2A1A0E]/25" />
-            <span className="text-[#2A1A0E]/30 text-xs">✦</span>
-            <div className="h-px w-12 bg-[#2A1A0E]/25" />
-          </div>
+          <div className="h-px w-16 bg-[#2A1A0E]/20 mx-auto mb-7" />
 
           <p className="text-sm text-[#3D2B1F] leading-relaxed mb-9 max-w-sm mx-auto">
             Khó chọn sản phẩm? Để nhân viên thân thiện của chúng tôi giúp bạn

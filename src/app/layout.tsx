@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
+import { Cormorant_Garamond, Be_Vietnam_Pro } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({
+const cormorant = Cormorant_Garamond({
   variable: "--font-playfair",
   subsets: ["latin", "vietnamese"],
+  weight: ["300", "400", "500", "600"],
+  style: ["normal", "italic"],
 });
 
-const jakarta = Plus_Jakarta_Sans({
+const beVietnam = Be_Vietnam_Pro({
   variable: "--font-jakarta",
   subsets: ["latin", "vietnamese"],
+  weight: ["300", "400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -25,7 +28,7 @@ export default function RootLayout({
   return (
     <html
       lang="vi"
-      className={`${playfair.variable} ${jakarta.variable} scroll-smooth antialiased`}
+      className={`${cormorant.variable} ${beVietnam.variable} scroll-smooth antialiased`}
     >
       <body className="font-sans text-gray-800 bg-[#FAFAFA] min-h-screen flex flex-col">{children}</body>
     </html>

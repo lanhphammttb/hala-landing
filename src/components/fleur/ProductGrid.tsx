@@ -13,7 +13,7 @@ const items = [
 
 export default function FleurProductGrid() {
   return (
-    <section id="popular" className="px-8 pb-20" style={{ backgroundColor: "#F5F0EA", paddingTop: 150 }}>
+    <section id="popular" className="px-4 md:px-8 pt-4 pb-16 md:pb-20" style={{ backgroundColor: "#F5F0EA" }}>
       <div className="max-w-5xl mx-auto">
 
         {/* Heading */}
@@ -27,11 +27,7 @@ export default function FleurProductGrid() {
             <h2 className="font-serif text-5xl text-[#2A1A0E] font-normal italic">
               Sản Phẩm Nổi Bật
             </h2>
-            <div className="flex items-center justify-center gap-2 mt-4">
-              <div className="h-px w-16 bg-[#C4A882]" />
-              <span className="text-[#C4A882] text-xs">✦</span>
-              <div className="h-px w-16 bg-[#C4A882]" />
-            </div>
+            <div className="h-px w-16 bg-[#C4A882] mx-auto mt-4" />
           </div>
         </FadeIn>
 

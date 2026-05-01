@@ -5,17 +5,17 @@ import FadeIn from "./FadeIn";
 
 const services = [
   {
-    title: "Túi Xách Móc Len",
+    title: "Túi Xách",
     description: "Bạn có gu riêng? Chúng tôi tạo ra những chiếc túi móc len theo đúng màu sắc và phong cách bạn muốn.",
     img: "/anh1.jpg",
   },
   {
-    title: "Thú Bông Handmade",
+    title: "Thú Bông",
     description: "Thú bông móc tay dễ thương cho mọi dịp — quà tặng ý nghĩa, trang trí tinh tế.",
     img: "/anh3.jpg",
   },
   {
-    title: "Phụ Kiện Theo Yêu Cầu",
+    title: "Phụ Kiện",
     description: "Từ mũ, khăn đến vòng tay — chúng tôi nhận order bất kỳ phụ kiện len nào theo ý bạn.",
     img: "/anh4.jpg",
   },
@@ -23,12 +23,12 @@ const services = [
 
 export default function FleurServices() {
   return (
-    <section id="services" className="py-20 px-8" style={{ backgroundColor: "#F5F0EA" }}>
+    <section id="services" className="pt-16 pb-10 px-6 md:px-8" style={{ backgroundColor: "#F5F0EA" }}>
       <div className="max-w-5xl mx-auto">
 
         {/* Heading */}
         <FadeIn>
-        <div className="text-center mb-14">
+        <div className="text-center mb-10">
           <div className="flex items-center justify-center gap-3 mb-3">
             <div className="h-px w-6 bg-[#A07850]" />
             <p className="text-[9px] tracking-[0.35em] uppercase text-[#A07850]">Chúng tôi làm gì</p>

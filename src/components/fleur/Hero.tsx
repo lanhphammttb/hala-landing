@@ -4,7 +4,7 @@ import VintageImage from "./VintageImage";
 
 export default function FleurHero() {
   return (
-    <section className="relative h-screen min-h-140 overflow-hidden">
+    <section className="relative h-svh min-h-140 overflow-hidden">
       {/* BG */}
       <div className="absolute inset-0">
         <VintageImage
