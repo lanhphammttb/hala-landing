@@ -1,5 +1,6 @@
 "use client";
 
+import { Heart, ShoppingBag } from "lucide-react";
 import FadeIn from "./FadeIn";
 import VintageImage from "./VintageImage";
 
@@ -14,12 +15,12 @@ const items = [
 
 export default function FleurProductGrid() {
   return (
-    <section id="popular" className="py-20 md:py-28 px-6 md:px-10"
+    <section id="popular" className="py-16 md:py-24 px-6 md:px-10"
       style={{ backgroundColor: "#F0EBE4" }}>
       <div className="max-w-360 mx-auto">
 
         <FadeIn>
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <p className="text-[10px] tracking-[0.3em] uppercase text-accent mb-3">Bộ sưu tập</p>
             <h2 className="font-serif font-semibold text-warm-900 text-4xl md:text-5xl">
               Sản Phẩm Nổi Bật
@@ -27,19 +28,19 @@ export default function FleurProductGrid() {
           </div>
         </FadeIn>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-5 xl:gap-6">
           {items.map((p, i) => (
             <FadeIn key={p.id} delay={i * 0.06}>
               <div className="group flex flex-col">
 
-                {/* Image */}
-                <div className="relative overflow-hidden mb-4"
+                <div className="relative overflow-hidden mb-3"
                   style={{ aspectRatio: "3/4", borderRadius: "1.25rem", backgroundColor: "#E8E0D6" }}>
                   <VintageImage
                     src={p.img}
                     alt={p.name}
                     className="group-hover:scale-105 transition-transform duration-700"
                   />
+
                   {p.tag && (
                     <span className="absolute top-3 left-3 text-[9px] tracking-widest uppercase px-2 py-1 font-medium"
                       style={{
@@ -51,16 +52,29 @@ export default function FleurProductGrid() {
                       {p.tag}
                     </span>
                   )}
+
+                  {/* Heart wishlist — fade in on hover */}
+                  <button
+                    className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"
+                    style={{ backgroundColor: "rgba(246,243,239,0.9)", boxShadow: "0 2px 8px rgba(45,41,38,0.12)" }}>
+                    <Heart size={13} strokeWidth={1.5} className="text-accent" />
+                  </button>
+
+                  {/* Dark gradient overlay on hover */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-500"
+                    style={{ borderRadius: "1.25rem", background: "linear-gradient(to top, rgba(45,41,38,0.70) 0%, transparent 50%)" }} />
+
+                  {/* "Sở hữu ngay" slides up from bottom */}
+                  <div className="absolute bottom-0 left-0 right-0 p-4 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                    <a href="#contact" className="inline-flex items-center gap-2 text-white text-[10px] tracking-[0.18em] uppercase">
+                      <ShoppingBag size={12} strokeWidth={1.5} />
+                      Sở hữu ngay
+                    </a>
+                  </div>
                 </div>
 
-                {/* Info */}
-                <p className="text-sm text-warm-900 font-medium mb-1 leading-tight">{p.name}</p>
-                <p className="font-serif text-sm text-accent font-semibold mb-3">{p.price}</p>
-                <a href="#contact"
-                  className="inline-flex items-center justify-center py-2 px-4 text-[10px] tracking-[0.15em] uppercase text-white bg-accent hover:bg-accent-hover transition-colors"
-                  style={{ borderRadius: "999px" }}>
-                  Mua ngay
-                </a>
+                <p className="text-sm text-warm-900 font-medium leading-tight mb-1">{p.name}</p>
+                <p className="font-serif text-sm text-accent font-semibold">{p.price}</p>
 
               </div>
             </FadeIn>
