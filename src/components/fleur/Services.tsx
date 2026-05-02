@@ -23,31 +23,29 @@ const services = [
 
 export default function FleurServices() {
   return (
-    <section id="services" className="py-20 md:py-28 px-6 md:px-12 xl:px-16"
+    <section id="services" className="py-20 md:py-28 px-6 md:px-10"
       style={{ backgroundColor: "#F6F3EF" }}>
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-360 mx-auto">
 
         <FadeIn>
           <div className="text-center mb-14">
-            <h2 className="font-serif font-semibold text-warm-900"
-              style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
-              Dịch Vụ
-            </h2>
+            <p className="text-[10px] tracking-[0.3em] uppercase text-accent mb-3">Chúng tôi làm gì</p>
+            <h2 className="font-serif font-semibold text-warm-900 text-4xl md:text-5xl">Dịch Vụ</h2>
           </div>
         </FadeIn>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 xl:gap-14">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 md:gap-14 xl:gap-20">
           {services.map((s, i) => (
-            <FadeIn key={s.title} delay={i * 0.12}>
+            <FadeIn key={s.title} delay={i * 0.1}>
               <div className="group flex flex-col items-center text-center">
 
-                {/* Arch image */}
-                <div className="mb-6 w-full max-w-52 mx-auto">
+                {/* Arch image — equal for all 3 */}
+                <div className="w-full max-w-56 mx-auto mb-7">
                   <div style={{
                     borderRadius: "999px 999px 1rem 1rem",
                     overflow: "hidden",
                     aspectRatio: "3/4",
-                    boxShadow: "0 20px 40px rgba(0,0,0,0.03), 0 6px 20px rgba(45,41,38,0.08)",
+                    boxShadow: "0 8px 32px rgba(45,41,38,0.10)",
                   }}>
                     <VintageImage
                       src={s.img}
@@ -58,8 +56,11 @@ export default function FleurServices() {
                 </div>
 
                 <h3 className="font-serif text-xl text-warm-900 font-semibold mb-2">{s.title}</h3>
-                <p className="text-sm text-warm-700 leading-[1.7] mb-4 max-w-60">{s.description}</p>
-                <div className="h-px w-6 bg-warm-300" />
+                <p className="text-sm text-warm-700 leading-relaxed mb-5 max-w-xs">{s.description}</p>
+                <a href="#contact"
+                  className="text-[10px] tracking-[0.2em] uppercase text-accent hover:text-accent-hover transition-colors">
+                  Xem thêm →
+                </a>
 
               </div>
             </FadeIn>

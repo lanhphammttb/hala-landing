@@ -14,11 +14,12 @@ export default function FleurNavbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/10" style={{ backgroundColor: "rgba(45,41,38,0.97)", backdropFilter: "blur(8px)" }}>
-      <div className="max-w-7xl mx-auto px-6 md:px-8 h-14 flex items-center justify-between">
-        <a href="#" className="font-serif text-xl tracking-[0.3em] italic text-[#C4A882]">Hala</a>
+    <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/10"
+      style={{ backgroundColor: "rgba(45,41,38,0.96)", backdropFilter: "blur(10px)" }}>
+      <div className="max-w-360 mx-auto px-6 md:px-10 h-14 flex items-center justify-between">
+        <a href="#" className="font-serif text-lg tracking-[0.3em] italic text-[#C4A882]">Hala</a>
 
-        <div className="hidden md:flex items-center gap-8 lg:gap-10">
+        <div className="hidden md:flex items-center gap-8">
           {links.map(([label, href]) => (
             <a key={label} href={href}
               className="text-[10px] tracking-[0.2em] uppercase text-white/55 hover:text-white/90 transition-colors">
@@ -37,7 +38,8 @@ export default function FleurNavbar() {
       </div>
 
       {open && (
-        <div className="md:hidden flex flex-col gap-5 px-6 py-6 border-t border-white/10" style={{ backgroundColor: "rgba(45,41,38,0.97)" }}>
+        <div className="md:hidden flex flex-col gap-5 px-6 py-6 border-t border-white/10"
+          style={{ backgroundColor: "rgba(45,41,38,0.98)" }}>
           {links.map(([label, href]) => (
             <a key={label} href={href} onClick={() => setOpen(false)}
               className="text-[11px] tracking-[0.2em] uppercase text-white/70 hover:text-white transition-colors">
