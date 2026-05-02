@@ -37,15 +37,26 @@ export default function FleurServices() {
           {services.map((s, i) => (
             <FadeIn key={s.title} delay={i * 0.1} className="flex flex-col">
               <article
-                className="flex flex-col flex-1 group overflow-hidden"
-                style={{ borderRadius: "1.5rem", border: "1px solid #D4C5B0", backgroundColor: "#EDE8E0" }}
+                className="flex flex-col flex-1 group"
+                style={{ borderRadius: "1.5rem", border: "1px solid #D4C5B0", backgroundColor: "#F5F0EA", overflow: "hidden" }}
               >
-                <div className="aspect-4/3 overflow-hidden shrink-0">
-                  <VintageImage
-                    src={s.img}
-                    alt={s.title}
-                    className="group-hover:scale-105 transition-transform duration-700"
-                  />
+                {/* Arch image — wider ratio, framed */}
+                <div className="px-5 pt-5 shrink-0">
+                  <div
+                    style={{
+                      borderRadius: "999px 999px 0.75rem 0.75rem",
+                      overflow: "hidden",
+                      aspectRatio: "4/5",
+                      border: "1px solid #D4C5B0",
+                      boxShadow: "inset 0 0 0 3px #F5F0EA",
+                    }}
+                  >
+                    <VintageImage
+                      src={s.img}
+                      alt={s.title}
+                      className="group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
                 </div>
                 <div className="px-6 pt-5 pb-7 flex flex-col flex-1">
                   <h3 className="font-serif text-xl text-warm-900 font-semibold mb-2">{s.title}</h3>

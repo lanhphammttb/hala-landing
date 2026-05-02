@@ -28,7 +28,7 @@ export default function FleurCTA() {
               href="https://zalo.me"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-2xl bg-accent text-white text-[10px] tracking-[0.2em] uppercase hover:bg-accent-hover transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-accent text-white text-[10px] tracking-[0.2em] uppercase transition-all hover:bg-accent-hover hover:shadow-[0_6px_20px_rgba(184,92,56,0.35)]"
             >
               <MessageCircle size={13} /> Zalo
             </a>
@@ -36,7 +36,7 @@ export default function FleurCTA() {
               href="https://m.me"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-2xl border border-accent text-accent text-[10px] tracking-[0.2em] uppercase hover:bg-accent hover:text-white transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full border border-accent text-accent text-[10px] tracking-[0.2em] uppercase transition-all hover:bg-accent hover:text-white hover:shadow-[0_6px_20px_rgba(184,92,56,0.25)]"
             >
               <Send size={13} /> Messenger
             </a>
