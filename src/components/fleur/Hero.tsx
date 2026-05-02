@@ -40,8 +40,8 @@ export default function FleurHero() {
           <div className="h-px w-12 bg-white/40" />
         </div>
 
-        <h1 className="font-serif text-5xl md:text-7xl text-white leading-[1.1] mb-5"
-          style={{ textShadow: "0 2px 30px rgba(42,26,14,0.4)" }}>
+        <h1 className="font-serif text-white leading-[1.1] mb-5"
+          style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)", textShadow: "0 2px 30px rgba(42,26,14,0.4)" }}>
           Phụ Kiện Móc Len<br />
           <em className="italic">Thủ Công Độc Bản</em>
         </h1>

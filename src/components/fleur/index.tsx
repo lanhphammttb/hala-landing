@@ -1,5 +1,6 @@
 import FleurNavbar from "./Navbar";
 import FleurHero from "./Hero";
+import CustomCursor from "./CustomCursor";
 import FleurServices from "./Services";
 import FleurProductGrid from "./ProductGrid";
 import FleurGiftIdeas from "./GiftIdeas";
@@ -7,7 +8,8 @@ import FleurCTA from "./CTA";
 
 export default function FleurTemplate() {
   return (
-    <main className="min-h-screen bg-[#FAF7F2] text-[#2A1F14]">
+    <main className="min-h-screen bg-warm-50 text-[#2A1F14]">
+      <CustomCursor />
       <FleurNavbar />
       <div className="pt-14">
         <FleurHero />
