@@ -2,8 +2,6 @@
 
 import { Heart, ShoppingBag } from "lucide-react";
 import FadeIn from "./FadeIn";
-import VintageImage from "./VintageImage";
-
 const items = [
   { id: 1, img: "/anh1.jpg", name: "Túi xách mini", price: "280.000₫", tag: "Mới" },
   { id: 2, img: "/anh2.jpg", name: "Túi tote len", price: "350.000₫" },
@@ -28,17 +26,20 @@ export default function FleurProductGrid() {
           </div>
         </FadeIn>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-5 xl:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-5 xl:gap-6 items-start">
           {items.map((p, i) => (
             <FadeIn key={p.id} delay={i * 0.06}>
               <div className="group flex flex-col">
 
+                {/* Image — 4:5, object-cover, fixed ratio so all equal height */}
                 <div className="relative overflow-hidden mb-3"
-                  style={{ aspectRatio: "3/4", borderRadius: "1.25rem", backgroundColor: "#E8E0D6" }}>
-                  <VintageImage
+                  style={{ aspectRatio: "4/5", borderRadius: "1.25rem", backgroundColor: "#E8E0D6" }}>
+                  <img
                     src={p.img}
                     alt={p.name}
-                    className="group-hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    style={{ filter: "sepia(6%) saturate(92%) contrast(97%) brightness(102%)" }}
                   />
 
                   {p.tag && (
@@ -53,18 +54,15 @@ export default function FleurProductGrid() {
                     </span>
                   )}
 
-                  {/* Heart wishlist — fade in on hover */}
                   <button
                     className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"
                     style={{ backgroundColor: "rgba(246,243,239,0.9)", boxShadow: "0 2px 8px rgba(45,41,38,0.12)" }}>
                     <Heart size={13} strokeWidth={1.5} className="text-accent" />
                   </button>
 
-                  {/* Dark gradient overlay on hover */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-500"
-                    style={{ borderRadius: "1.25rem", background: "linear-gradient(to top, rgba(45,41,38,0.70) 0%, transparent 50%)" }} />
+                    style={{ borderRadius: "1.25rem", background: "linear-gradient(to top, rgba(45,41,38,0.72) 0%, transparent 55%)" }} />
 
-                  {/* "Sở hữu ngay" slides up from bottom */}
                   <div className="absolute bottom-0 left-0 right-0 p-4 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
                     <a href="#contact" className="inline-flex items-center gap-2 text-white text-[10px] tracking-[0.18em] uppercase">
                       <ShoppingBag size={12} strokeWidth={1.5} />
