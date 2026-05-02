@@ -5,8 +5,8 @@ import { Menu, X } from "lucide-react";
 
 const links: [string, string][] = [
   ["Dịch vụ", "#services"],
-  ["Quà tặng", "#gift"],
   ["Sản phẩm", "#popular"],
+  ["Quà tặng", "#gift"],
   ["Liên hệ", "#contact"],
 ];
 

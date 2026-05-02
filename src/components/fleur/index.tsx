@@ -1,8 +1,8 @@
 import FleurNavbar from "./Navbar";
 import FleurHero from "./Hero";
 import FleurServices from "./Services";
-import FleurGiftIdeas from "./GiftIdeas";
 import FleurProductGrid from "./ProductGrid";
+import FleurGiftIdeas from "./GiftIdeas";
 import FleurCTA from "./CTA";
 
 export default function FleurTemplate() {
@@ -16,10 +16,59 @@ export default function FleurTemplate() {
       <FleurProductGrid />
       <FleurGiftIdeas />
       <FleurCTA />
-      <footer className="bg-[#2A1F14] py-8 text-center">
-        <p className="text-[10px] tracking-[0.2em] uppercase text-[#9B7B5E]">
-          &copy; {new Date().getFullYear()} Hala Handmade — Tất cả quyền được bảo lưu
-        </p>
+
+      <footer className="bg-[#2A1F14] px-6 md:px-8 pt-12 pb-8">
+        <div className="max-w-5xl mx-auto">
+
+          {/* Top row */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10 border-b border-white/10">
+            {/* Brand */}
+            <div>
+              <p className="font-serif text-2xl italic text-[#C4A882] mb-3">Hala</p>
+              <p className="text-sm text-white/50 leading-relaxed">
+                Phụ kiện móc len thủ công độc bản.<br />
+                Miễn phí giao hàng từ 500.000₫.
+              </p>
+            </div>
+
+            {/* Links */}
+            <div>
+              <p className="text-[10px] tracking-[0.25em] uppercase text-white/30 mb-4">Khám phá</p>
+              <ul className="space-y-2.5">
+                {[["Dịch vụ", "#services"], ["Sản phẩm", "#popular"], ["Quà tặng", "#gift"], ["Liên hệ", "#contact"]].map(([label, href]) => (
+                  <li key={label}>
+                    <a href={href} className="text-sm text-white/55 hover:text-[#C4A882] transition-colors">{label}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <p className="text-[10px] tracking-[0.25em] uppercase text-white/30 mb-4">Liên hệ</p>
+              <ul className="space-y-2.5">
+                <li className="text-sm text-white/55">Zalo / Messenger</li>
+                <li className="text-sm text-white/55">halahandmade@gmail.com</li>
+                <li>
+                  <div className="flex gap-4 mt-1">
+                    {["Instagram", "Facebook", "TikTok"].map((s) => (
+                      <a key={s} href="#" className="text-[10px] tracking-[0.15em] text-white/35 hover:text-[#C4A882] transition-colors uppercase">{s}</a>
+                    ))}
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Bottom row */}
+          <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-2">
+            <p className="text-[10px] tracking-[0.15em] uppercase text-white/25">
+              &copy; {new Date().getFullYear()} Hala Handmade
+            </p>
+            <p className="text-[10px] text-white/25">Tất cả quyền được bảo lưu</p>
+          </div>
+
+        </div>
       </footer>
     </main>
   );

@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Be_Vietnam_Pro } from "next/font/google";
+import { Lora, Be_Vietnam_Pro } from "next/font/google";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
+const lora = Lora({
   variable: "--font-playfair",
   subsets: ["latin", "vietnamese"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
 });
 
@@ -28,9 +28,9 @@ export default function RootLayout({
   return (
     <html
       lang="vi"
-      className={`${cormorant.variable} ${beVietnam.variable} scroll-smooth antialiased`}
+      className={`${lora.variable} ${beVietnam.variable} scroll-smooth antialiased`}
     >
-      <body className="font-sans text-gray-800 bg-[#FAFAFA] min-h-screen flex flex-col">{children}</body>
+      <body className="font-sans text-[#2A1F14] bg-[#FAF7F2] min-h-screen">{children}</body>
     </html>
   );
 }

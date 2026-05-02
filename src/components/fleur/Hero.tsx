@@ -40,13 +40,13 @@ export default function FleurHero() {
           <div className="h-px w-12 bg-white/40" />
         </div>
 
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-[5.5rem] text-white leading-[1.05] mb-5"
+        <h1 className="font-serif text-5xl md:text-7xl text-white leading-[1.1] mb-5"
           style={{ textShadow: "0 2px 30px rgba(42,26,14,0.4)" }}>
           Phụ Kiện Móc Len<br />
-          <em className="font-light italic">Thủ Công Độc Bản</em>
+          <em className="italic">Thủ Công Độc Bản</em>
         </h1>
 
-        <p className="text-sm md:text-base text-white/75 mb-10 tracking-widest font-light">
+        <p className="text-sm text-white/70 mb-10 tracking-wide">
           Miễn phí vận chuyển cho đơn hàng trên 500.000₫
         </p>
 
