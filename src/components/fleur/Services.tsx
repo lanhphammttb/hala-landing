@@ -1,73 +1,39 @@
 "use client";
 
-import FadeIn from "./FadeIn";
-import VintageImage from "./VintageImage";
+import { motion } from "framer-motion";
+import { Hammer, Heart, ShieldCheck, Truck } from "lucide-react";
 
-const services = [
-  {
-    title: "Túi Xách",
-    sub: "Móc tay theo yêu cầu — màu sắc và phong cách của bạn.",
-    img: "/anh1.jpg",
-  },
-  {
-    title: "Thú Bông",
-    sub: "Quà tặng dễ thương, ý nghĩa cho mọi dịp.",
-    img: "/anh3.jpg",
-  },
-  {
-    title: "Phụ Kiện",
-    sub: "Mũ, khăn, túi nhỏ — nhận order bất kỳ.",
-    img: "/anh4.jpg",
-  },
+const steps = [
+  { icon: Hammer, title: "Làm tay 100%", desc: "Tỉ mỉ từng mũi len" },
+  { icon: Heart, title: "Làm bằng tâm", desc: "Gói ghém sự ấm áp" },
+  { icon: ShieldCheck, title: "Bền bỉ", desc: "Chất liệu cao cấp" },
+  { icon: Truck, title: "Giao nhanh", desc: "Tận tay bạn" },
 ];
 
 export default function FleurServices() {
   return (
-    <section id="services" className="py-16 md:py-20 px-6 md:px-10"
-      style={{ backgroundColor: "#F6F3EF" }}>
-      <div className="max-w-360 mx-auto">
-
-        <FadeIn>
-          <div className="text-center mb-10">
-            <p className="text-[11px] tracking-[0.25em] uppercase text-accent mb-3 font-sans">Chúng tôi làm gì</p>
-            <h2 className="font-serif font-medium text-warm-900" style={{ fontSize: "clamp(1.8rem, 3vw, 2.8rem)" }}>Dịch Vụ</h2>
-          </div>
-        </FadeIn>
-
-        {/* Responsive: 1 col mobile → 2 col sm → 3 col lg */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-          {services.map((s, i) => (
-            <FadeIn key={s.title} delay={i * 0.1}>
-              <a href="#contact" className="group flex flex-col items-center text-center">
-
-                {/* Arch with gold border frame */}
-                <div className="w-full mb-4" style={{
-                  padding: "4px",
-                  borderRadius: "999px 999px 1rem 1rem",
-                  border: "1px solid rgba(180,140,60,0.45)",
-                }}>
-                  <div style={{
-                    borderRadius: "999px 999px 0.75rem 0.75rem",
-                    overflow: "hidden",
-                    aspectRatio: "3/4",
-                    boxShadow: "0 6px 24px rgba(45,41,38,0.09)",
-                  }}>
-                    <VintageImage
-                      src={s.img}
-                      alt={s.title}
-                      className="group-hover:scale-105 transition-transform duration-700"
-                    />
-                  </div>
+    <section id="services" className="py-20 px-6 bg-[#FAF7F2]">
+      <div className="max-w-5xl mx-auto">
+        <div className="bg-white p-12 md:p-16 rounded-[3rem] shadow-sm border border-[#2C2420]/5 flex flex-wrap justify-between items-center gap-12">
+           {steps.map((s, i) => (
+             <motion.div
+               key={s.title}
+               initial={{ opacity: 0, y: 10 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               transition={{ delay: i * 0.1 }}
+               className="flex items-center gap-6 group"
+             >
+                <div className="w-14 h-14 rounded-2xl bg-[#C59D5F]/10 flex items-center justify-center text-[#C59D5F] group-hover:bg-[#C59D5F] group-hover:text-white transition-all duration-500">
+                   <s.icon size={24} strokeWidth={1.5} />
                 </div>
-
-                <h3 className="font-serif text-lg text-warm-900 font-medium mb-1">{s.title}</h3>
-                <p className="text-xs text-warm-700 leading-relaxed max-w-52">{s.sub}</p>
-
-              </a>
-            </FadeIn>
-          ))}
+                <div>
+                   <h3 className="text-base font-bold text-[#2C2420]">{s.title}</h3>
+                   <p className="text-xs text-[#2C2420]/40 uppercase tracking-widest">{s.desc}</p>
+                </div>
+             </motion.div>
+           ))}
         </div>
-
       </div>
     </section>
   );

@@ -1,41 +1,56 @@
 "use client";
 
+import { motion } from "framer-motion";
 import VintageImage from "./VintageImage";
 
 export default function FleurHero() {
   return (
-    <section className="relative h-svh min-h-140 overflow-hidden">
-      <div className="absolute inset-0">
-        <VintageImage src="/anh2.jpg" alt="" />
+    <section className="relative h-svh min-h-[600px] flex items-center justify-center bg-[#FAF7F2] overflow-hidden">
+      {/* Warm Soft Glow */}
+      <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-[#C59D5F]/5 to-transparent z-10 pointer-events-none" />
+
+      <div className="container mx-auto px-6 relative z-20 flex flex-col items-center text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-4xl w-full"
+        >
+          <span className="text-[#A56336] text-[12px] md:text-[14px] uppercase tracking-[0.4em] font-bold mb-6 block">Tiệm đồ len thủ công Hala</span>
+          
+          <h1 className="font-serif italic text-[#2C2420] text-6xl md:text-8xl lg:text-9xl leading-[1.1] mb-12 tracking-tight">
+            Gói Ghém <br /> <span className="text-[#C59D5F]">Sự Ấm Áp</span>
+          </h1>
+
+          <div className="relative w-full max-w-4xl mx-auto mb-16 aspect-[16/7] rounded-[2rem] overflow-hidden shadow-2xl border-[8px] border-white">
+             <VintageImage 
+               src="/vintage_crochet_hero_1777732976775.png" 
+               alt="Hala Boutique" 
+               className="w-full h-full object-cover"
+             />
+             <div className="absolute inset-0 bg-black/5" />
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <a
+              href="#popular"
+              className="px-12 py-5 bg-[#2C2420] text-white text-[13px] uppercase tracking-[0.2em] font-bold rounded-full hover:bg-[#A56336] transition-all shadow-lg"
+            >
+              Xem bộ sưu tập
+            </a>
+            <a
+              href="#gift"
+              className="px-12 py-5 bg-white text-[#2C2420] text-[13px] uppercase tracking-[0.2em] font-bold rounded-full border border-[#2C2420]/10 hover:border-[#A56336] transition-all shadow-sm"
+            >
+              Đặt làm theo yêu cầu
+            </a>
+          </div>
+        </motion.div>
       </div>
-      <div className="absolute inset-0 bg-linear-to-b from-warm-900/50 via-warm-900/25 to-warm-900/55" />
 
-      <div className="absolute left-8 bottom-8 hidden md:flex gap-6">
-        {["IG", "FB", "TT"].map((s) => (
-          <a key={s} href="#"
-            className="text-[10px] tracking-[0.2em] text-white/50 hover:text-white/80 transition-colors">
-            {s}
-          </a>
-        ))}
-      </div>
-
-      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
-        <p className="text-[10px] tracking-[0.4em] uppercase text-white/50 mb-8">Hala Handmade</p>
-
-        <h1 className="font-serif font-medium text-white leading-[1.1] mb-5"
-          style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)", textShadow: "0 2px 30px rgba(42,26,14,0.35)" }}>
-          Phụ Kiện Móc Len<br />
-          <em className="italic font-normal">Thủ Công Độc Bản</em>
-        </h1>
-
-        <p className="text-sm text-white/60 mb-10">
-          Miễn phí vận chuyển từ 500.000₫
-        </p>
-
-        <a href="#popular"
-          className="px-8 py-3 rounded-full bg-accent text-white text-[10px] tracking-[0.25em] uppercase hover:bg-accent-hover transition-colors">
-          Khám phá
-        </a>
+      {/* Soft Decorative Elements */}
+      <div className="absolute bottom-10 left-10 opacity-20 hidden md:block">
+         <div className="w-16 h-16 border-2 border-[#A56336] rounded-full border-dashed animate-spin-slow" />
       </div>
     </section>
   );

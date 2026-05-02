@@ -2,13 +2,13 @@
 
 import { useState, useEffect } from "react";
 import FleurTemplate from "./fleur/index";
-import MiMiTemplate from "./mimimi/index";
+import EditorialTemplate from "./editorial/index";
 
-type Theme = "fleur" | "mimimi";
+type Theme = "fleur" | "editorial";
 
 const themes: { id: Theme; label: string; emoji: string; desc: string }[] = [
-  { id: "fleur", label: "Vintage Fleur", emoji: "🌿", desc: "Tao nhã · Vintage" },
-  { id: "mimimi", label: "Mị Mị Mê Len", emoji: "🧶", desc: "Cute · Handmade" },
+  { id: "fleur", label: "Heritage Vintage", emoji: "🏰", desc: "Cổ điển · Mộc mạc" },
+  { id: "editorial", label: "Editorial", emoji: "✨", desc: "Hiện đại · Tạp chí" },
 ];
 
 export default function HomeClient() {
@@ -17,7 +17,7 @@ export default function HomeClient() {
 
   useEffect(() => {
     const saved = localStorage.getItem("hala-theme") as Theme | null;
-    if (saved && (saved === "fleur" || saved === "mimimi")) setTheme(saved);
+    if (saved && (saved === "fleur" || saved === "editorial")) setTheme(saved);
   }, []);
 
   function changeTheme(t: Theme) {
@@ -28,7 +28,8 @@ export default function HomeClient() {
 
   return (
     <>
-      {theme === "fleur" ? <FleurTemplate /> : <MiMiTemplate />}
+      {theme === "fleur" && <FleurTemplate />}
+      {theme === "editorial" && <EditorialTemplate />}
 
       {/* Floating theme switcher */}
       <div className="fixed bottom-6 right-6 z-[100]">

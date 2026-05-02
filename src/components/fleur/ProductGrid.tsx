@@ -1,84 +1,78 @@
 "use client";
 
-import { Heart, ShoppingBag } from "lucide-react";
-import FadeIn from "./FadeIn";
-const items = [
-  { id: 1, img: "/anh1.jpg", name: "Túi xách mini", price: "280.000₫", tag: "Mới" },
-  { id: 2, img: "/anh2.jpg", name: "Túi tote len", price: "350.000₫" },
-  { id: 3, img: "/anh3.jpg", name: "Túi dây rút", price: "320.000₫" },
-  { id: 4, img: "/anh4.jpg", name: "Túi hoa crochet", price: "290.000₫", tag: "Mới" },
-  { id: 5, img: "/anh5.jpg", name: "Móc chìa khóa", price: "90.000₫" },
-  { id: 6, img: "/anh6.jpg", name: "Hoa len trang trí", price: "120.000₫" },
+import { motion } from "framer-motion";
+import { ShoppingBag, Heart } from "lucide-react";
+
+const products = [
+  { id: 1, img: "/anh1.jpg", name: "Túi Xách Mini Xinh", price: "280.000₫", tag: "Mới" },
+  { id: 2, img: "/anh2.jpg", name: "Túi Tote Len Mềm", price: "450.000₫", tag: "Hot" },
+  { id: 3, img: "/anh3.jpg", name: "Túi Dây Rút Thêu", price: "320.000₫", tag: "Đặc biệt" },
+  { id: 4, img: "/anh4.jpg", name: "Mũ Nồi Len Đáng Yêu", price: "220.000₫", tag: "Sẵn có" },
+  { id: 5, img: "/anh5.jpg", name: "Thú Len Handmade", price: "95.000₫", tag: "Mới" },
+  { id: 6, img: "/anh6.jpg", name: "Bó Hoa Len Trang Trí", price: "150.000₫", tag: "Quà tặng" },
 ];
 
 export default function FleurProductGrid() {
   return (
-    <section id="popular" className="py-16 md:py-24 px-6 md:px-10"
-      style={{ backgroundColor: "#EDE8E0" }}>
-      <div className="max-w-360 mx-auto">
+    <section id="popular" className="py-24 px-6 bg-white">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-20">
+          <motion.h2
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-serif italic text-5xl md:text-6xl text-[#2C2420]"
+          >
+            Góc <span className="text-[#C59D5F]">Đồ Len</span> Nhỏ
+          </motion.h2>
+          <div className="w-16 h-1 bg-[#C59D5F]/20 mx-auto mt-4 rounded-full" />
+        </div>
 
-        <FadeIn>
-          <div className="text-center mb-10">
-            <p className="text-[11px] tracking-[0.25em] uppercase text-accent mb-3 font-sans">Bộ sưu tập</p>
-            <h2 className="font-serif font-medium text-warm-900" style={{ fontSize: "clamp(1.8rem, 3vw, 2.8rem)" }}>
-              Sản Phẩm Nổi Bật
-            </h2>
-          </div>
-        </FadeIn>
-
-        <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-5 xl:gap-6 items-start">
-          {items.map((p, i) => (
-            <FadeIn key={p.id} delay={i * 0.06}>
-              <div className="group flex flex-col">
-
-                {/* Image — 4:5, object-cover, fixed ratio so all equal height */}
-                <div className="relative overflow-hidden mb-3"
-                  style={{ aspectRatio: "4/5", borderRadius: "1.25rem", backgroundColor: "#E8E0D6" }}>
-                  <img
-                    src={p.img}
-                    alt={p.name}
-                    loading="lazy"
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    style={{ filter: "sepia(6%) saturate(92%) contrast(97%) brightness(102%)" }}
-                  />
-
-                  {p.tag && (
-                    <span className="absolute top-3 left-3 text-[9px] tracking-widest uppercase px-2 py-1 font-medium"
-                      style={{
-                        backgroundColor: "#F6F3EF",
-                        color: "#6B705C",
-                        borderRadius: "0.3rem",
-                        border: "1px solid rgba(107,112,92,0.25)",
-                      }}>
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+          {products.map((p, i) => (
+            <motion.div
+              key={p.id}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.05 }}
+              className="group cursor-pointer"
+            >
+              <div className="relative mb-5 aspect-square rounded-[1.5rem] overflow-hidden bg-[#FAF7F2] shadow-sm group-hover:shadow-xl transition-all duration-500">
+                <img
+                  src={p.img}
+                  alt={p.name}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute top-3 left-3">
+                   <span className="bg-white/90 backdrop-blur-md text-[#A56336] px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-sm">
                       {p.tag}
-                    </span>
-                  )}
-
-                  <button
-                    className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"
-                    style={{ backgroundColor: "rgba(246,243,239,0.9)", boxShadow: "0 2px 8px rgba(45,41,38,0.12)" }}>
-                    <Heart size={13} strokeWidth={1.5} className="text-accent" />
-                  </button>
-
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-500"
-                    style={{ borderRadius: "1.25rem", background: "linear-gradient(to top, rgba(45,41,38,0.72) 0%, transparent 55%)" }} />
-
-                  <div className="absolute bottom-0 left-0 right-0 p-4 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-                    <a href="#contact" className="inline-flex items-center gap-2 text-white text-[10px] tracking-[0.18em] uppercase">
-                      <ShoppingBag size={12} strokeWidth={1.5} />
-                      Sở hữu ngay
-                    </a>
-                  </div>
+                   </span>
                 </div>
-
-                <p className="text-sm text-warm-900 font-medium leading-tight mb-1">{p.name}</p>
-                <p className="font-serif text-sm text-accent font-semibold">{p.price}</p>
-
+                {/* Friendly Heart Button */}
+                <button className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 flex items-center justify-center text-[#2C2420]/20 hover:text-red-400 transition-colors">
+                   <Heart size={16} />
+                </button>
               </div>
-            </FadeIn>
+
+              <div className="text-center">
+                <h3 className="text-lg md:text-xl font-medium text-[#2C2420] mb-1 group-hover:text-[#A56336] transition-colors">
+                  {p.name}
+                </h3>
+                <p className="font-bold text-[#A56336] text-lg">{p.price}</p>
+                <button className="mt-4 px-6 py-2 bg-[#2C2420] text-white text-[10px] uppercase font-bold rounded-full opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0">
+                   Thêm vào giỏ
+                </button>
+              </div>
+            </motion.div>
           ))}
         </div>
 
+        <div className="mt-20 text-center">
+          <button className="px-12 py-4 bg-[#FAF7F2] text-[#2C2420] text-[11px] uppercase tracking-widest font-bold rounded-full hover:bg-[#2C2420] hover:text-white transition-all">
+             Xem tất cả sản phẩm
+          </button>
+        </div>
       </div>
     </section>
   );

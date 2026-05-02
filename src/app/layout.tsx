@@ -1,23 +1,55 @@
 import type { Metadata } from "next";
-import { Lora, Be_Vietnam_Pro } from "next/font/google";
+import { Fraunces, Be_Vietnam_Pro, Crimson_Text, Quicksand, Lora, EB_Garamond, Pinyon_Script } from "next/font/google";
 import "./globals.css";
 
-const lora = Lora({
-  variable: "--font-playfair",
+const pinyonScript = Pinyon_Script({
+  variable: "--font-script",
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+});
+
+const ebGaramond = EB_Garamond({
+  variable: "--font-vintage-classic",
+  subsets: ["latin", "vietnamese"],
+  weight: ["400", "500", "600", "700", "800"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+const quicksand = Quicksand({
+  variable: "--font-cute",
   subsets: ["latin", "vietnamese"],
   weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+const fraunces = Fraunces({
+  variable: "--font-serif",
+  subsets: ["latin", "vietnamese"],
+  weight: ["400", "500", "600", "700", "800", "900"],
   style: ["normal", "italic"],
+  display: "swap",
+});
+
+const crimson = Crimson_Text({
+  variable: "--font-crimson",
+  subsets: ["latin", "vietnamese"],
+  weight: ["400", "600", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
 });
 
 const beVietnam = Be_Vietnam_Pro({
   variable: "--font-jakarta",
   subsets: ["latin", "vietnamese"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Hala Handmade | Độc Bản & Bình Yên",
-  description: "Phụ kiện thủ công thiết kế riêng cho sắc độ da và phong cách cá tính của bạn.",
+  title: "Hala Handmade — Phụ Kiện Móc Len Thủ Công Độc Bản",
+  description: "Phụ kiện móc len thủ công 100% — thiết kế độc bản theo sắc độ da và phong cách riêng của bạn.",
 };
 
 export default function RootLayout({
@@ -28,7 +60,7 @@ export default function RootLayout({
   return (
     <html
       lang="vi"
-      className={`${lora.variable} ${beVietnam.variable} scroll-smooth antialiased`}
+      className={`${fraunces.variable} ${beVietnam.variable} ${crimson.variable} ${quicksand.variable} ${ebGaramond.variable} ${pinyonScript.variable} scroll-smooth antialiased`}
     >
       <body className="font-sans text-[#2A1F14] bg-[#FAF7F2] min-h-screen">{children}</body>
     </html>

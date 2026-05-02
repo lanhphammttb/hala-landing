@@ -1,103 +1,113 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { Camera, MessageSquare, Mail, MapPin, ArrowUp, Globe } from "lucide-react";
 import FleurNavbar from "./Navbar";
 import FleurHero from "./Hero";
-import CustomCursor from "./CustomCursor";
 import FleurServices from "./Services";
 import FleurProductGrid from "./ProductGrid";
 import FleurGiftIdeas from "./GiftIdeas";
 import FleurCTA from "./CTA";
 
-/* Minimal SVG social icons */
-function IconIG() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-      <circle cx="12" cy="12" r="4" />
-      <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
-    </svg>
-  );
-}
-function IconFB() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-    </svg>
-  );
-}
-function IconTT() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
-    </svg>
-  );
-}
-
 export default function FleurTemplate() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <main className="min-h-screen bg-warm-50 text-warm-900">
-      <CustomCursor />
+    <div className="flex flex-col min-h-screen bg-[#FDF9F3] selection:bg-[#C59D5F] selection:text-[#2C2420]">
       <FleurNavbar />
-      <div className="pt-14">
+      
+      <main className="flex-grow">
         <FleurHero />
-      </div>
-      <FleurServices />
-      <FleurProductGrid />
-      <FleurGiftIdeas />
-      <FleurCTA />
+        <FleurServices />
+        <FleurProductGrid />
+        <FleurGiftIdeas />
+        <FleurCTA />
+      </main>
 
-      <footer className="px-6 md:px-10 pt-12 pb-8" style={{ backgroundColor: "#2E1A10" }}>
-        <div className="max-w-360 mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10 border-b border-white/10">
-
-            <div>
-              <p className="font-serif text-xl italic text-[#C4A882] mb-3">Hala</p>
-              <p className="text-sm text-white/50 leading-relaxed">
-                Phụ kiện móc len thủ công độc bản.<br />
-                Miễn phí giao hàng từ 500.000₫.
+      {/* Professional Sales Footer */}
+      <footer className="bg-white border-t border-[#2C2420]/5 pt-24 pb-12 px-6 relative font-sans">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
+            {/* Brand Section */}
+            <div className="lg:col-span-1">
+              <span className="font-serif italic text-4xl font-bold mb-8 block text-[#2C2420]">
+                HALA<span className="text-[#C59D5F]">.</span>
+              </span>
+              <p className="text-[#2C2420]/60 text-sm leading-relaxed mb-10 max-w-xs font-serif italic">
+                “Tôn vinh nghệ thuật thủ công truyền thống qua những thiết kế len hiện đại và độc bản.”
               </p>
-              {/* Social icon buttons */}
-              <div className="flex gap-3 mt-5">
-                {[
-                  { label: "Instagram", icon: <IconIG /> },
-                  { label: "Facebook", icon: <IconFB /> },
-                  { label: "TikTok", icon: <IconTT /> },
-                ].map(({ label, icon }) => (
-                  <a key={label} href="#" aria-label={label}
-                    className="w-8 h-8 flex items-center justify-center rounded-full text-white/40 hover:text-[#C4A882] transition-colors"
-                    style={{ border: "1px solid rgba(255,255,255,0.12)" }}>
-                    {icon}
-                  </a>
+              <div className="flex gap-4">
+                {[Globe, Camera, MessageSquare].map((Icon, i) => (
+                   <a key={i} href="#" className="w-10 h-10 rounded-full border border-[#2C2420]/10 flex items-center justify-center text-[#2C2420] hover:bg-[#C59D5F] hover:text-white hover:border-[#C59D5F] transition-all">
+                      <Icon size={18} strokeWidth={1.5} />
+                   </a>
                 ))}
               </div>
             </div>
 
+            {/* Shop Links */}
             <div>
-              <p className="text-[10px] tracking-[0.25em] uppercase text-white/30 mb-4">Khám phá</p>
-              <ul className="space-y-2.5">
-                {[["Dịch vụ", "#services"], ["Sản phẩm", "#popular"], ["Quà tặng", "#gift"], ["Liên hệ", "#contact"]].map(([label, href]) => (
-                  <li key={label}>
-                    <a href={href} className="text-sm text-white/55 hover:text-[#C4A882] transition-colors">{label}</a>
+              <h4 className="text-[11px] uppercase tracking-[0.4em] font-black text-[#C59D5F] mb-10">Cửa hàng</h4>
+              <ul className="space-y-4">
+                {["Tất cả sản phẩm", "Túi xách tay", "Phụ kiện len", "Thú len & Quà tặng", "Hàng mới về"].map((link) => (
+                  <li key={link}>
+                    <a href="#" className="text-[#2C2420]/60 hover:text-[#C59D5F] text-sm font-medium transition-colors">{link}</a>
                   </li>
                 ))}
               </ul>
             </div>
 
+            {/* Information */}
             <div>
-              <p className="text-[10px] tracking-[0.25em] uppercase text-white/30 mb-4">Liên hệ</p>
-              <ul className="space-y-2.5">
-                <li className="text-sm text-white/55">Zalo / Messenger</li>
-                <li className="text-sm text-white/55">halahandmade@gmail.com</li>
+              <h4 className="text-[11px] uppercase tracking-[0.4em] font-black text-[#C59D5F] mb-10">Hỗ trợ khách hàng</h4>
+              <ul className="space-y-4">
+                {["Hướng dẫn đặt hàng", "Chính sách vận chuyển", "Đổi trả & Hoàn tiền", "Chăm sóc sản phẩm len", "Liên hệ hỗ trợ"].map((link) => (
+                  <li key={link}>
+                    <a href="#" className="text-[#2C2420]/60 hover:text-[#C59D5F] text-sm font-medium transition-colors">{link}</a>
+                  </li>
+                ))}
               </ul>
             </div>
 
+            {/* Newsletter */}
+            <div>
+              <h4 className="text-[11px] uppercase tracking-[0.4em] font-black text-[#C59D5F] mb-10">Đăng ký nhận tin</h4>
+              <p className="text-[#2C2420]/60 text-sm mb-8 leading-relaxed">Nhận thông báo sớm nhất về các bộ sưu tập giới hạn.</p>
+              <div className="flex border-b border-[#2C2420]/10 pb-2 group focus-within:border-[#C59D5F] transition-colors">
+                <input
+                  type="email"
+                  placeholder="Email của bạn"
+                  className="bg-transparent border-none outline-none text-sm w-full placeholder:text-[#2C2420]/20 text-[#2C2420]"
+                />
+                <button className="text-[#C59D5F] text-[10px] uppercase font-black tracking-widest">Gửi</button>
+              </div>
+            </div>
           </div>
-          <div className="pt-6 flex items-center justify-between">
-            <p className="text-[10px] tracking-[0.15em] uppercase text-white/25">
-              &copy; {new Date().getFullYear()} Hala Handmade
+
+          <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-[#2C2420]/5 gap-8">
+            <div className="flex items-center gap-3 text-[#2C2420]/30 text-[10px] tracking-widest uppercase font-black">
+               <MapPin size={14} strokeWidth={1.5} />
+               <span>TP. Hồ Chí Minh, Việt Nam</span>
+            </div>
+
+            <p className="text-[#2C2420]/30 text-[10px] tracking-[0.2em] uppercase font-black">
+              © 2024 HALA HANDMADE. BẢN QUYỀN ĐÃ ĐƯỢC BẢO HỘ.
             </p>
-            <p className="text-[10px] text-white/25">Tất cả quyền được bảo lưu</p>
+
+            <button
+              onClick={scrollToTop}
+              className="group flex items-center gap-4 text-[#2C2420]/30 hover:text-[#C59D5F] transition-colors"
+            >
+              <span className="text-[10px] uppercase tracking-widest font-black">Lên đầu trang</span>
+              <div className="p-3 border border-[#2C2420]/5 group-hover:border-[#C59D5F] transition-all rounded-full">
+                <ArrowUp size={16} />
+              </div>
+            </button>
           </div>
         </div>
       </footer>
-    </main>
+    </div>
   );
 }

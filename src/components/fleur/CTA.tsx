@@ -1,42 +1,44 @@
 "use client";
 
-import { MessageCircle, Send } from "lucide-react";
-import FadeIn from "./FadeIn";
+import { motion } from "framer-motion";
+import { MessageCircle, Send, Phone } from "lucide-react";
 
 export default function FleurCTA() {
   return (
-    <section id="contact" className="py-16 md:py-24 px-6 md:px-10"
-      style={{ backgroundColor: "#F6F3EF" }}>
-      <FadeIn>
-        <div className="max-w-md mx-auto text-center">
-
-          <p className="text-[11px] tracking-[0.25em] uppercase text-accent mb-4 font-sans">Liên hệ</p>
-
-          <h2 className="font-serif font-medium text-warm-900 leading-snug mb-4"
-            style={{ fontSize: "clamp(1.8rem, 3vw, 2.8rem)" }}>
-            Bạn đang tìm một<br />chiếc phụ kiện riêng?
-          </h2>
-
-          <div className="h-px w-8 bg-warm-300 mx-auto mb-6" />
-
-          <p className="text-sm text-warm-700 leading-[1.75] mb-8 max-w-xs mx-auto">
-            Hãy nói với chúng tôi — màu len, kiểu dáng hay dịp tặng quà,
-            chúng tôi sẽ làm riêng cho bạn.
-          </p>
-
-          <div className="flex justify-center gap-3">
-            <a href="https://zalo.me" target="_blank" rel="noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent text-white text-[10px] tracking-[0.2em] uppercase transition-all hover:bg-accent-hover hover:shadow-[0_4px_16px_rgba(142,90,68,0.35)]">
-              <MessageCircle size={12} strokeWidth={1.5} /> Zalo
-            </a>
-            <a href="https://m.me" target="_blank" rel="noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-accent text-accent text-[10px] tracking-[0.2em] uppercase transition-all hover:bg-accent hover:text-white hover:shadow-[0_4px_16px_rgba(142,90,68,0.25)]">
-              <Send size={12} strokeWidth={1.5} /> Messenger
-            </a>
-          </div>
-
+    <section id="contact" className="py-24 px-6 bg-[#2C2420] text-white text-center">
+      <div className="max-w-4xl mx-auto">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="font-serif italic text-6xl md:text-[8rem] leading-none mb-12 tracking-tighter"
+        >
+          Liên hệ với <span className="text-[#C59D5F]">Hala</span>
+        </motion.h2>
+        
+        <div className="flex flex-wrap justify-center gap-10 md:gap-20">
+          {[
+            { name: "Messenger", icon: Send, href: "https://m.me" },
+            { name: "Zalo", icon: MessageCircle, href: "https://zalo.me" },
+            { name: "Gọi điện", icon: Phone, href: "tel:#" },
+          ].map((item, i) => (
+            <motion.a
+              key={item.name}
+              href={item.href}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="flex flex-col items-center gap-4 group"
+            >
+              <div className="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center text-[#C59D5F] group-hover:bg-[#C59D5F] group-hover:text-[#2C2420] transition-all">
+                <item.icon size={20} />
+              </div>
+              <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/40 group-hover:text-white transition-colors">{item.name}</span>
+            </motion.a>
+          ))}
         </div>
-      </FadeIn>
+      </div>
     </section>
   );
 }
