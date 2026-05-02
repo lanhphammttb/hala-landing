@@ -10,16 +10,18 @@ export default function FleurCTA() {
       <FadeIn>
         <div className="max-w-md mx-auto text-center">
 
-          <p className="text-[10px] tracking-[0.3em] uppercase text-accent mb-4">Liên hệ</p>
+          <p className="text-[11px] tracking-[0.25em] uppercase text-accent mb-4 font-sans">Liên hệ</p>
 
-          <h2 className="font-serif font-semibold text-warm-900 text-4xl md:text-5xl leading-snug mb-4">
-            Nói Chuyện<br />Với Chúng Tôi
+          <h2 className="font-serif font-medium text-warm-900 leading-snug mb-4"
+            style={{ fontSize: "clamp(1.8rem, 3vw, 2.8rem)" }}>
+            Bạn đang tìm một<br />chiếc phụ kiện riêng?
           </h2>
 
-          <div className="h-px w-10 bg-warm-300 mx-auto mb-6" />
+          <div className="h-px w-8 bg-warm-300 mx-auto mb-6" />
 
-          <p className="text-sm text-warm-700 leading-relaxed mb-8 max-w-xs mx-auto">
-            Để chúng tôi tư vấn và giúp bạn tìm chiếc phụ kiện len hoàn hảo.
+          <p className="text-sm text-warm-700 leading-[1.75] mb-8 max-w-xs mx-auto">
+            Hãy nói với chúng tôi — màu len, kiểu dáng hay dịp tặng quà,
+            chúng tôi sẽ làm riêng cho bạn.
           </p>
 
           <div className="flex justify-center gap-3">

@@ -19,8 +19,8 @@ export default function FleurProductGrid() {
 
         <FadeIn>
           <div className="text-center mb-10">
-            <p className="text-[10px] tracking-[0.3em] uppercase text-accent mb-3">Bộ sưu tập</p>
-            <h2 className="font-serif font-semibold text-warm-900 text-4xl md:text-5xl">
+            <p className="text-[11px] tracking-[0.25em] uppercase text-accent mb-3 font-sans">Bộ sưu tập</p>
+            <h2 className="font-serif font-medium text-warm-900" style={{ fontSize: "clamp(1.8rem, 3vw, 2.8rem)" }}>
               Sản Phẩm Nổi Bật
             </h2>
           </div>

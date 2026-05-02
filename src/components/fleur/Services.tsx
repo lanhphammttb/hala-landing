@@ -29,8 +29,8 @@ export default function FleurServices() {
 
         <FadeIn>
           <div className="text-center mb-10">
-            <p className="text-[10px] tracking-[0.3em] uppercase text-accent mb-3">Chúng tôi làm gì</p>
-            <h2 className="font-serif font-semibold text-warm-900 text-4xl md:text-5xl">Dịch Vụ</h2>
+            <p className="text-[11px] tracking-[0.25em] uppercase text-accent mb-3 font-sans">Chúng tôi làm gì</p>
+            <h2 className="font-serif font-medium text-warm-900" style={{ fontSize: "clamp(1.8rem, 3vw, 2.8rem)" }}>Dịch Vụ</h2>
           </div>
         </FadeIn>
 
