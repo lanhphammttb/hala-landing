@@ -7,13 +7,20 @@ interface Props {
   alt?: string;
   ratio?: string;
   hoverScale?: boolean;
+  radius?: string;
 }
 
-export default function ArchFrame({ src, alt = "", ratio = "3/3.5", hoverScale = false }: Props) {
+export default function ArchFrame({
+  src,
+  alt = "",
+  ratio = "3/4",
+  hoverScale = false,
+  radius = "1.5rem",
+}: Props) {
   return (
     <div
       className="w-full overflow-hidden"
-      style={{ aspectRatio: ratio, borderRadius: "999px 999px 0 0" }}
+      style={{ aspectRatio: ratio, borderRadius: radius }}
     >
       <VintageImage
         src={src}

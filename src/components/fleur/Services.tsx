@@ -1,7 +1,7 @@
 "use client";
 
 import FadeIn from "./FadeIn";
-import ArchFrame from "./ArchFrame";
+import VintageImage from "./VintageImage";
 
 const services = [
   {
@@ -29,38 +29,34 @@ export default function FleurServices() {
         <FadeIn>
           <div className="text-center mb-10">
             <p className="text-[10px] tracking-[0.3em] uppercase text-accent mb-3">Chúng tôi làm gì</p>
-            <h2 className="font-serif text-4xl md:text-5xl text-warm-900 font-semibold">
-              Dịch Vụ
-            </h2>
+            <h2 className="font-serif text-4xl md:text-5xl text-warm-900 font-semibold">Dịch Vụ</h2>
           </div>
         </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 xl:gap-10 items-stretch">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 xl:gap-8">
           {services.map((s, i) => (
             <FadeIn key={s.title} delay={i * 0.1} className="flex flex-col">
-              <article className="flex flex-col flex-1 group">
-
-                <ArchFrame src={s.img} alt={s.title} ratio="3/4" hoverScale />
-
-                <div
-                  className="px-6 pt-5 pb-7 flex flex-col flex-1 text-center"
-                  style={{
-                    backgroundColor: "#EDE8E0",
-                    borderRadius: "0 0 16px 16px",
-                    border: "1px solid #D4C5B0",
-                    borderTop: "none",
-                  }}
-                >
+              <article
+                className="flex flex-col flex-1 group overflow-hidden"
+                style={{ borderRadius: "1.5rem", border: "1px solid #D4C5B0", backgroundColor: "#EDE8E0" }}
+              >
+                <div className="aspect-4/3 overflow-hidden shrink-0">
+                  <VintageImage
+                    src={s.img}
+                    alt={s.title}
+                    className="group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+                <div className="px-6 pt-5 pb-7 flex flex-col flex-1">
                   <h3 className="font-serif text-xl text-warm-900 font-semibold mb-2">{s.title}</h3>
                   <p className="text-sm text-warm-700 leading-[1.7] flex-1 mb-5">{s.description}</p>
                   <a
                     href="#contact"
-                    className="text-[10px] tracking-[0.2em] uppercase text-accent hover:text-accent-hover transition-colors"
+                    className="self-start text-[10px] tracking-[0.2em] uppercase text-accent hover:text-accent-hover transition-colors"
                   >
                     Xem thêm →
                   </a>
                 </div>
-
               </article>
             </FadeIn>
           ))}
