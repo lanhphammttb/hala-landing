@@ -44,7 +44,7 @@ export default function FleurTemplate() {
       <FleurGiftIdeas />
       <FleurCTA />
 
-      <footer className="px-6 md:px-10 pt-12 pb-8" style={{ backgroundColor: "#2D2926" }}>
+      <footer className="px-6 md:px-10 pt-12 pb-8" style={{ backgroundColor: "#2E1A10" }}>
         <div className="max-w-360 mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10 border-b border-white/10">
 

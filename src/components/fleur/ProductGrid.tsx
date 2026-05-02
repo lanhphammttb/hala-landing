@@ -14,7 +14,7 @@ const items = [
 export default function FleurProductGrid() {
   return (
     <section id="popular" className="py-16 md:py-24 px-6 md:px-10"
-      style={{ backgroundColor: "#F0EBE4" }}>
+      style={{ backgroundColor: "#EDE8E0" }}>
       <div className="max-w-360 mx-auto">
 
         <FadeIn>

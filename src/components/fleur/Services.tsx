@@ -60,7 +60,7 @@ export default function FleurServices() {
                   </div>
                 </div>
 
-                <h3 className="font-serif text-lg text-warm-900 font-semibold mb-1">{s.title}</h3>
+                <h3 className="font-serif text-lg text-warm-900 font-medium mb-1">{s.title}</h3>
                 <p className="text-xs text-warm-700 leading-relaxed max-w-52">{s.sub}</p>
 
               </a>

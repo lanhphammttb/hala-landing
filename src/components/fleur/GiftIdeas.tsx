@@ -6,7 +6,7 @@ import VintageImage from "./VintageImage";
 export default function FleurGiftIdeas() {
   return (
     <section id="gift" className="py-16 md:py-24 px-6 md:px-10 overflow-hidden"
-      style={{ backgroundColor: "#E8E0D6" }}>
+      style={{ backgroundColor: "#EDE8E0" }}>
       <div className="max-w-360 mx-auto">
 
         <div className="flex flex-col md:flex-row md:items-center gap-8 md:gap-0">
@@ -19,12 +19,9 @@ export default function FleurGiftIdeas() {
               Lưu Giữ<br />Mãi Mãi
             </h2>
             <div className="h-px w-8 bg-warm-300 mb-5" />
-            <p className="text-sm text-warm-700 leading-[1.75] mb-3">
-              Một chiếc túi móc len hay thú bông handmade không chỉ là phụ kiện —
-              đó là kỷ niệm được dệt bằng tay, bền đẹp theo năm tháng.
-            </p>
             <p className="text-sm text-warm-700 leading-[1.75]">
-              Liên hệ để được tư vấn chọn quà phù hợp cho từng dịp đặc biệt.
+              Không chỉ là phụ kiện — đó là kỷ niệm được dệt bằng tay,
+              bền đẹp theo năm tháng.
             </p>
           </FadeIn>
 
