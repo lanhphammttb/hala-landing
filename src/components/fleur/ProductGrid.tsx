@@ -12,8 +12,8 @@ const items = [
 
 export default function FleurProductGrid() {
   return (
-    <section id="popular" className="py-20 md:py-28 px-6 md:px-8" style={{ backgroundColor: "#FAF7F2" }}>
-      <div className="max-w-5xl mx-auto">
+    <section id="popular" className="py-20 md:py-28 px-6 md:px-12 xl:px-16" style={{ backgroundColor: "#FAF7F2" }}>
+      <div className="max-w-7xl mx-auto">
 
         <FadeIn>
           <div className="text-center mb-10">
@@ -24,11 +24,11 @@ export default function FleurProductGrid() {
           </div>
         </FadeIn>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 xl:gap-10">
           {items.map((p, i) => (
             <FadeIn key={p.id} delay={i * 0.08}>
               <div className="group cursor-pointer">
-                <ArchFrame src={p.img} alt={p.name} ratio="3/4" hoverScale />
+                <ArchFrame src={p.img} alt={p.name} ratio="1/1" hoverScale />
                 <div className="pt-3 pb-1">
                   <p className="text-sm text-warm-900 font-medium leading-tight">{p.name}</p>
                   <p className="text-sm text-accent font-medium mt-0.5">{p.price}</p>

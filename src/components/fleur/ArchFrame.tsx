@@ -5,11 +5,11 @@ import VintageImage from "./VintageImage";
 interface Props {
   src: string;
   alt?: string;
-  ratio?: string;           // e.g. "3/4" (default) or "1/1"
+  ratio?: string;
   hoverScale?: boolean;
 }
 
-export default function ArchFrame({ src, alt = "", ratio = "3/4", hoverScale = false }: Props) {
+export default function ArchFrame({ src, alt = "", ratio = "3/3.5", hoverScale = false }: Props) {
   return (
     <div
       className="w-full overflow-hidden"

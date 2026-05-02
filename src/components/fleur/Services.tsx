@@ -23,8 +23,8 @@ const services = [
 
 export default function FleurServices() {
   return (
-    <section id="services" className="py-20 md:py-28 px-6 md:px-8" style={{ backgroundColor: "#FAF7F2" }}>
-      <div className="max-w-5xl mx-auto">
+    <section id="services" className="py-20 md:py-28 px-6 md:px-12 xl:px-16" style={{ backgroundColor: "#FAF7F2" }}>
+      <div className="max-w-7xl mx-auto">
 
         <FadeIn>
           <div className="text-center mb-10">
@@ -35,7 +35,7 @@ export default function FleurServices() {
           </div>
         </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 xl:gap-10 items-stretch">
           {services.map((s, i) => (
             <FadeIn key={s.title} delay={i * 0.1} className="flex flex-col">
               <article className="flex flex-col flex-1 group">

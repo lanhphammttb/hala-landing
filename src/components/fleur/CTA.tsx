@@ -5,7 +5,7 @@ import FadeIn from "./FadeIn";
 
 export default function FleurCTA() {
   return (
-    <section id="contact" className="py-20 md:py-28 px-6 md:px-8" style={{ backgroundColor: "#FAF7F2" }}>
+    <section id="contact" className="py-20 md:py-28 px-6 md:px-12 xl:px-16" style={{ backgroundColor: "#FAF7F2" }}>
       <FadeIn>
         <div className="max-w-lg mx-auto text-center">
 

@@ -15,7 +15,7 @@ export default function FleurNavbar() {
 
   return (
     <nav className="fixed inset-x-0 top-0 z-50 bg-[#FAF7F2]/95 backdrop-blur-sm border-b border-[#E8DDD0]">
-      <div className="max-w-6xl mx-auto px-6 md:px-8 h-14 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 h-14 flex items-center justify-between">
         <a href="#" className="font-serif text-xl tracking-[0.3em] italic text-[#2A1F14]">Hala</a>
 
         <div className="hidden md:flex items-center gap-8 lg:gap-10">

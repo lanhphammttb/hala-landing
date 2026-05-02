@@ -5,8 +5,8 @@ import ArchFrame from "./ArchFrame";
 
 export default function FleurGiftIdeas() {
   return (
-    <section id="gift" className="py-20 md:py-28 px-6 md:px-8" style={{ backgroundColor: "#EDE8E0" }}>
-      <div className="max-w-5xl mx-auto">
+    <section id="gift" className="py-20 md:py-28 px-6 md:px-12 xl:px-16" style={{ backgroundColor: "#EDE8E0" }}>
+      <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
 
           {/* Image — arch frame, portrait */}

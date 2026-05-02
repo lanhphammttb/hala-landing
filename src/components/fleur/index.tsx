@@ -17,21 +17,16 @@ export default function FleurTemplate() {
       <FleurGiftIdeas />
       <FleurCTA />
 
-      <footer className="bg-[#2A1F14] px-6 md:px-8 pt-12 pb-8">
-        <div className="max-w-5xl mx-auto">
-
-          {/* Top row */}
+      <footer className="bg-[#2A1F14] px-6 md:px-12 xl:px-16 pt-12 pb-8">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10 border-b border-white/10">
-            {/* Brand */}
             <div>
               <p className="font-serif text-2xl italic text-[#C4A882] mb-3">Hala</p>
-              <p className="text-sm text-white/50 leading-relaxed">
+              <p className="text-sm text-white/50 leading-[1.7]">
                 Phụ kiện móc len thủ công độc bản.<br />
                 Miễn phí giao hàng từ 500.000₫.
               </p>
             </div>
-
-            {/* Links */}
             <div>
               <p className="text-[10px] tracking-[0.25em] uppercase text-white/30 mb-4">Khám phá</p>
               <ul className="space-y-2.5">
@@ -42,8 +37,6 @@ export default function FleurTemplate() {
                 ))}
               </ul>
             </div>
-
-            {/* Contact */}
             <div>
               <p className="text-[10px] tracking-[0.25em] uppercase text-white/30 mb-4">Liên hệ</p>
               <ul className="space-y-2.5">
@@ -59,15 +52,12 @@ export default function FleurTemplate() {
               </ul>
             </div>
           </div>
-
-          {/* Bottom row */}
           <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-2">
             <p className="text-[10px] tracking-[0.15em] uppercase text-white/25">
               &copy; {new Date().getFullYear()} Hala Handmade
             </p>
             <p className="text-[10px] text-white/25">Tất cả quyền được bảo lưu</p>
           </div>
-
         </div>
       </footer>
     </main>
