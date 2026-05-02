@@ -1,7 +1,7 @@
 "use client";
 
-import VintageImage from "./VintageImage";
 import FadeIn from "./FadeIn";
+import ArchFrame from "./ArchFrame";
 
 const services = [
   {
@@ -23,13 +23,13 @@ const services = [
 
 export default function FleurServices() {
   return (
-    <section id="services" className="pt-16 pb-12 px-6 md:px-8" style={{ backgroundColor: "#F5F0EA" }}>
+    <section id="services" className="py-20 md:py-28 px-6 md:px-8" style={{ backgroundColor: "#FAF7F2" }}>
       <div className="max-w-5xl mx-auto">
 
         <FadeIn>
           <div className="text-center mb-10">
-            <p className="text-[10px] tracking-[0.3em] uppercase text-[#A07850] mb-3">Chúng tôi làm gì</p>
-            <h2 className="font-serif text-4xl md:text-5xl text-[#2A1A0E] font-semibold">
+            <p className="text-[10px] tracking-[0.3em] uppercase text-accent mb-3">Chúng tôi làm gì</p>
+            <h2 className="font-serif text-4xl md:text-5xl text-warm-900 font-semibold">
               Dịch Vụ
             </h2>
           </div>
@@ -39,24 +39,28 @@ export default function FleurServices() {
           {services.map((s, i) => (
             <FadeIn key={s.title} delay={i * 0.1} className="flex flex-col">
               <article className="flex flex-col flex-1 group">
+
+                <ArchFrame src={s.img} alt={s.title} ratio="3/4" hoverScale />
+
                 <div
-                  className="w-full overflow-hidden"
-                  style={{ aspectRatio: "3 / 4", borderRadius: "999px 999px 0 0" }}
+                  className="px-6 pt-5 pb-7 flex flex-col flex-1 text-center"
+                  style={{
+                    backgroundColor: "#EDE8E0",
+                    borderRadius: "0 0 16px 16px",
+                    border: "1px solid #D4C5B0",
+                    borderTop: "none",
+                  }}
                 >
-                  <VintageImage src={s.img} alt={s.title}
-                    className="group-hover:scale-105 transition-transform duration-700" />
-                </div>
-                <div
-                  className="px-6 pt-5 pb-7 flex flex-col flex-1 text-center border-x border-b border-[#C4A882]/30"
-                  style={{ backgroundColor: "#EDE8E0" }}
-                >
-                  <h3 className="font-serif text-xl text-[#2A1A0E] font-normal italic mb-2">{s.title}</h3>
-                  <p className="text-sm text-[#5C4433] leading-relaxed flex-1 mb-5">{s.description}</p>
-                  <a href="#contact"
-                    className="text-[10px] tracking-[0.2em] uppercase text-[#A07850] hover:text-[#2A1A0E] transition-colors">
+                  <h3 className="font-serif text-xl text-warm-900 font-semibold mb-2">{s.title}</h3>
+                  <p className="text-sm text-warm-700 leading-[1.7] flex-1 mb-5">{s.description}</p>
+                  <a
+                    href="#contact"
+                    className="text-[10px] tracking-[0.2em] uppercase text-accent hover:text-accent-hover transition-colors"
+                  >
                     Xem thêm →
                   </a>
                 </div>
+
               </article>
             </FadeIn>
           ))}

@@ -26,7 +26,7 @@ export default function FleurNavbar() {
             </a>
           ))}
           <a href="#popular"
-            className="px-5 py-2 bg-[#2A1F14] text-[#FAF7F2] text-[10px] tracking-[0.2em] uppercase hover:bg-[#9B7B5E] transition-colors">
+            className="px-5 py-2 rounded-2xl bg-accent text-white text-[10px] tracking-[0.2em] uppercase hover:bg-accent-hover transition-colors">
             Mua ngay
           </a>
         </div>
@@ -45,7 +45,7 @@ export default function FleurNavbar() {
             </a>
           ))}
           <a href="#popular" onClick={() => setOpen(false)}
-            className="self-start px-6 py-2.5 bg-[#2A1F14] text-[#FAF7F2] text-[10px] tracking-[0.2em] uppercase">
+            className="self-start px-6 py-2.5 rounded-2xl bg-accent text-white text-[10px] tracking-[0.2em] uppercase hover:bg-accent-hover transition-colors">
             Mua ngay
           </a>
         </div>

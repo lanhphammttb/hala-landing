@@ -1,8 +1,7 @@
 "use client";
 
-
-import VintageImage from "./VintageImage";
 import FadeIn from "./FadeIn";
+import ArchFrame from "./ArchFrame";
 
 const items = [
   { id: 1, img: "/anh1.jpg", name: "Túi xách mini", price: "280.000₫" },
@@ -13,36 +12,26 @@ const items = [
 
 export default function FleurProductGrid() {
   return (
-    <section id="popular" className="py-16 md:py-20 px-6 md:px-8" style={{ backgroundColor: "#F5F0EA" }}>
+    <section id="popular" className="py-20 md:py-28 px-6 md:px-8" style={{ backgroundColor: "#FAF7F2" }}>
       <div className="max-w-5xl mx-auto">
 
         <FadeIn>
           <div className="text-center mb-10">
-            <p className="text-[10px] tracking-[0.3em] uppercase text-[#A07850] mb-3">Bộ sưu tập</p>
-            <h2 className="font-serif text-4xl md:text-5xl text-[#2A1A0E] font-semibold">
+            <p className="text-[10px] tracking-[0.3em] uppercase text-accent mb-3">Bộ sưu tập</p>
+            <h2 className="font-serif text-4xl md:text-5xl text-warm-900 font-semibold">
               Sản Phẩm Nổi Bật
             </h2>
           </div>
         </FadeIn>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {items.map((p, i) => (
             <FadeIn key={p.id} delay={i * 0.08}>
-              <div className="group">
-                <div
-                  className="aspect-square overflow-hidden mb-2.5 relative cursor-pointer"
-                  style={{ backgroundColor: "#E8E0D5" }}
-                >
-                  <VintageImage
-                    src={p.img}
-                    alt=""
-                    className="group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-[#2A1A0E]/0 group-hover:bg-[#2A1A0E]/10 transition-colors duration-300 pointer-events-none" />
-                </div>
-                <div className="mt-2.5">
-                  <p className="text-xs text-[#2A1A0E] font-medium leading-tight">{p.name}</p>
-                  <p className="text-[11px] text-[#A07850] mt-0.5">{p.price}</p>
+              <div className="group cursor-pointer">
+                <ArchFrame src={p.img} alt={p.name} ratio="3/4" hoverScale />
+                <div className="pt-3 pb-1">
+                  <p className="text-sm text-warm-900 font-medium leading-tight">{p.name}</p>
+                  <p className="text-sm text-accent font-medium mt-0.5">{p.price}</p>
                 </div>
               </div>
             </FadeIn>

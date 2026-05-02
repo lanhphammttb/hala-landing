@@ -14,7 +14,7 @@ export default function FleurHero() {
       </div>
 
       {/* Dark vignette overlay for readability */}
-      <div className="absolute inset-0 bg-linear-to-b from-[#2A1A0E]/55 via-[#2A1A0E]/30 to-[#2A1A0E]/60" />
+      <div className="absolute inset-0 bg-linear-to-b from-warm-900/55 via-warm-900/30 to-warm-900/60" />
 
       {/* Social — bottom left */}
       <div className="absolute left-8 bottom-8 hidden md:flex gap-5">
@@ -51,7 +51,7 @@ export default function FleurHero() {
         </p>
 
         <a href="#popular"
-          className="px-10 py-3.5 border border-white/70 text-white text-[10px] tracking-[0.3em] uppercase hover:bg-white hover:text-[#2A1A0E] transition-all duration-300">
+          className="px-10 py-3.5 rounded-2xl bg-accent text-white text-[10px] tracking-[0.3em] uppercase hover:bg-accent-hover transition-colors">
           Mua ngay
         </a>
       </div>

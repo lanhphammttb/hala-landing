@@ -5,65 +5,45 @@ import FadeIn from "./FadeIn";
 
 export default function FleurCTA() {
   return (
-    <section id="contact" style={{ backgroundColor: "#FAF7F2", paddingBottom: 0 }}>
-      <div
-        className="w-full px-6 py-20 md:py-28"
-        style={{
-          backgroundColor: "#D4B896",
-          borderRadius: "50% 50% 0 0 / 8% 8% 0 0",
-        }}
-      >
-        <FadeIn>
-          <div className="max-w-xl mx-auto text-center">
-            <p className="text-[10px] tracking-[0.3em] uppercase text-[#2A1A0E]/50 mb-5">
-              Liên hệ với chúng tôi
-            </p>
+    <section id="contact" className="py-20 md:py-28 px-6 md:px-8" style={{ backgroundColor: "#FAF7F2" }}>
+      <FadeIn>
+        <div className="max-w-lg mx-auto text-center">
 
-            <h2 className="font-serif text-4xl md:text-[2.75rem] text-[#2A1A0E] font-semibold leading-snug mb-4">
-              Nói Chuyện Với Chúng Tôi
-            </h2>
+          <p className="text-[10px] tracking-[0.3em] uppercase text-accent mb-5">
+            Liên hệ với chúng tôi
+          </p>
 
-            <div className="h-px w-10 bg-[#2A1A0E]/20 mx-auto mb-6" />
+          <h2 className="font-serif text-4xl md:text-5xl text-warm-900 font-semibold leading-snug mb-4">
+            Nói Chuyện Với Chúng Tôi
+          </h2>
 
-            <p className="text-sm text-[#3D2B1F] leading-relaxed mb-10 max-w-sm mx-auto">
-              Khó chọn sản phẩm? Để chúng tôi tư vấn và giúp bạn tìm chiếc phụ kiện len hoàn hảo.
-            </p>
+          <div className="h-px w-10 bg-warm-300 mx-auto mb-6" />
 
-            <div className="flex flex-col sm:flex-row justify-center gap-3">
-              <a
-                href="https://zalo.me"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3 text-[10px] tracking-[0.2em] uppercase transition-colors"
-                style={{ backgroundColor: "#2A1A0E", color: "#F2EAE0" }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = "#7A5535"; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = "#2A1A0E"; }}
-              >
-                <MessageCircle size={13} /> Zalo
-              </a>
-              <a
-                href="https://m.me"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3 text-[10px] tracking-[0.2em] uppercase border transition-colors"
-                style={{ borderColor: "#2A1A0E", color: "#2A1A0E" }}
-                onMouseEnter={(e) => {
-                  const el = e.currentTarget as HTMLElement;
-                  el.style.backgroundColor = "#2A1A0E";
-                  el.style.color = "#F2EAE0";
-                }}
-                onMouseLeave={(e) => {
-                  const el = e.currentTarget as HTMLElement;
-                  el.style.backgroundColor = "transparent";
-                  el.style.color = "#2A1A0E";
-                }}
-              >
-                <Send size={13} /> Messenger
-              </a>
-            </div>
+          <p className="text-sm text-warm-700 leading-[1.7] mb-10 max-w-sm mx-auto">
+            Khó chọn sản phẩm? Để chúng tôi tư vấn và giúp bạn tìm chiếc phụ kiện len hoàn hảo.
+          </p>
+
+          <div className="flex flex-col sm:flex-row justify-center gap-3">
+            <a
+              href="https://zalo.me"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-2xl bg-accent text-white text-[10px] tracking-[0.2em] uppercase hover:bg-accent-hover transition-colors"
+            >
+              <MessageCircle size={13} /> Zalo
+            </a>
+            <a
+              href="https://m.me"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-2xl border border-accent text-accent text-[10px] tracking-[0.2em] uppercase hover:bg-accent hover:text-white transition-colors"
+            >
+              <Send size={13} /> Messenger
+            </a>
           </div>
-        </FadeIn>
-      </div>
+
+        </div>
+      </FadeIn>
     </section>
   );
 }
