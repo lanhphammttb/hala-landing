@@ -8,8 +8,23 @@ import FleurCTA from "./CTA";
 
 export default function FleurTemplate() {
   return (
-    <main className="min-h-screen bg-warm-50 text-[#2A1F14]">
+    <main className="min-h-screen bg-warm-50 text-[#2A1F14] relative">
       <CustomCursor />
+
+      {/* Sidebar decoration — only 2xl+ screens */}
+      <div className="hidden 2xl:block fixed left-6 top-1/2 -translate-y-1/2 z-40 pointer-events-none select-none">
+        <p className="text-[9px] tracking-[0.4em] uppercase text-warm-300 font-light"
+          style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}>
+          Handmade with love
+        </p>
+      </div>
+      <div className="hidden 2xl:block fixed right-6 top-1/2 -translate-y-1/2 z-40 pointer-events-none select-none">
+        <p className="text-[9px] tracking-[0.4em] uppercase text-warm-300 font-light"
+          style={{ writingMode: "vertical-rl" }}>
+          Hala · Crochet Studio
+        </p>
+      </div>
+
       <FleurNavbar />
       <div className="pt-14">
         <FleurHero />
