@@ -1,5 +1,6 @@
 "use client";
 
+import { Heart, ShoppingBag } from "lucide-react";
 import FadeIn from "./FadeIn";
 import VintageImage from "./VintageImage";
 
@@ -14,7 +15,7 @@ const items = [
 
 export default function FleurProductGrid() {
   return (
-    <section id="popular" className="py-20 md:py-28 px-6 md:px-12 xl:px-16" style={{ backgroundColor: "#F5F0EA" }}>
+    <section id="popular" className="py-20 md:py-28 px-6 md:px-12 xl:px-16" style={{ backgroundColor: "#F0EBE4" }}>
       <div className="max-w-7xl mx-auto">
 
         <FadeIn>
@@ -27,10 +28,6 @@ export default function FleurProductGrid() {
           </div>
         </FadeIn>
 
-        {/*
-          Asymmetric: item[0] featured — col-span-2 landscape on md+
-          Grid: 2-col mobile → 3-col md → 4-col lg
-        */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
           {items.map((p, i) => {
             const featured = i === 0;
@@ -46,7 +43,8 @@ export default function FleurProductGrid() {
                     style={{
                       aspectRatio: featured ? "4/3" : "3/4",
                       borderRadius: "1.5rem",
-                      backgroundColor: "#EDE8E0",
+                      backgroundColor: "#E8E0D6",
+                      boxShadow: "0 20px 40px rgba(0,0,0,0.03)",
                     }}
                   >
                     <VintageImage
@@ -57,15 +55,15 @@ export default function FleurProductGrid() {
 
                     {/* Paper tag badge */}
                     {p.tag && (
-                      <div className="absolute top-3 left-3 flex items-center gap-1.5">
+                      <div className="absolute top-3 left-3">
                         <span
                           className="text-[9px] tracking-[0.15em] uppercase px-2.5 py-1 font-medium"
                           style={{
-                            backgroundColor: "#FBF9F4",
+                            backgroundColor: "#F6F3EF",
                             color: "#6B705C",
                             borderRadius: "0.35rem",
                             border: "1px solid rgba(107,112,92,0.3)",
-                            boxShadow: "1px 1px 4px rgba(62,39,35,0.08)",
+                            boxShadow: "1px 1px 4px rgba(45,41,38,0.08)",
                           }}
                         >
                           {p.tag}
@@ -73,31 +71,43 @@ export default function FleurProductGrid() {
                       </div>
                     )}
 
-                    {/* Dark gradient + info on hover */}
+                    {/* Wishlist icon — always visible top-right */}
+                    <button
+                      className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full opacity-0 group-hover:opacity-100 transition-all duration-400"
+                      style={{
+                        backgroundColor: "rgba(246,243,239,0.9)",
+                        boxShadow: "0 2px 8px rgba(45,41,38,0.12)",
+                        transition: "all 0.4s cubic-bezier(0.22, 1, 0.36, 1)",
+                      }}
+                    >
+                      <Heart size={13} strokeWidth={1.5} className="text-accent" />
+                    </button>
+
+                    {/* Gradient + CTA overlay on hover */}
                     <div
-                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-500"
                       style={{
                         borderRadius: "1.5rem",
-                        background: "linear-gradient(to top, rgba(61,43,31,0.65) 0%, transparent 55%)",
+                        background: "linear-gradient(to top, rgba(45,41,38,0.70) 0%, transparent 50%)",
                       }}
                     />
-                    <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-400">
-                      <p className="text-white font-semibold text-base leading-none">{p.price}</p>
-                      <p className="text-white/70 text-xs mt-1 tracking-wide">{p.name}</p>
+                    <div className="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0"
+                      style={{ transition: "all 0.5s cubic-bezier(0.22, 1, 0.36, 1)" }}>
+                      <a href="#contact"
+                        className="inline-flex items-center gap-2 text-white text-[10px] tracking-[0.18em] uppercase hover:gap-3 transition-all duration-300">
+                        <ShoppingBag size={12} strokeWidth={1.5} />
+                        Sở hữu ngay
+                      </a>
                     </div>
                   </div>
 
-                  <p className="text-sm text-warm-900 font-medium leading-tight mb-0.5">{p.name}</p>
-                  <p className="text-sm font-light mb-3" style={{ color: "#7A5C4A", fontFamily: "var(--font-sans)" }}>
+                  {/* Typography: thin sans name / serif price */}
+                  <p className="text-sm font-light text-warm-900 leading-tight mb-0.5 tracking-wide">
+                    {p.name}
+                  </p>
+                  <p className="font-serif text-sm font-medium text-warm-700">
                     {p.price}
                   </p>
-                  <a
-                    href="#contact"
-                    className="inline-flex items-center justify-center py-2 px-5 text-[10px] tracking-[0.15em] uppercase text-white bg-accent transition-all duration-300 hover:bg-accent-hover hover:px-6 hover:shadow-[0_6px_18px_rgba(168,93,68,0.35)]"
-                    style={{ borderRadius: "999px" }}
-                  >
-                    Sở hữu ngay
-                  </a>
                 </div>
               </FadeIn>
             );

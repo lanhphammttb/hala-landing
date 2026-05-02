@@ -11,6 +11,10 @@ export default function FleurTemplate() {
     <main className="min-h-screen bg-warm-50 text-[#2A1F14] relative">
       <CustomCursor />
 
+      {/* Visual anchor line — thin spine running full page height, xl+ */}
+      <div className="hidden xl:block fixed left-10 top-0 bottom-0 w-px pointer-events-none z-30"
+        style={{ background: "linear-gradient(to bottom, transparent 5%, rgba(205,191,172,0.25) 20%, rgba(205,191,172,0.25) 80%, transparent 95%)" }} />
+
       {/* Sidebar decoration — only 2xl+ screens */}
       <div className="hidden 2xl:block fixed left-6 top-1/2 -translate-y-1/2 z-40 pointer-events-none select-none">
         <p className="text-[9px] tracking-[0.4em] uppercase text-warm-300 font-light"
