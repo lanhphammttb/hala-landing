@@ -14,18 +14,17 @@ const products = [
 
 export default function FleurProductGrid() {
   return (
-    <section id="popular" className="py-24 px-6 bg-white">
+    <section id="popular" className="py-8 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-20">
+        <div className="text-center mb-8">
           <motion.h2
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-serif italic text-5xl md:text-6xl text-[#2C2420]"
+            className="font-serif italic text-3xl md:text-4xl text-[#2C2420]"
           >
-            Góc <span className="text-[#C59D5F]">Đồ Len</span> Nhỏ
+            Sản phẩm <span className="text-[#C59D5F]">Nổi bật</span>
           </motion.h2>
-          <div className="w-16 h-1 bg-[#C59D5F]/20 mx-auto mt-4 rounded-full" />
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
@@ -68,9 +67,9 @@ export default function FleurProductGrid() {
           ))}
         </div>
 
-        <div className="mt-20 text-center">
-          <button className="px-12 py-4 bg-[#FAF7F2] text-[#2C2420] text-[11px] uppercase tracking-widest font-bold rounded-full hover:bg-[#2C2420] hover:text-white transition-all">
-             Xem tất cả sản phẩm
+        <div className="mt-8 text-center">
+          <button className="px-10 py-3 bg-[#FAF7F2] text-[#2C2420] text-[11px] uppercase tracking-widest font-bold rounded-full hover:bg-[#2C2420] hover:text-white transition-all">
+             Xem tất cả
           </button>
         </div>
       </div>

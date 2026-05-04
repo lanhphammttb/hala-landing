@@ -27,36 +27,20 @@ const services = [
 
 export default function FleurServices() {
   return (
-    <section id="services" className="py-32 px-6 bg-background">
+    <section id="services" className="py-16 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-8">
           <div className="max-w-2xl">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="text-accent text-[11px] uppercase tracking-[0.4em] font-bold mb-6 block"
-            >
-              Nghệ Thuật Chế Tác
-            </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="font-serif italic text-5xl md:text-6xl text-primary leading-tight"
             >
-              Những gì <br /> chúng tôi tạo ra
+              Dịch vụ <br /> Chế tác
             </motion.h2>
           </div>
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-primary/60 max-w-sm text-lg font-light leading-relaxed"
-          >
-            Mỗi sản phẩm là một hành trình của sự tỉ mỉ, nơi len sợi được dệt thành những kỷ niệm hữu hình.
-          </motion.p>
         </div>
 
         {/* Grid */}
@@ -71,32 +55,22 @@ export default function FleurServices() {
               className="group cursor-pointer"
             >
               {/* Image Container */}
-              <div className="relative aspect-[3/4] overflow-hidden bg-stone mb-8">
+              <div className="relative aspect-[3/4] overflow-hidden bg-stone mb-8 rounded-sm">
                 <VintageImage
                   src={service.img}
                   alt={service.title}
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale hover:grayscale-0"
                 />
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
-                
-                {/* Floating Category */}
-                <div className="absolute top-6 left-6 flex items-center gap-3">
-                  <div className="w-8 h-[1px] bg-white/50" />
-                  <span className="text-white text-[9px] uppercase tracking-[0.3em] font-bold">{service.category}</span>
-                </div>
               </div>
 
               {/* Content */}
               <div className="flex justify-between items-start gap-4">
                 <div>
-                  <h3 className="font-serif italic text-2xl text-primary mb-4 transition-colors group-hover:text-accent">
+                  <h3 className="font-serif italic text-3xl text-primary mb-6 transition-colors group-hover:text-accent">
                     {service.title}
                   </h3>
-                  <p className="text-primary/60 text-sm leading-relaxed font-light mb-6">
-                    {service.description}
-                  </p>
-                  <div className="flex items-center gap-3 text-accent text-[10px] uppercase tracking-widest font-bold group-hover:gap-5 transition-all">
-                    <span>Tìm hiểu thêm</span>
+                  <div className="flex items-center gap-3 text-accent text-[10px] uppercase tracking-widest font-bold">
+                    <span>Khám phá</span>
                     <ArrowUpRight size={14} />
                   </div>
                 </div>

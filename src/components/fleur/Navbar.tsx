@@ -14,8 +14,8 @@ export default function FleurNavbar() {
 
   return (
     <nav
-      className={`fixed top-6 inset-x-6 z-[100] transition-all duration-500 rounded-full ${
-        isScrolled ? "bg-white/90 backdrop-blur-md py-3 shadow-lg" : "bg-white/50 backdrop-blur-sm py-4"
+      className={`fixed top-0 md:top-6 inset-x-0 md:inset-x-6 z-[100] transition-all duration-500 ${
+        isScrolled ? "bg-white/95 backdrop-blur-md py-3 shadow-lg rounded-none md:rounded-full" : "bg-transparent py-4 rounded-none md:rounded-full"
       }`}
     >
       <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
