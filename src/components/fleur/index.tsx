@@ -32,9 +32,7 @@ export default function FleurTemplate() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
             {/* Brand Section */}
             <div className="lg:col-span-1">
-              <span className="font-serif italic text-4xl font-bold mb-8 block text-[#2C2420]">
-                LITO<span className="text-[#C59D5F]">.</span>
-              </span>
+              <img src="/icon_logo.svg" alt="Lito Handmade" className="h-10 object-contain mb-8" />
               <p className="text-[#2C2420]/60 text-sm leading-relaxed mb-10 max-w-xs font-serif italic">
                 “Tôn vinh nghệ thuật thủ công truyền thống qua những thiết kế len hiện đại và độc bản.”
               </p>

@@ -30,13 +30,8 @@ export default function FleurNavbar() {
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}
-          <a
-            href="#"
-            className={`font-serif text-3xl italic font-bold tracking-tight transition-colors duration-500 ${
-              isScrolled ? "text-primary" : "text-white"
-            }`}
-          >
-            Lito<span className="text-accent">.</span>
+          <a href="#">
+            <img src="/icon_logo.svg" alt="Lito Handmade" className="h-10 object-contain" />
           </a>
 
           {/* Desktop Links */}
