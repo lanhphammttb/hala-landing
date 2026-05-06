@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import JsonLd from "@/components/JsonLd";
 import ProductDetailClient from "@/components/ProductDetailClient";
 
 type ProductDetail = {
@@ -24,6 +26,42 @@ async function getProduct(id: string): Promise<ProductDetail | null> {
   }
 }
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const product = await getProduct(id);
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://halahandmade.com";
+
+  if (!product) {
+    return { title: "Sản phẩm không tồn tại" };
+  }
+
+  const productUrl = `${siteUrl}/product/${id}`;
+  const imageUrl = product.image || `${siteUrl}/og-image.jpg`;
+
+  return {
+    title: product.name,
+    description: product.description,
+    alternates: { canonical: productUrl },
+    openGraph: {
+      type: "website",
+      url: productUrl,
+      title: product.name,
+      description: product.description,
+      images: [{ url: imageUrl, width: 800, height: 800, alt: product.name }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: product.name,
+      description: product.description,
+      images: [imageUrl],
+    },
+  };
+}
+
 export default async function ProductDetailPage({
   params,
 }: {
@@ -43,5 +81,31 @@ export default async function ProductDetailPage({
       </div>
     );
   }
-  return <ProductDetailClient product={product} />;
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://halahandmade.com";
+
+  return (
+    <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: product.name,
+          description: product.description,
+          image: product.images?.length ? product.images : [product.image],
+          offers: {
+            "@type": "Offer",
+            price: product.base_price,
+            priceCurrency: "VND",
+            availability: "https://schema.org/InStock",
+            url: `${siteUrl}/product/${product.id}`,
+            seller: {
+              "@type": "Organization",
+              name: "Hala Handmade",
+            },
+          },
+        }}
+      />
+      <ProductDetailClient product={product} />
+    </>
+  );
 }
