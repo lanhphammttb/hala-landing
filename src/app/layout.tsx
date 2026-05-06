@@ -30,6 +30,11 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://litohandmade.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  icons: {
+    icon: "/icon_logo.svg",
+    shortcut: "/icon_logo.svg",
+    apple: "/icon_logo.svg",
+  },
   title: {
     default: "Lito Handmade — Phụ Kiện Móc Len Thủ Công Độc Bản",
     template: "%s | Lito Handmade",
