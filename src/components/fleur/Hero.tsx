@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import VintageImage from "./VintageImage";
+import { motion } from 'framer-motion';
+import VintageImage from './VintageImage';
 
 export default function FleurHero() {
   return (
@@ -18,11 +18,11 @@ export default function FleurHero() {
           </h1>
 
           <div className="relative w-full max-w-2xl mx-auto mb-10 aspect-[16/7] rounded-xl overflow-hidden shadow-md">
-             <VintageImage 
-               src="/vintage_crochet_hero_1777732976775.png" 
-               alt="Lito Boutique" 
-               className="w-full h-full object-cover"
-             />
+            <VintageImage
+              src="/anh2.jpg"
+              alt="Lito Boutique"
+              className="w-full h-full object-cover"
+            />
           </div>
 
           <div className="flex gap-4 justify-center">
