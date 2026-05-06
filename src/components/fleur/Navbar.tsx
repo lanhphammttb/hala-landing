@@ -28,7 +28,7 @@ export default function FleurNavbar() {
 
         {/* Center: Logo */}
         <div className="flex flex-col items-center">
-          <span className="font-serif italic text-3xl md:text-4xl text-[#2C2420] tracking-tighter">HALA</span>
+          <span className="font-serif italic text-3xl md:text-4xl text-[#2C2420] tracking-tighter">LITO</span>
           <span className="text-[#C59D5F] text-[8px] uppercase tracking-[0.4em] font-black -mt-1">Tiệm Đồ Len</span>
         </div>
 

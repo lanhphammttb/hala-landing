@@ -13,7 +13,7 @@ async function getProductIds(): Promise<string[]> {
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://halahandmade.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://litohandmade.com";
   const productIds = await getProductIds();
 
   const productUrls: MetadataRoute.Sitemap = productIds.map((id) => ({

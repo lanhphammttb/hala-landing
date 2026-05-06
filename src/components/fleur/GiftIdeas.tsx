@@ -16,7 +16,7 @@ export default function FleurGiftIdeas() {
               viewport={{ once: true }}
               className="relative rounded-2xl overflow-hidden shadow-xl z-10"
             >
-              <VintageImage src="/anh4.jpg" alt="Quà tặng Hala" className="w-full aspect-[4/3] object-cover" />
+              <VintageImage src="/anh4.jpg" alt="Quà tặng Lito" className="w-full aspect-[4/3] object-cover" />
             </motion.div>
           </div>
 

@@ -18,7 +18,7 @@ export default function FleurGiftIdeas() {
             viewport={{ once: true }}
             className="relative z-10 aspect-[4/5] md:aspect-square overflow-hidden shadow-2xl"
           >
-            <VintageImage src="/anh4.jpg" alt="Hala Handmade Gift Ideas" />
+            <VintageImage src="/anh4.jpg" alt="Lito Handmade Gift Ideas" />
           </motion.div>
           
           {/* Decorative floating elements */}
@@ -50,7 +50,7 @@ export default function FleurGiftIdeas() {
 
             <div className="space-y-6 mb-12">
               <p className="text-primary/70 text-lg font-light leading-relaxed">
-                Khác với hoa tươi chóng tàn, những món quà từ len sợi của Hala mang theo sự bền bỉ của thời gian. Mỗi mũi kim là một lời nhắn nhủ, một sự trân trọng gửi trao đến người thân yêu.
+                Khác với hoa tươi chóng tàn, những món quà từ len sợi của Lito mang theo sự bền bỉ của thời gian. Mỗi mũi kim là một lời nhắn nhủ, một sự trân trọng gửi trao đến người thân yêu.
               </p>
               <p className="text-primary/70 text-lg font-light leading-relaxed">
                 Chúng tôi tin rằng món quà ý nghĩa nhất là món quà mang đậm dấu ấn cá nhân và được thực hiện bằng cả trái tim.

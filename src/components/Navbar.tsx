@@ -5,7 +5,7 @@ export default function Navbar() {
     <nav className="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur-sm border-b border-[#e8ddd0]">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <span className="font-serif text-xl tracking-widest text-[#2c2420] uppercase">
-          Hala
+          Lito
         </span>
 
         <div className="hidden md:flex gap-10 text-xs font-medium tracking-widest uppercase text-[#8b6f5e]">

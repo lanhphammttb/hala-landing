@@ -34,9 +34,9 @@ export default function ProductDetailClient({ product }: { product: ProductDetai
 
           <a href="/" className="text-2xl font-serif text-rose-500 font-bold tracking-tight">
             {product.business_logo ? (
-              <img src={product.business_logo} alt="Hala Handmade Logo" className="h-10 object-contain" />
+              <img src={product.business_logo} alt="Lito Handmade Logo" className="h-10 object-contain" />
             ) : (
-              <span>Hala Handmade</span>
+              <span>Lito Handmade</span>
             )}
           </a>
 
@@ -114,7 +114,7 @@ export default function ProductDetailClient({ product }: { product: ProductDetai
 
             <div className="flex flex-col sm:flex-row gap-4 mb-14">
               <a
-                href="https://zalo.me/halahandmade"
+                href="https://zalo.me/litohandmade"
                 className="flex-1 bg-gray-900 text-white hover:bg-gray-800 py-5 px-8 rounded-full font-bold text-lg flex items-center justify-center gap-3 transition-colors shadow-xl shadow-gray-900/20"
               >
                 <ShoppingBag className="w-6 h-6" /> Thiết kế riêng cho bạn

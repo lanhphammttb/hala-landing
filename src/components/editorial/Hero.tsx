@@ -8,7 +8,7 @@ export default function EditorialHero() {
     <section className="relative h-[90vh] min-h-[600px] overflow-hidden flex items-center justify-center">
       {/* Cinematic Background */}
       <div className="absolute inset-0 z-0">
-        <VintageImage src="/anh2.jpg" alt="Hala Handmade Hero" className="scale-105" />
+        <VintageImage src="/anh2.jpg" alt="Lito Handmade Hero" className="scale-105" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/60" />
       </div>
 
@@ -42,7 +42,7 @@ export default function EditorialHero() {
 
       {/* Subtle Bottom Label */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-40">
-         <span className="text-white text-[10px] uppercase tracking-[0.4em]">Hala Handmade</span>
+         <span className="text-white text-[10px] uppercase tracking-[0.4em]">Lito Handmade</span>
       </div>
     </section>
   );

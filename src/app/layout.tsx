@@ -26,13 +26,13 @@ const beVietnam = Be_Vietnam_Pro({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://halahandmade.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://litohandmade.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Hala Handmade — Phụ Kiện Móc Len Thủ Công Độc Bản",
-    template: "%s | Hala Handmade",
+    default: "Lito Handmade — Phụ Kiện Móc Len Thủ Công Độc Bản",
+    template: "%s | Lito Handmade",
   },
   description:
     "Phụ kiện móc len thủ công 100% — thiết kế độc bản theo sắc độ da và phong cách riêng của bạn. Mũ len, túi len, khăn len handmade tại Việt Nam.",
@@ -44,16 +44,16 @@ export const metadata: Metadata = {
     "khăn len thủ công",
     "quà tặng handmade",
     "len thủ công Việt Nam",
-    "Hala Handmade",
+    "Lito Handmade",
   ],
-  authors: [{ name: "Hala Handmade" }],
-  creator: "Hala Handmade",
+  authors: [{ name: "Lito Handmade" }],
+  creator: "Lito Handmade",
   openGraph: {
     type: "website",
     locale: "vi_VN",
     url: siteUrl,
-    siteName: "Hala Handmade",
-    title: "Hala Handmade — Phụ Kiện Móc Len Thủ Công Độc Bản",
+    siteName: "Lito Handmade",
+    title: "Lito Handmade — Phụ Kiện Móc Len Thủ Công Độc Bản",
     description:
       "Phụ kiện móc len thủ công 100% — thiết kế độc bản theo sắc độ da và phong cách riêng của bạn.",
     images: [
@@ -61,13 +61,13 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Hala Handmade — Phụ Kiện Móc Len Thủ Công",
+        alt: "Lito Handmade — Phụ Kiện Móc Len Thủ Công",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hala Handmade — Phụ Kiện Móc Len Thủ Công Độc Bản",
+    title: "Lito Handmade — Phụ Kiện Móc Len Thủ Công Độc Bản",
     description:
       "Phụ kiện móc len thủ công 100% — thiết kế độc bản theo sắc độ da và phong cách riêng của bạn.",
     images: ["/og-image.jpg"],
@@ -107,7 +107,7 @@ export default function RootLayout({
                 "@type": "WebSite",
                 "@id": `${siteUrl}/#website`,
                 url: siteUrl,
-                name: "Hala Handmade",
+                name: "Lito Handmade",
                 description:
                   "Phụ kiện móc len thủ công 100% — thiết kế độc bản theo sắc độ da và phong cách riêng của bạn.",
                 inLanguage: "vi",
@@ -123,7 +123,7 @@ export default function RootLayout({
               {
                 "@type": "LocalBusiness",
                 "@id": `${siteUrl}/#business`,
-                name: "Hala Handmade",
+                name: "Lito Handmade",
                 description:
                   "Phụ kiện móc len thủ công 100% — thiết kế độc bản theo sắc độ da và phong cách riêng của bạn.",
                 url: siteUrl,

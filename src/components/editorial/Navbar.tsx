@@ -36,7 +36,7 @@ export default function FleurNavbar() {
               isScrolled ? "text-primary" : "text-white"
             }`}
           >
-            Hala<span className="text-accent">.</span>
+            Lito<span className="text-accent">.</span>
           </a>
 
           {/* Desktop Links */}
@@ -87,7 +87,7 @@ export default function FleurNavbar() {
             className="fixed inset-0 z-[110] bg-deep-brown flex flex-col p-12"
           >
             <div className="flex justify-between items-center mb-20">
-              <span className="font-serif italic text-3xl text-white">Hala<span className="text-accent">.</span></span>
+              <span className="font-serif italic text-3xl text-white">Lito<span className="text-accent">.</span></span>
               <button onClick={() => setIsMobileMenuOpen(false)} className="text-white">
                 <X size={32} />
               </button>

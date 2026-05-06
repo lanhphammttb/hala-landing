@@ -33,7 +33,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { id } = await params;
   const product = await getProduct(id);
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://halahandmade.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://litohandmade.com";
 
   if (!product) {
     return { title: "Sản phẩm không tồn tại" };
@@ -81,7 +81,7 @@ export default async function ProductDetailPage({
       </div>
     );
   }
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://halahandmade.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://litohandmade.com";
 
   return (
     <>
@@ -100,7 +100,7 @@ export default async function ProductDetailPage({
             url: `${siteUrl}/product/${product.id}`,
             seller: {
               "@type": "Organization",
-              name: "Hala Handmade",
+              name: "Lito Handmade",
             },
           },
         }}

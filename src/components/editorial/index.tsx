@@ -34,7 +34,7 @@ export default function EditorialTemplate() {
             {/* Brand Section */}
             <div className="lg:col-span-1">
               <span className="font-serif italic text-4xl font-bold mb-8 block">
-                Hala<span className="text-accent">.</span>
+                Lito<span className="text-accent">.</span>
               </span>
               <p className="text-stone/40 text-[13px] leading-relaxed mb-10 max-w-xs font-light">
                 Nơi những sợi len mềm mại được dệt thành những câu chuyện riêng, mang lại sự bình yên và phong cách cho cuộc sống của bạn.
@@ -93,7 +93,7 @@ export default function EditorialTemplate() {
             </div>
             
             <p className="text-stone/30 text-[11px] font-light tracking-widest uppercase">
-              © 2024 HALA HANDMADE. BẢN QUYỀN ĐÃ ĐƯỢC BẢO HỘ.
+              © 2024 LITO HANDMADE. BẢN QUYỀN ĐÃ ĐƯỢC BẢO HỘ.
             </p>
 
             <button

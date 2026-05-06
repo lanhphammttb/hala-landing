@@ -13,7 +13,7 @@ export default function FleurCTA() {
           viewport={{ once: true }}
           className="font-serif italic text-6xl md:text-[8rem] leading-none mb-12 tracking-tighter"
         >
-          Liên hệ với <span className="text-[#C59D5F]">Hala</span>
+          Liên hệ với <span className="text-[#C59D5F]">Lito</span>
         </motion.h2>
         
         <div className="flex flex-wrap justify-center gap-10 md:gap-20">

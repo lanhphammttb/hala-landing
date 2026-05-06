@@ -33,7 +33,7 @@ export default function FleurTemplate() {
             {/* Brand Section */}
             <div className="lg:col-span-1">
               <span className="font-serif italic text-4xl font-bold mb-8 block text-[#2C2420]">
-                HALA<span className="text-[#C59D5F]">.</span>
+                LITO<span className="text-[#C59D5F]">.</span>
               </span>
               <p className="text-[#2C2420]/60 text-sm leading-relaxed mb-10 max-w-xs font-serif italic">
                 “Tôn vinh nghệ thuật thủ công truyền thống qua những thiết kế len hiện đại và độc bản.”
@@ -93,7 +93,7 @@ export default function FleurTemplate() {
             </div>
 
             <p className="text-[#2C2420]/30 text-[10px] tracking-[0.2em] uppercase font-black">
-              © 2024 HALA HANDMADE. BẢN QUYỀN ĐÃ ĐƯỢC BẢO HỘ.
+              © 2024 LITO HANDMADE. BẢN QUYỀN ĐÃ ĐƯỢC BẢO HỘ.
             </p>
 
             <button

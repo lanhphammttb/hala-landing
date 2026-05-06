@@ -16,13 +16,13 @@ export default function HomeClient() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const saved = localStorage.getItem("hala-theme") as Theme | null;
+    const saved = localStorage.getItem("lito-theme") as Theme | null;
     if (saved && (saved === "fleur" || saved === "editorial")) setTheme(saved);
   }, []);
 
   function changeTheme(t: Theme) {
     setTheme(t);
-    localStorage.setItem("hala-theme", t);
+    localStorage.setItem("lito-theme", t);
     setOpen(false);
   }
 
