@@ -100,7 +100,7 @@ export default async function ProductDetailPage({
             url: `${siteUrl}/product/${product.id}`,
             seller: {
               "@type": "Organization",
-              name: "Lito Handmade",
+              name: "LITO Handmade",
             },
           },
         }}

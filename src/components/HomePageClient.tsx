@@ -30,9 +30,9 @@ export default function HomePageClient({
         <div className="container mx-auto px-6 h-20 flex items-center justify-between">
           <a href="/" className="text-2xl font-serif text-rose-500 font-bold tracking-tight flex items-center">
             {logoUrl ? (
-              <img src={logoUrl} alt="Lito Handmade Logo" className="h-10 object-contain" />
+              <img src={logoUrl} alt="LITO Handmade Logo" className="h-10 object-contain" />
             ) : (
-              "Lito Handmade"
+              "LITO Handmade"
             )}
           </a>
           <div className="hidden md:flex gap-8 text-sm font-medium text-gray-600">
@@ -63,7 +63,7 @@ export default function HomePageClient({
 
       <footer className="bg-gray-900 py-12 text-center text-gray-400">
         <div className="container mx-auto px-6">
-          <p>&copy; {new Date().getFullYear()} Lito Handmade. Built with love and Next.js.</p>
+          <p>&copy; {new Date().getFullYear()} LITO Handmade. Built with love and Next.js.</p>
         </div>
       </footer>
     </main>

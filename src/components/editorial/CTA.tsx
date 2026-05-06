@@ -20,7 +20,7 @@ export default function FleurCTA() {
           <div className="w-24 h-24 rounded-full border-2 border-accent/30 p-2">
             <img
               src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=300&auto=format&fit=crop"
-              alt="Lito Handmade Founder"
+              alt="LITO Handmade Founder"
               className="w-full h-full object-cover rounded-full"
             />
           </div>

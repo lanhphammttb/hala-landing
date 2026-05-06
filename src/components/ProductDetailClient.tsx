@@ -34,9 +34,9 @@ export default function ProductDetailClient({ product }: { product: ProductDetai
 
           <a href="/" className="text-2xl font-serif text-rose-500 font-bold tracking-tight">
             {product.business_logo ? (
-              <img src={product.business_logo} alt="Lito Handmade Logo" className="h-10 object-contain" />
+              <img src={product.business_logo} alt="LITO Handmade Logo" className="h-10 object-contain" />
             ) : (
-              <span>Lito Handmade</span>
+              <span>LITO Handmade</span>
             )}
           </a>
 

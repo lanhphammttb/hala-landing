@@ -36,8 +36,8 @@ export const metadata: Metadata = {
     apple: "/icon_logo.svg",
   },
   title: {
-    default: "Lito Handmade — Phụ Kiện Móc Len Thủ Công Độc Bản",
-    template: "%s | Lito Handmade",
+    default: "LITO Handmade — Phụ Kiện Móc Len Thủ Công Độc Bản",
+    template: "%s | LITO Handmade",
   },
   description:
     "Phụ kiện móc len thủ công 100% — thiết kế độc bản theo sắc độ da và phong cách riêng của bạn. Mũ len, túi len, khăn len handmade tại Việt Nam.",
@@ -49,16 +49,16 @@ export const metadata: Metadata = {
     "khăn len thủ công",
     "quà tặng handmade",
     "len thủ công Việt Nam",
-    "Lito Handmade",
+    "LITO Handmade",
   ],
-  authors: [{ name: "Lito Handmade" }],
-  creator: "Lito Handmade",
+  authors: [{ name: "LITO Handmade" }],
+  creator: "LITO Handmade",
   openGraph: {
     type: "website",
     locale: "vi_VN",
     url: siteUrl,
-    siteName: "Lito Handmade",
-    title: "Lito Handmade — Phụ Kiện Móc Len Thủ Công Độc Bản",
+    siteName: "LITO Handmade",
+    title: "LITO Handmade — Phụ Kiện Móc Len Thủ Công Độc Bản",
     description:
       "Phụ kiện móc len thủ công 100% — thiết kế độc bản theo sắc độ da và phong cách riêng của bạn.",
     images: [
@@ -66,13 +66,13 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Lito Handmade — Phụ Kiện Móc Len Thủ Công",
+        alt: "LITO Handmade — Phụ Kiện Móc Len Thủ Công",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lito Handmade — Phụ Kiện Móc Len Thủ Công Độc Bản",
+    title: "LITO Handmade — Phụ Kiện Móc Len Thủ Công Độc Bản",
     description:
       "Phụ kiện móc len thủ công 100% — thiết kế độc bản theo sắc độ da và phong cách riêng của bạn.",
     images: ["/og-image.jpg"],
@@ -112,7 +112,7 @@ export default function RootLayout({
                 "@type": "WebSite",
                 "@id": `${siteUrl}/#website`,
                 url: siteUrl,
-                name: "Lito Handmade",
+                name: "LITO Handmade",
                 description:
                   "Phụ kiện móc len thủ công 100% — thiết kế độc bản theo sắc độ da và phong cách riêng của bạn.",
                 inLanguage: "vi",
@@ -128,7 +128,7 @@ export default function RootLayout({
               {
                 "@type": "LocalBusiness",
                 "@id": `${siteUrl}/#business`,
-                name: "Lito Handmade",
+                name: "LITO Handmade",
                 description:
                   "Phụ kiện móc len thủ công 100% — thiết kế độc bản theo sắc độ da và phong cách riêng của bạn.",
                 url: siteUrl,

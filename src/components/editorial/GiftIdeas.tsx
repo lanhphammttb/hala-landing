@@ -18,7 +18,7 @@ export default function FleurGiftIdeas() {
             viewport={{ once: true }}
             className="relative z-10 aspect-[4/5] md:aspect-square overflow-hidden shadow-2xl"
           >
-            <VintageImage src="/anh4.jpg" alt="Lito Handmade Gift Ideas" />
+            <VintageImage src="/anh4.jpg" alt="LITO Handmade Gift Ideas" />
           </motion.div>
           
           {/* Decorative floating elements */}

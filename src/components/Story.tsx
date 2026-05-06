@@ -70,7 +70,7 @@ export default function Story() {
             >
               <h2 className="text-sm font-bold tracking-widest text-rose-500 uppercase mb-4 flex items-center gap-2">
                 <span className="w-8 h-px bg-rose-500"></span>
-                Về Lito Handmade
+                Về LITO Handmade
               </h2>
               <h3 className="text-4xl md:text-5xl/tight font-serif text-gray-900 mb-8">
                 Tạo nên sự khác biệt từ những điều nhỏ nhất
@@ -78,7 +78,7 @@ export default function Story() {
               
               <div className="space-y-6 text-gray-600 text-lg font-light leading-relaxed mb-12">
                 <p>
-                  So với việc sản xuất hàng loạt công nghiệp, chúng mình lựa chọn đi chậm lại. Tại Lito Handmade, một chiếc túi có thể tốn vài ngày để hoàn thiện, nhưng đó là sự đầu tư xứng đáng cho chất lượng.
+                  So với việc sản xuất hàng loạt công nghiệp, chúng mình lựa chọn đi chậm lại. Tại LITO Handmade, một chiếc túi có thể tốn vài ngày để hoàn thiện, nhưng đó là sự đầu tư xứng đáng cho chất lượng.
                 </p>
               </div>
 
