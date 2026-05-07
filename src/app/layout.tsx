@@ -31,9 +31,9 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://litohandmade.com';
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   icons: {
-    icon: '/icon_logo.svg',
-    shortcut: '/icon_logo.svg',
-    apple: '/icon_logo.svg'
+    icon: '/icon_nen.png',
+    shortcut: '/icon_nen.png',
+    apple: '/icon_nen.png'
   },
   title: {
     default: 'LITO Handmade — Phụ Kiện Móc Len Thủ Công Độc Bản',
@@ -132,7 +132,7 @@ export default function RootLayout({
                 description:
                   'Phụ kiện móc len thủ công 100% — thiết kế độc bản theo sắc độ da và phong cách riêng của bạn.',
                 url: siteUrl,
-                logo: `${siteUrl}/icon_logo.svg`,
+                logo: `${siteUrl}/icon_nen.png`,
                 image: `${siteUrl}/og-image.jpg`,
                 telephone: '+84886251629',
                 email: 'contact@litohandmade.com',
