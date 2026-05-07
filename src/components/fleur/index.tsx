@@ -87,7 +87,7 @@ export default function FleurTemplate() {
           <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-[#2C2420]/5 gap-8">
             <div className="flex items-center gap-3 text-[#2C2420]/30 text-[10px] tracking-widest uppercase font-black">
                <MapPin size={14} strokeWidth={1.5} />
-               <span>TP. Hồ Chí Minh, Việt Nam</span>
+               <span>Hà Nội, Việt Nam</span>
             </div>
 
             <p className="text-[#2C2420]/30 text-[10px] tracking-[0.2em] uppercase font-black">

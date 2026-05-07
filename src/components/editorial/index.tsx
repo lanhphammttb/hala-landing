@@ -87,7 +87,7 @@ export default function EditorialTemplate() {
           <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-stone/10 gap-8">
             <div className="flex items-center gap-2 text-stone/30 text-[11px] font-light tracking-wide uppercase">
               <MapPin size={14} strokeWidth={1} />
-              <span>TP. Hồ Chí Minh, Việt Nam</span>
+              <span>Hà Nội, Việt Nam</span>
             </div>
             
             <p className="text-stone/30 text-[11px] font-light tracking-widest uppercase">

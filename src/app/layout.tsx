@@ -139,7 +139,9 @@ export default function RootLayout({
                 priceRange: '$$',
                 address: {
                   '@type': 'PostalAddress',
-                  addressCountry: 'VN'
+                  addressCountry: 'VN',
+                  addressLocality: 'Hà Nội',
+                  streetAddress: 'Hà Nội'
                 },
                 sameAs: [
                   'https://www.facebook.com/litohandmade',
