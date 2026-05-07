@@ -7,13 +7,15 @@ interface Props {
   alt?: string;
   className?: string;
   style?: React.CSSProperties;
+  priority?: boolean;
 }
 
 export default function VintageImage({
   src,
   alt = '',
   className = '',
-  style
+  style,
+  priority = false
 }: Props) {
   function handleError(e: React.SyntheticEvent<HTMLImageElement>) {
     const img = e.currentTarget;
@@ -25,7 +27,8 @@ export default function VintageImage({
       <img
         src={src}
         alt={alt}
-        loading="lazy"
+        loading={priority ? 'eager' : 'lazy'}
+        fetchPriority={priority ? 'high' : 'auto'}
         onError={handleError}
         className={`absolute inset-0 w-full h-full object-cover ${className}`}
         style={{

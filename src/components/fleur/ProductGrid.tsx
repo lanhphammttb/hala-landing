@@ -49,7 +49,7 @@ export default function FleurProductGrid() {
                    </span>
                 </div>
                 {/* Friendly Heart Button */}
-                <button className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 flex items-center justify-center text-[#2C2420]/20 hover:text-red-400 transition-colors">
+                <button aria-label="Yêu thích" className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 flex items-center justify-center text-[#2C2420]/20 hover:text-red-400 transition-colors">
                    <Heart size={16} />
                 </button>
               </div>

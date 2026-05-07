@@ -37,8 +37,8 @@ export default function FleurTemplate() {
                 “Tôn vinh nghệ thuật thủ công truyền thống qua những thiết kế len hiện đại và độc bản.”
               </p>
               <div className="flex gap-4">
-                {[Globe, Camera, MessageSquare].map((Icon, i) => (
-                   <a key={i} href="#" className="w-10 h-10 rounded-full border border-[#2C2420]/10 flex items-center justify-center text-[#2C2420] hover:bg-[#C59D5F] hover:text-white hover:border-[#C59D5F] transition-all">
+                {[{ Icon: Globe, label: 'Website' }, { Icon: Camera, label: 'Instagram' }, { Icon: MessageSquare, label: 'Zalo' }].map(({ Icon, label }) => (
+                   <a key={label} href="#" aria-label={label} className="w-10 h-10 rounded-full border border-[#2C2420]/10 flex items-center justify-center text-[#2C2420] hover:bg-[#C59D5F] hover:text-white hover:border-[#C59D5F] transition-all">
                       <Icon size={18} strokeWidth={1.5} />
                    </a>
                 ))}

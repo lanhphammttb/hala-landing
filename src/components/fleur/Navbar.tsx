@@ -21,7 +21,7 @@ export default function FleurNavbar() {
       <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
         {/* Left: Menu */}
         <div className="flex items-center gap-6">
-          <button className="text-[#2C2420] p-2 hover:bg-[#FAF7F2] rounded-full transition-colors">
+          <button aria-label="Menu" className="text-[#2C2420] p-2 hover:bg-[#FAF7F2] rounded-full transition-colors">
             <Menu size={20} />
           </button>
         </div>
@@ -33,7 +33,7 @@ export default function FleurNavbar() {
 
         {/* Right: Actions */}
         <div className="flex items-center gap-4">
-          <button className="text-[#2C2420] p-2 hover:bg-[#FAF7F2] rounded-full transition-colors hidden md:flex">
+          <button aria-label="Tìm kiếm" className="text-[#2C2420] p-2 hover:bg-[#FAF7F2] rounded-full transition-colors hidden md:flex">
             <Search size={20} />
           </button>
           <button className="flex items-center gap-2 bg-[#2C2420] text-white px-5 py-2 rounded-full hover:bg-[#A56336] transition-all shadow-md group">

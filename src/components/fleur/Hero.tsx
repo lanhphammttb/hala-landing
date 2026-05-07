@@ -22,6 +22,7 @@ export default function FleurHero() {
               src="/anh2.jpg"
               alt="Lito Boutique"
               className="w-full h-full object-cover"
+              priority
             />
           </div>
 

@@ -38,9 +38,9 @@ export default function EditorialTemplate() {
                 Nơi những sợi len mềm mại được dệt thành những câu chuyện riêng, mang lại sự bình yên và phong cách cho cuộc sống của bạn.
               </p>
               <div className="flex gap-6">
-                <a href="#" className="text-stone/40 hover:text-accent transition-colors"><Camera size={20} /></a>
-                <a href="#" className="text-stone/40 hover:text-accent transition-colors"><MessageSquare size={20} /></a>
-                <a href="#" className="text-stone/40 hover:text-accent transition-colors"><Mail size={20} /></a>
+                <a href="#" aria-label="Instagram" className="text-stone/40 hover:text-accent transition-colors"><Camera size={20} /></a>
+                <a href="#" aria-label="Zalo" className="text-stone/40 hover:text-accent transition-colors"><MessageSquare size={20} /></a>
+                <a href="#" aria-label="Email" className="text-stone/40 hover:text-accent transition-colors"><Mail size={20} /></a>
               </div>
             </div>
 
