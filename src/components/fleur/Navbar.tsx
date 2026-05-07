@@ -28,7 +28,7 @@ export default function FleurNavbar() {
 
         {/* Center: Logo */}
         <div className="flex flex-col items-center">
-          <img src="/icon_logo.svg" alt="LITO Handmade" className="h-10 object-contain" />
+          <img src="/icon_litohandmade.png" alt="LITO Handmade" className="h-10 object-contain" />
         </div>
 
         {/* Right: Actions */}

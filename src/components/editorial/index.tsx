@@ -33,7 +33,7 @@ export default function EditorialTemplate() {
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-16 mb-24">
             {/* Brand Section */}
             <div className="lg:col-span-1">
-              <img src="/icon_logo.svg" alt="LITO Handmade" className="h-10 object-contain mb-8" />
+              <img src="/icon_litohandmade.png" alt="LITO Handmade" className="h-10 object-contain mb-8" />
               <p className="text-stone/40 text-[13px] leading-relaxed mb-10 max-w-xs font-light">
                 Nơi những sợi len mềm mại được dệt thành những câu chuyện riêng, mang lại sự bình yên và phong cách cho cuộc sống của bạn.
               </p>
