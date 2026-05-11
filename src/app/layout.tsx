@@ -30,11 +30,6 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://litohandmade.com';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  icons: {
-    icon: '/icon.png',
-    shortcut: '/icon.png',
-    apple: '/icon.png'
-  },
   title: {
     default: 'LITO Handmade — Phụ Kiện Móc Len Thủ Công Độc Bản',
     template: '%s | LITO Handmade'
@@ -90,6 +85,13 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: siteUrl
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png' }
+    ],
+    apple: '/icon.png'
   }
 };
 
