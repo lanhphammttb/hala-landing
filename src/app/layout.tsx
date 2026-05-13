@@ -26,10 +26,12 @@ const beVietnam = Be_Vietnam_Pro({
   display: 'swap'
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://litohandmade.com';
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://litohandmade.com').replace(/\/$/, '');
+const siteRoot = `${siteUrl}/`;
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(siteRoot),
+  applicationName: 'LITO Handmade',
   title: {
     default: 'LITO Handmade — Phụ Kiện Móc Len Thủ Công Độc Bản',
     template: '%s | LITO Handmade'
@@ -48,19 +50,21 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'LITO Handmade' }],
   creator: 'LITO Handmade',
+  publisher: 'LITO Handmade',
+  category: 'Handmade accessories',
   openGraph: {
     type: 'website',
     locale: 'vi_VN',
-    url: siteUrl,
+    url: siteRoot,
     siteName: 'LITO Handmade',
     title: 'LITO Handmade — Phụ Kiện Móc Len Thủ Công Độc Bản',
     description:
       'Phụ kiện móc len thủ công 100% — thiết kế độc bản theo sắc độ da và phong cách riêng của bạn.',
     images: [
       {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
+        url: '/litohandmade.png',
+        width: 1536,
+        height: 864,
         alt: 'LITO Handmade — Phụ Kiện Móc Len Thủ Công'
       }
     ]
@@ -70,7 +74,7 @@ export const metadata: Metadata = {
     title: 'LITO Handmade — Phụ Kiện Móc Len Thủ Công Độc Bản',
     description:
       'Phụ kiện móc len thủ công 100% — thiết kế độc bản theo sắc độ da và phong cách riêng của bạn.',
-    images: ['/og-image.jpg']
+    images: ['/litohandmade.png']
   },
   robots: {
     index: true,
@@ -84,14 +88,11 @@ export const metadata: Metadata = {
     }
   },
   alternates: {
-    canonical: siteUrl
+    canonical: siteRoot
   },
   icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/icon.png', type: 'image/png' }
-    ],
-    apple: '/icon.png'
+    icon: [{ url: '/icon.png', type: 'image/png', sizes: '512x512' }],
+    apple: [{ url: '/apple-icon.png', type: 'image/png', sizes: '180x180' }]
   }
 };
 
@@ -116,9 +117,10 @@ export default function RootLayout({
             '@graph': [
               {
                 '@type': 'WebSite',
-                '@id': `${siteUrl}/#website`,
-                url: siteUrl,
+                '@id': `${siteRoot}#website`,
+                url: siteRoot,
                 name: 'LITO Handmade',
+                alternateName: ['LITO', 'Lito Handmade'],
                 description:
                   'Phụ kiện móc len thủ công 100% — thiết kế độc bản theo sắc độ da và phong cách riêng của bạn.',
                 inLanguage: 'vi',
@@ -126,20 +128,20 @@ export default function RootLayout({
                   '@type': 'SearchAction',
                   target: {
                     '@type': 'EntryPoint',
-                    urlTemplate: `${siteUrl}/?q={search_term_string}`
+                    urlTemplate: `${siteRoot}?q={search_term_string}`
                   },
                   'query-input': 'required name=search_term_string'
                 }
               },
               {
                 '@type': 'LocalBusiness',
-                '@id': `${siteUrl}/#business`,
+                '@id': `${siteRoot}#business`,
                 name: 'LITO Handmade',
                 description:
                   'Phụ kiện móc len thủ công 100% — thiết kế độc bản theo sắc độ da và phong cách riêng của bạn.',
-                url: siteUrl,
-                logo: `${siteUrl}/icon.png`,
-                image: `${siteUrl}/og-image.jpg`,
+                url: siteRoot,
+                logo: `${siteRoot}icon.png`,
+                image: `${siteRoot}litohandmade.png`,
                 telephone: '+84886251629',
                 email: 'contact@litohandmade.com',
                 priceRange: '$$',
