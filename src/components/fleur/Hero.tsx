@@ -18,8 +18,16 @@ export default function FleurHero({ seasonal }: FleurHeroProps) {
           className="h-full w-full scale-105 object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#211915]/82 via-[#2C2420]/42 to-transparent" />
+        <div className={`absolute inset-0 bg-gradient-to-r ${seasonal.overlayClass}`} />
         <div className="absolute inset-0 bg-gradient-to-t from-[#2C2420]/58 via-transparent to-[#1d1511]/25" />
+        {seasonal.id !== 'default' && (
+          <div className="pointer-events-none absolute left-6 top-28 hidden h-24 w-24 sm:block">
+            <span className={`absolute left-2 top-9 h-2.5 w-2.5 rounded-full ${seasonal.ornamentClass} opacity-80`} />
+            <span className={`absolute left-8 top-3 h-1.5 w-1.5 rounded-full ${seasonal.ornamentClass} opacity-55`} />
+            <span className={`absolute left-14 top-12 h-2 w-2 rounded-full ${seasonal.ornamentClass} opacity-65`} />
+            <span className="absolute left-1 top-1 h-20 w-px rotate-12 bg-white/14" />
+          </div>
+        )}
       </div>
 
       <div className="relative z-20 mx-auto flex w-full max-w-7xl px-6 sm:px-8">
@@ -29,9 +37,16 @@ export default function FleurHero({ seasonal }: FleurHeroProps) {
           transition={{ duration: 0.8 }}
           className="max-w-2xl pt-10"
         >
-          <p className={`mb-4 text-[12px] font-bold ${seasonal.accentClass}`}>
-            {seasonal.label || 'Túi len làm tay'}
-          </p>
+          <div className="mb-4 flex flex-wrap items-center gap-3">
+            <p className={`text-[12px] font-bold ${seasonal.accentClass}`}>
+              {seasonal.label || 'Túi len làm tay'}
+            </p>
+            {seasonal.note && (
+              <span className={`rounded-full border px-3 py-1 text-[11px] font-semibold ${seasonal.badgeClass}`}>
+                {seasonal.note}
+              </span>
+            )}
+          </div>
           <h1 className="font-serif text-5xl leading-[1.04] tracking-normal text-white sm:text-6xl lg:text-7xl">
             Đồ Len
             <span className={`block italic ${seasonal.accentClass}`}>Handmade</span>
@@ -43,7 +58,7 @@ export default function FleurHero({ seasonal }: FleurHeroProps) {
           <div className="mt-10 flex flex-wrap gap-4">
             <a
               href="#popular"
-              className="rounded-full bg-[#E4C28B] px-8 py-3.5 text-sm font-bold text-[#2C2420] shadow-xl shadow-black/20 transition-all hover:bg-white"
+              className={`rounded-full px-8 py-3.5 text-sm font-bold text-[#2C2420] shadow-xl shadow-black/20 transition-all ${seasonal.ctaClass}`}
             >
               Xem mẫu
             </a>
