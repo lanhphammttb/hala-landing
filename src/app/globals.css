@@ -27,7 +27,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Subtle editorial noise texture */
+/* Subtle paper-like noise texture */
 body::after {
   content: '';
   position: fixed;

@@ -1,7 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ShoppingBag, Search, User, Menu } from "lucide-react";
+import { Menu, Search, ShoppingBag } from "lucide-react";
+
+const links = [
+  { label: "Dịch vụ", href: "#services" },
+  { label: "Mẫu túi", href: "#popular" },
+  { label: "Quà tặng", href: "#gift" },
+  { label: "Liên hệ", href: "#contact" },
+];
 
 export default function FleurNavbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -14,31 +21,75 @@ export default function FleurNavbar() {
 
   return (
     <nav
-      className={`fixed top-0 md:top-6 inset-x-0 md:inset-x-6 z-[100] transition-all duration-500 ${
-        isScrolled ? "bg-white/95 backdrop-blur-md py-3 shadow-lg rounded-none md:rounded-full" : "bg-transparent py-4 rounded-none md:rounded-full"
+      className={`fixed top-0 inset-x-0 z-[100] transition-all duration-500 ${
+        isScrolled
+          ? "bg-[#fffaf3]/92 backdrop-blur-xl border-b border-[#2C2420]/10 shadow-sm"
+          : "bg-gradient-to-b from-[#1c1511]/45 to-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
-        {/* Left: Menu */}
-        <div className="flex items-center gap-6">
-          <button aria-label="Menu" className="text-[#2C2420] p-2 hover:bg-[#FAF7F2] rounded-full transition-colors">
-            <Menu size={20} />
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
+        <div className="flex min-w-0 items-center gap-4">
+          <button
+            aria-label="Menu"
+            className={`flex h-10 w-10 items-center justify-center rounded-full border transition-colors lg:hidden ${
+              isScrolled
+                ? "border-[#2C2420]/10 text-[#2C2420] hover:bg-[#2C2420]/5"
+                : "border-white/25 text-white hover:bg-white/10"
+            }`}
+          >
+            <Menu size={19} />
           </button>
+
+          <a href="#" className="flex min-w-0 items-center gap-3">
+            <img src="/icon_litohandmade.png" alt="LITO Handmade" className="h-11 w-auto object-contain" />
+            <span
+              className={`hidden text-sm font-bold sm:block ${
+                isScrolled ? "text-[#2C2420]" : "text-white"
+              }`}
+            >
+              Lito Handmade
+            </span>
+          </a>
         </div>
 
-        {/* Center: Logo */}
-        <div className="flex flex-col items-center">
-          <img src="/icon_litohandmade.png" alt="LITO Handmade" className="h-10 object-contain" />
+        <div
+          className={`hidden items-center gap-8 text-sm font-semibold lg:flex ${
+            isScrolled ? "text-[#2C2420]/70" : "text-white/78"
+          }`}
+        >
+          {links.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className={`transition-colors ${
+                isScrolled ? "hover:text-[#A56336]" : "hover:text-white"
+              }`}
+            >
+              {link.label}
+            </a>
+          ))}
         </div>
 
-        {/* Right: Actions */}
-        <div className="flex items-center gap-4">
-          <button aria-label="Tìm kiếm" className="text-[#2C2420] p-2 hover:bg-[#FAF7F2] rounded-full transition-colors hidden md:flex">
+        <div className="flex items-center gap-3 sm:gap-4">
+          <button
+            aria-label="Tìm kiếm"
+            className={`hidden h-10 w-10 items-center justify-center rounded-full transition-colors md:flex ${
+              isScrolled
+                ? "text-[#2C2420] hover:bg-[#2C2420]/5"
+                : "text-white hover:bg-white/10"
+            }`}
+          >
             <Search size={20} />
           </button>
-          <button className="flex items-center gap-2 bg-[#2C2420] text-white px-5 py-2 rounded-full hover:bg-[#A56336] transition-all shadow-md group">
-             <ShoppingBag size={18} className="group-hover:scale-110 transition-transform" />
-             <span className="text-[10px] uppercase font-bold tracking-widest hidden sm:block">Giỏ hàng</span>
+          <button
+            className={`group flex items-center gap-2 rounded-full px-4 py-2.5 shadow-sm transition-all sm:px-5 ${
+              isScrolled
+                ? "bg-[#2C2420] text-white hover:bg-[#A56336]"
+                : "bg-white text-[#2C2420] hover:bg-[#C59D5F] hover:text-white"
+            }`}
+          >
+            <ShoppingBag size={17} className="transition-transform group-hover:scale-110" />
+            <span className="hidden text-sm font-bold sm:block">Giỏ hàng</span>
           </button>
         </div>
       </div>

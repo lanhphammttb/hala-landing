@@ -8,18 +8,21 @@ import FleurServices from "./Services";
 import FleurProductGrid from "./ProductGrid";
 import FleurGiftIdeas from "./GiftIdeas";
 import FleurCTA from "./CTA";
+import { getSeasonalTheme } from "./seasonal";
 
 export default function FleurTemplate() {
+  const seasonal = getSeasonalTheme();
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#FDF9F3] selection:bg-[#C59D5F] selection:text-[#2C2420]">
+    <div className={`flex flex-col min-h-screen ${seasonal.surfaceClass} selection:bg-[#C59D5F] selection:text-[#2C2420]`}>
       <FleurNavbar />
       
       <main className="flex-grow">
-        <FleurHero />
+        <FleurHero seasonal={seasonal} />
         <FleurServices />
         <FleurProductGrid />
         <FleurGiftIdeas />

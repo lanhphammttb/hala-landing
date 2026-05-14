@@ -2,46 +2,81 @@
 
 import { motion } from 'framer-motion';
 import VintageImage from './VintageImage';
+import type { SeasonalTheme } from './seasonal';
 
-export default function FleurHero() {
+type FleurHeroProps = {
+  seasonal: SeasonalTheme;
+};
+
+export default function FleurHero({ seasonal }: FleurHeroProps) {
   return (
-    <section className="relative h-[80vh] min-h-[500px] flex items-center justify-center bg-[#FAF7F2] overflow-hidden pt-20">
-      <div className="container mx-auto px-6 relative z-20 flex flex-col items-center text-center">
+    <section className="relative flex min-h-[720px] items-center overflow-hidden bg-[#2C2420] pt-20 text-white md:h-screen">
+      <div className="absolute inset-0 z-0">
+        <VintageImage
+          src="/anh2.jpg"
+          alt="Túi len handmade Lito"
+          className="h-full w-full scale-105 object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#211915]/82 via-[#2C2420]/42 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#2C2420]/58 via-transparent to-[#1d1511]/25" />
+      </div>
+
+      <div className="relative z-20 mx-auto flex w-full max-w-7xl px-6 sm:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-3xl w-full"
+          className="max-w-2xl pt-10"
         >
-          <h1 className="font-serif italic text-[#2C2420] text-4xl md:text-6xl leading-[1.2] mb-8 tracking-tight">
-            Đồ Len <span className="text-[#C59D5F]">Handmade</span>
+          <p className={`mb-4 text-[12px] font-bold ${seasonal.accentClass}`}>
+            {seasonal.label || 'Túi len làm tay'}
+          </p>
+          <h1 className="font-serif text-5xl leading-[1.04] tracking-normal text-white sm:text-6xl lg:text-7xl">
+            Đồ Len
+            <span className={`block italic ${seasonal.accentClass}`}>Handmade</span>
           </h1>
+          <p className="mt-6 max-w-md text-base leading-7 text-white/78 md:text-lg">
+            Mềm mại, dễ phối, làm theo màu bạn thích.
+          </p>
 
-          <div className="relative w-full max-w-2xl mx-auto mb-10 aspect-[16/7] rounded-xl overflow-hidden shadow-md">
-            <VintageImage
-              src="/anh2.jpg"
-              alt="Lito Boutique"
-              className="w-full h-full object-cover"
-              priority
-            />
-          </div>
-
-          <div className="flex gap-4 justify-center">
+          <div className="mt-10 flex flex-wrap gap-4">
             <a
               href="#popular"
-              className="px-8 py-3 bg-[#2C2420] text-white text-[12px] uppercase font-bold rounded-full hover:bg-[#A56336] transition-all"
+              className="rounded-full bg-[#E4C28B] px-8 py-3.5 text-sm font-bold text-[#2C2420] shadow-xl shadow-black/20 transition-all hover:bg-white"
             >
-              Cửa hàng
+              Xem mẫu
             </a>
             <a
               href="#gift"
-              className="px-8 py-3 bg-white text-[#2C2420] text-[12px] uppercase font-bold rounded-full border border-[#2C2420]/10 transition-all"
+              className="rounded-full border border-white/35 bg-white/10 px-8 py-3.5 text-sm font-bold text-white backdrop-blur-sm transition-all hover:bg-white hover:text-[#2C2420]"
             >
-              Đặt làm
+              Đặt theo màu
             </a>
+          </div>
+
+          <div className="mt-14 hidden max-w-xl grid-cols-3 gap-6 border-t border-white/18 pt-7 sm:grid">
+            {[
+              ['Làm tay', 'Từng chiếc'],
+              ['2-5 ngày', 'Hoàn thiện'],
+              ['Đổi màu', 'Theo ý thích'],
+            ].map(([value, label]) => (
+              <div key={label}>
+                <div className="text-sm font-bold text-white">{value}</div>
+                <div className="mt-2 text-xs text-white/55">{label}</div>
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>
+
+      <a
+        href="#popular"
+        className="absolute bottom-8 right-6 z-20 hidden items-center gap-3 text-sm font-bold text-white/78 transition-colors hover:text-white md:flex"
+      >
+        Xem thêm
+        <span aria-hidden="true">→</span>
+      </a>
     </section>
   );
 }
