@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Mail, MapPin, ArrowUp } from "lucide-react";
+import { useState } from "react";
 import FleurNavbar from "./Navbar";
 import FleurHero from "./Hero";
 import FleurServices from "./Services";
@@ -12,9 +13,26 @@ import { getSeasonalTheme } from "./seasonal";
 
 export default function FleurTemplate() {
   const seasonal = getSeasonalTheme();
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleSubscribe = async () => {
+    if (!email) return;
+    setStatus("loading");
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      setStatus(res.ok ? "success" : "error");
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -72,10 +90,26 @@ export default function FleurTemplate() {
                 <input
                   type="email"
                   placeholder="Email của bạn"
-                  className="bg-transparent border-none outline-none text-sm w-full placeholder:text-[#2C2420]/20 text-[#2C2420]"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  onKeyDown={(e) => e.key === "Enter" && handleSubscribe()}
+                  disabled={status === "loading" || status === "success"}
+                  className="bg-transparent border-none outline-none text-sm w-full placeholder:text-[#2C2420]/20 text-[#2C2420] disabled:opacity-50"
                 />
-                <button className="text-[#C59D5F] text-[10px] uppercase font-black tracking-widest">Gửi</button>
+                <button
+                  onClick={handleSubscribe}
+                  disabled={status === "loading" || status === "success"}
+                  className="text-[#C59D5F] text-[10px] uppercase font-black tracking-widest disabled:opacity-50"
+                >
+                  {status === "loading" ? "..." : status === "success" ? "✓" : "Gửi"}
+                </button>
               </div>
+              {status === "success" && (
+                <p className="text-[11px] text-[#C59D5F] mt-3">Đăng ký thành công!</p>
+              )}
+              {status === "error" && (
+                <p className="text-[11px] text-red-400 mt-3">Có lỗi xảy ra, thử lại nhé.</p>
+              )}
             </div>
           </div>
 
