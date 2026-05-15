@@ -14,7 +14,7 @@ const products = [
 
 export default function FleurProductGrid() {
   return (
-    <section id="popular" className="py-8 px-6 bg-white">
+    <section id="popular" className="bg-white px-5 py-8 sm:px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
           <motion.h2
@@ -27,7 +27,7 @@ export default function FleurProductGrid() {
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+        <div className="grid grid-cols-2 gap-x-5 gap-y-9 lg:grid-cols-3 md:gap-10">
           {products.map((p, i) => (
             <motion.div
               key={p.id}
@@ -37,7 +37,7 @@ export default function FleurProductGrid() {
               transition={{ delay: i * 0.05 }}
               className="group cursor-pointer"
             >
-              <div className="relative mb-5 aspect-square rounded-[1.5rem] overflow-hidden bg-[#FAF7F2] shadow-sm group-hover:shadow-xl transition-all duration-500">
+              <div className="relative mb-3 aspect-square overflow-hidden rounded-[1.25rem] bg-[#FAF7F2] shadow-sm transition-all duration-500 group-hover:shadow-xl sm:mb-5 sm:rounded-[1.5rem]">
                 <img
                   src={p.img}
                   alt={p.name}
@@ -55,10 +55,10 @@ export default function FleurProductGrid() {
               </div>
 
               <div className="text-center">
-                <h3 className="text-lg md:text-xl font-medium text-[#2C2420] mb-1 group-hover:text-[#A56336] transition-colors">
+                <h3 className="overflow-hidden text-ellipsis whitespace-nowrap text-[15px] font-medium leading-[1.25] text-[#2C2420] transition-colors group-hover:text-[#A56336] sm:text-lg md:text-xl">
                   {p.name}
                 </h3>
-                <p className="font-bold text-[#A56336] text-lg">{p.price}</p>
+                <p className="mt-0.5 text-base font-bold leading-tight text-[#A56336] sm:mt-1 sm:text-lg">{p.price}</p>
                 <a href="#contact" className="mt-4 inline-block px-6 py-2 bg-[#2C2420] text-white text-[10px] uppercase font-bold rounded-full opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0">
                    Thêm vào giỏ
                 </a>

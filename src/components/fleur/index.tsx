@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Camera, MessageSquare, Mail, MapPin, ArrowUp, Globe } from "lucide-react";
+import { Mail, MapPin, ArrowUp } from "lucide-react";
 import FleurNavbar from "./Navbar";
 import FleurHero from "./Hero";
 import FleurServices from "./Services";
@@ -20,7 +20,6 @@ export default function FleurTemplate() {
   return (
     <div className={`flex flex-col min-h-screen ${seasonal.surfaceClass} selection:bg-[#C59D5F] selection:text-[#2C2420]`}>
       <FleurNavbar />
-      
       <main className="flex-grow">
         <FleurHero seasonal={seasonal} />
         <FleurServices />
@@ -39,13 +38,6 @@ export default function FleurTemplate() {
               <p className="text-[#2C2420]/60 text-sm leading-relaxed mb-10 max-w-xs font-serif italic">
                 “Tôn vinh nghệ thuật thủ công truyền thống qua những thiết kế len hiện đại và độc bản.”
               </p>
-              <div className="flex gap-4">
-                {[{ Icon: Globe, label: 'Website' }, { Icon: Camera, label: 'Instagram' }, { Icon: MessageSquare, label: 'Zalo' }].map(({ Icon, label }) => (
-                   <a key={label} href="#" aria-label={label} className="w-10 h-10 rounded-full border border-[#2C2420]/10 flex items-center justify-center text-[#2C2420] hover:bg-[#C59D5F] hover:text-white hover:border-[#C59D5F] transition-all">
-                      <Icon size={18} strokeWidth={1.5} />
-                   </a>
-                ))}
-              </div>
             </div>
 
             {/* Shop Links */}
