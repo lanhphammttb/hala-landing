@@ -92,11 +92,14 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/icon.png', type: 'image/png', sizes: '512x512' }
+      { url: '/favicon.ico?v=2', sizes: 'any' },
+      { url: '/icon.png?v=2', type: 'image/png', sizes: '512x512' }
     ],
-    shortcut: ['/favicon.ico'],
-    apple: [{ url: '/apple-icon.png', type: 'image/png', sizes: '180x180' }]
+    shortcut: ['/favicon.ico?v=2'],
+    apple: [{ url: '/apple-icon.png?v=2', type: 'image/png', sizes: '180x180' }]
+  },
+  other: {
+    'og:site_name': 'LITO Handmade',
   }
 };
 
