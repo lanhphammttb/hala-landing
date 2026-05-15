@@ -34,9 +34,9 @@ export default function FleurGiftIdeas() {
                  Thiết kế riêng theo yêu cầu của bạn, mang đậm dấu ấn cá nhân.
               </p>
               <div className="pt-2">
-                <button className="px-10 py-3 bg-[#2C2420] text-white text-[12px] uppercase font-bold rounded-full hover:bg-[#A56336] transition-all">
+                <a href="#contact" className="inline-block px-10 py-3 bg-[#2C2420] text-white text-[12px] uppercase font-bold rounded-full hover:bg-[#A56336] transition-all">
                    Tư vấn ngay
-                </button>
+                </a>
               </div>
             </motion.div>
           </div>

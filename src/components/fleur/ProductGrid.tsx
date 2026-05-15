@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShoppingBag, Heart } from "lucide-react";
+import { Heart } from "lucide-react";
 
 const products = [
   { id: 1, img: "/anh1.jpg", name: "Túi Xách Mini Xinh", price: "280.000₫", tag: "Mới" },
@@ -49,9 +49,9 @@ export default function FleurProductGrid() {
                    </span>
                 </div>
                 {/* Friendly Heart Button */}
-                <button aria-label="Yêu thích" className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 flex items-center justify-center text-[#2C2420]/20 hover:text-red-400 transition-colors">
+                <a href="#gift" aria-label="Yêu thích" className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 flex items-center justify-center text-[#2C2420]/20 hover:text-red-400 transition-colors">
                    <Heart size={16} />
-                </button>
+                </a>
               </div>
 
               <div className="text-center">
@@ -59,18 +59,18 @@ export default function FleurProductGrid() {
                   {p.name}
                 </h3>
                 <p className="font-bold text-[#A56336] text-lg">{p.price}</p>
-                <button className="mt-4 px-6 py-2 bg-[#2C2420] text-white text-[10px] uppercase font-bold rounded-full opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0">
+                <a href="#contact" className="mt-4 inline-block px-6 py-2 bg-[#2C2420] text-white text-[10px] uppercase font-bold rounded-full opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0">
                    Thêm vào giỏ
-                </button>
+                </a>
               </div>
             </motion.div>
           ))}
         </div>
 
         <div className="mt-8 text-center">
-          <button className="px-10 py-3 bg-[#FAF7F2] text-[#2C2420] text-[11px] uppercase tracking-widest font-bold rounded-full hover:bg-[#2C2420] hover:text-white transition-all">
+          <a href="#contact" className="inline-block px-10 py-3 bg-[#FAF7F2] text-[#2C2420] text-[11px] uppercase tracking-widest font-bold rounded-full hover:bg-[#2C2420] hover:text-white transition-all">
              Xem tất cả
-          </button>
+          </a>
         </div>
       </div>
     </section>

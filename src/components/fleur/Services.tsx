@@ -12,9 +12,9 @@ const steps = [
 
 export default function FleurServices() {
   return (
-    <section id="services" className="py-8 px-6 bg-[#FAF7F2]">
+    <section id="services" className="bg-[#FAF7F2] px-5 py-7 sm:px-6 sm:py-8">
       <div className="max-w-6xl mx-auto">
-        <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-[#2C2420]/5 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 gap-3 rounded-2xl border border-[#2C2420]/5 bg-white p-4 shadow-sm sm:gap-4 sm:p-6 md:grid-cols-4 md:p-8">
            {steps.map((s, i) => (
              <motion.div
                key={s.title}
@@ -22,12 +22,12 @@ export default function FleurServices() {
                whileInView={{ opacity: 1, y: 0 }}
                viewport={{ once: true }}
                transition={{ delay: i * 0.1 }}
-               className="flex items-center gap-3 group"
+               className="flex min-w-0 items-center gap-2.5 sm:gap-3 group"
              >
-                <div className="w-10 h-10 rounded-xl bg-[#C59D5F]/10 flex items-center justify-center text-[#C59D5F] shrink-0">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#C59D5F]/10 text-[#C59D5F] sm:h-10 sm:w-10">
                    <s.icon size={18} strokeWidth={2} />
                 </div>
-                <h3 className="text-sm font-bold text-[#2C2420] whitespace-nowrap">{s.title}</h3>
+                <h3 className="min-w-0 text-[13px] font-bold leading-snug text-[#2C2420] sm:text-sm">{s.title}</h3>
              </motion.div>
            ))}
         </div>
