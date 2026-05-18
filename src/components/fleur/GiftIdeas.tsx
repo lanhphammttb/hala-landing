@@ -7,11 +7,10 @@ export default function FleurGiftIdeas() {
         <div className="flex flex-col lg:flex-row items-center gap-12 md:gap-16">
           {/* Soft Rounded Visual */}
           <div className="w-full lg:w-1/2 relative">
-            <div className="relative z-10 overflow-hidden rounded-2xl shadow-xl">
+            <div className="relative z-10 overflow-hidden rounded-2xl shadow-xl aspect-4/3">
               <VintageImage
                 src="/anh4.jpg"
                 alt="Quà tặng Lito"
-                className="w-full aspect-[4/3] object-cover"
                 sizes="(min-width: 1024px) 50vw, 100vw"
               />
             </div>
