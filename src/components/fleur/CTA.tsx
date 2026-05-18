@@ -1,7 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { MessageCircle, Phone, Mail } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
 
 const CONTACTS = [
   {
@@ -52,26 +49,17 @@ export default function FleurCTA() {
   return (
     <section id="contact" className="py-24 px-6 bg-[#2C2420] text-white text-center">
       <div className="max-w-4xl mx-auto">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="font-serif italic text-6xl md:text-[8rem] leading-none mb-12 tracking-tighter"
-        >
+        <h2 className="mb-12 font-serif text-6xl italic leading-none tracking-normal md:text-[8rem]">
           Liên hệ với <span className="text-[#C59D5F]">LITO</span>
-        </motion.h2>
+        </h2>
 
         <div className="flex flex-wrap justify-center gap-8 md:gap-14">
-          {CONTACTS.map((item, i) => (
-            <motion.a
+          {CONTACTS.map((item) => (
+            <a
               key={item.name}
               href={item.href}
               target={item.href.startsWith("http") ? "_blank" : undefined}
               rel={item.href.startsWith("http") ? "noreferrer" : undefined}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
               className="flex flex-col items-center gap-4 group"
             >
               <div className="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center text-[#C59D5F] group-hover:bg-[#C59D5F] group-hover:text-[#2C2420] transition-all">
@@ -80,7 +68,7 @@ export default function FleurCTA() {
               <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/40 group-hover:text-white transition-colors">
                 {item.name}
               </span>
-            </motion.a>
+            </a>
           ))}
         </div>
       </div>

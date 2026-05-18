@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import VintageImage from "./VintageImage";
 
 export default function FleurGiftIdeas() {
@@ -10,23 +7,18 @@ export default function FleurGiftIdeas() {
         <div className="flex flex-col lg:flex-row items-center gap-12 md:gap-16">
           {/* Soft Rounded Visual */}
           <div className="w-full lg:w-1/2 relative">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="relative rounded-2xl overflow-hidden shadow-xl z-10"
-            >
-              <VintageImage src="/anh4.jpg" alt="Quà tặng Lito" className="w-full aspect-[4/3] object-cover" />
-            </motion.div>
+            <div className="relative z-10 overflow-hidden rounded-2xl shadow-xl">
+              <VintageImage
+                src="/anh4.jpg"
+                alt="Quà tặng Lito"
+                className="w-full aspect-[4/3] object-cover"
+                sizes="(min-width: 1024px) 50vw, 100vw"
+              />
+            </div>
           </div>
 
           <div className="w-full lg:w-1/2">
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="space-y-6"
-            >
+            <div className="space-y-6">
               <h2 className="font-serif italic text-3xl md:text-5xl text-[#2C2420] leading-none">
                  Quà Tặng <span className="text-[#C59D5F]">Handmade</span>
               </h2>
@@ -38,7 +30,7 @@ export default function FleurGiftIdeas() {
                    Tư vấn ngay
                 </a>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

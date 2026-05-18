@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Heart, Menu, Search, ShoppingBag, User, X } from "lucide-react";
+import Image from "next/image";
 
 const links = [
   { label: "Mẫu túi", href: "#popular" },
@@ -32,7 +33,14 @@ export default function FleurNavbar() {
       <div className="relative mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
         <div className="flex shrink-0 items-center">
           <a href="#" className="flex min-w-0 items-center">
-            <img src="/icon_litohandmade.png" alt="LITO Handmade" className="h-10 w-auto object-contain sm:h-11" />
+            <Image
+              src="/icon_litohandmade.png"
+              alt="LITO Handmade"
+              width={66}
+              height={44}
+              sizes="66px"
+              className="h-10 w-auto object-contain sm:h-11"
+            />
           </a>
         </div>
 

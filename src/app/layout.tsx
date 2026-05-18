@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Fraunces, Be_Vietnam_Pro, Pinyon_Script } from 'next/font/google';
+import Script from 'next/script';
 import JsonLd from '@/components/JsonLd';
 import './globals.css';
 
@@ -62,9 +63,9 @@ export const metadata: Metadata = {
       'Phụ kiện móc len thủ công 100% — thiết kế độc bản theo sắc độ da và phong cách riêng của bạn.',
     images: [
       {
-        url: '/litohandmade.png',
-        width: 1536,
-        height: 864,
+        url: '/litohandmade_og.jpg',
+        width: 1200,
+        height: 630,
         alt: 'LITO Handmade — Phụ Kiện Móc Len Thủ Công'
       }
     ]
@@ -74,7 +75,7 @@ export const metadata: Metadata = {
     title: 'LITO Handmade — Phụ Kiện Móc Len Thủ Công Độc Bản',
     description:
       'Phụ kiện móc len thủ công 100% — thiết kế độc bản theo sắc độ da và phong cách riêng của bạn.',
-    images: ['/litohandmade.png']
+    images: ['/litohandmade_og.jpg']
   },
   robots: {
     index: true,
@@ -92,11 +93,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.ico?v=2', sizes: 'any' },
-      { url: '/icon.png?v=2', type: 'image/png', sizes: '512x512' }
+      { url: '/favicon.ico?v=3', sizes: '64x64' },
+      { url: '/icon.png?v=3', type: 'image/png', sizes: '512x512' },
+      { url: '/icon-192.png?v=3', type: 'image/png', sizes: '192x192' }
     ],
-    shortcut: ['/favicon.ico?v=2'],
-    apple: [{ url: '/apple-icon.png?v=2', type: 'image/png', sizes: '180x180' }]
+    shortcut: ['/favicon.ico?v=3'],
+    apple: [{ url: '/apple-icon.png?v=3', type: 'image/png', sizes: '180x180' }]
   },
   other: {
     'og:site_name': 'LITO Handmade',
@@ -113,11 +115,15 @@ export default function RootLayout({
       lang="vi"
       className={`${fraunces.variable} ${beVietnam.variable} ${pinyonScript.variable} scroll-smooth antialiased`}
     >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KDRC5866');` }} />
-      </head>
       <body className="font-sans text-[#2A1F14] bg-[#FAF7F2] min-h-screen">
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KDRC5866" height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}></iframe></noscript>
+        <Script
+          id="gtm"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KDRC5866');`
+          }}
+        />
         <JsonLd
           data={{
             '@context': 'https://schema.org',
@@ -148,7 +154,7 @@ export default function RootLayout({
                   'Phụ kiện móc len thủ công 100% — thiết kế độc bản theo sắc độ da và phong cách riêng của bạn.',
                 url: siteRoot,
                 logo: `${siteRoot}icon.png`,
-                image: `${siteRoot}litohandmade.png`,
+                image: `${siteRoot}litohandmade_og.jpg`,
                 telephone: '+84886251629',
                 email: 'contact@litohandmade.com',
                 priceRange: '$$',

@@ -1,7 +1,5 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Heart } from "lucide-react";
+import Image from "next/image";
 
 const products = [
   { id: 1, img: "/anh1.jpg", name: "Túi Xách Mini Xinh", price: "280.000₫", tag: "Mới" },
@@ -17,30 +15,24 @@ export default function FleurProductGrid() {
     <section id="popular" className="bg-white px-5 py-8 sm:px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
-          <motion.h2
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="font-serif italic text-3xl md:text-4xl text-[#2C2420]"
-          >
+          <h2 className="font-serif italic text-3xl md:text-4xl text-[#2C2420]">
             Sản phẩm <span className="text-[#C59D5F]">Nổi bật</span>
-          </motion.h2>
+          </h2>
         </div>
 
         <div className="grid grid-cols-2 gap-x-5 gap-y-9 lg:grid-cols-3 md:gap-10">
-          {products.map((p, i) => (
-            <motion.div
+          {products.map((p) => (
+            <div
               key={p.id}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
               className="group cursor-pointer"
             >
               <div className="relative mb-3 aspect-square overflow-hidden rounded-[1.25rem] bg-[#FAF7F2] shadow-sm transition-all duration-500 group-hover:shadow-xl sm:mb-5 sm:rounded-[1.5rem]">
-                <img
+                <Image
                   src={p.img}
                   alt={p.name}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, 50vw"
+                  quality={72}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute top-3 left-3">
@@ -63,7 +55,7 @@ export default function FleurProductGrid() {
                    Thêm vào giỏ
                 </a>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
