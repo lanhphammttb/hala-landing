@@ -102,6 +102,7 @@ export const metadata: Metadata = {
   },
   other: {
     'og:site_name': 'LITO Handmade',
+    'p:domain_verify': '3ce14f3540a2536d4982f522cc9356ba'
   }
 };
 
