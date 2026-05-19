@@ -121,6 +121,12 @@ export default function RootLayout({
       lang="vi"
       className={`${fraunces.variable} ${beVietnam.variable} ${pinyonScript.variable} scroll-smooth antialiased`}
     >
+      <head>
+        <link rel="preload" as="font" type="font/woff2" crossOrigin="anonymous" href="/_next/static/media/b887d91685b8c137-s.0z~ry.rim0raw.woff2" />
+        <link rel="preload" as="font" type="font/woff2" crossOrigin="anonymous" href="/_next/static/media/85ea1b3aadcead52-s.01rdcbu-77uoy.woff2" />
+        <link rel="preload" as="font" type="font/woff2" crossOrigin="anonymous" href="/_next/static/media/6afabefbb32d7517-s.05-22z7vt.jl1.woff2" />
+        <link rel="preload" as="font" type="font/woff2" crossOrigin="anonymous" href="/_next/static/media/b35fd19aef91b293-s.07en.a1_ufzzv.woff2" />
+      </head>
       <body className="font-sans text-[#2A1F14] bg-[#FAF7F2] min-h-screen">
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KDRC5866" height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}></iframe></noscript>
         <Script
