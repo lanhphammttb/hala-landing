@@ -40,7 +40,7 @@ export default function FleurFooter() {
               sizes="60px"
               className="mb-8 h-10 w-auto object-contain"
             />
-            <p className="mb-10 max-w-xs font-serif text-sm italic leading-relaxed text-[#2C2420]/60">
+            <p className="mb-10 max-w-xs font-serif text-sm italic leading-relaxed text-[#2C2420]/70">
               “Tôn vinh nghệ thuật thủ công truyền thống qua những thiết kế len hiện đại và độc bản.”
             </p>
           </div>
@@ -50,7 +50,7 @@ export default function FleurFooter() {
             <ul className="space-y-4">
               {["Tất cả sản phẩm", "Túi xách tay", "Phụ kiện len", "Thú len & Quà tặng", "Hàng mới về"].map((link) => (
                 <li key={link}>
-                  <a href="#" className="text-sm font-medium text-[#2C2420]/60 transition-colors hover:text-[#C59D5F]">{link}</a>
+                  <a href="#" className="text-sm font-medium text-[#2C2420]/70 transition-colors hover:text-[#C59D5F]">{link}</a>
                 </li>
               ))}
             </ul>
@@ -61,7 +61,7 @@ export default function FleurFooter() {
             <ul className="space-y-4">
               {["Hướng dẫn đặt hàng", "Chính sách vận chuyển", "Đổi trả & Hoàn tiền", "Chăm sóc sản phẩm len", "Liên hệ hỗ trợ"].map((link) => (
                 <li key={link}>
-                  <a href="#" className="text-sm font-medium text-[#2C2420]/60 transition-colors hover:text-[#C59D5F]">{link}</a>
+                  <a href="#" className="text-sm font-medium text-[#2C2420]/70 transition-colors hover:text-[#C59D5F]">{link}</a>
                 </li>
               ))}
             </ul>
@@ -69,7 +69,7 @@ export default function FleurFooter() {
 
           <div>
             <h3 className="mb-10 text-[11px] font-black uppercase tracking-[0.4em] text-[#A56336]">Đăng ký nhận tin</h3>
-            <p className="mb-8 text-sm leading-relaxed text-[#2C2420]/60">Nhận thông báo sớm nhất về các bộ sưu tập giới hạn.</p>
+            <p className="mb-8 text-sm leading-relaxed text-[#2C2420]/70">Nhận thông báo sớm nhất về các bộ sưu tập giới hạn.</p>
             <div className="group flex items-center border-b border-[#2C2420]/10 transition-colors focus-within:border-[#C59D5F]">
               <input
                 type="email"
@@ -94,18 +94,18 @@ export default function FleurFooter() {
         </div>
 
         <div className="flex flex-col items-center justify-between gap-8 border-t border-[#2C2420]/5 pt-12 md:flex-row">
-          <div className="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-[#2C2420]/30">
+          <div className="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-[#2C2420]/65">
             <MapPin size={14} strokeWidth={1.5} />
             <span>Hà Nội, Việt Nam</span>
           </div>
 
-          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#2C2420]/30">
+          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#2C2420]/65">
             © 2026 LITO HANDMADE. BẢN QUYỀN ĐÃ ĐƯỢC BẢO HỘ.
           </p>
 
           <button
             onClick={scrollToTop}
-            className="group flex items-center gap-4 text-[#2C2420]/30 transition-colors hover:text-[#C59D5F]"
+            className="group flex items-center gap-4 text-[#2C2420]/65 transition-colors hover:text-[#C59D5F]"
           >
             <span className="text-[10px] font-black uppercase tracking-widest">Lên đầu trang</span>
             <div className="rounded-full border border-[#2C2420]/5 p-3 transition-all group-hover:border-[#C59D5F]">

@@ -16,7 +16,7 @@ export default function FleurHero({ seasonal }: FleurHeroProps) {
           priority
           fetchPriority="high"
           sizes="100vw"
-          quality={72}
+          quality={60}
           className="h-full w-full object-cover"
           style={{ filter: 'sepia(6%) saturate(92%) contrast(97%) brightness(102%)' }}
         />

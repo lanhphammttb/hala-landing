@@ -17,7 +17,7 @@ const fraunces = Fraunces({
   subsets: ['latin', 'vietnamese'],
   weight: ['400', '700'],
   style: ['italic'],
-  display: 'swap',
+  display: 'optional',
   preload: true,
   adjustFontFallback: true
 });
