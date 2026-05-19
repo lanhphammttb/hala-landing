@@ -22,8 +22,7 @@ export default function FleurMobileMenu({ links }: FleurMobileMenuProps) {
         aria-label="Menu"
         onClick={() => setIsMenuOpen((value) => !value)}
         aria-expanded={isMenuOpen}
-        style={{ position: "fixed", left: "min(calc(100vw - 56px), 344px)", top: 20, zIndex: 130 }}
-        className="flex h-9 w-9 items-center justify-center rounded-full text-[#2C2420] transition-colors hover:bg-[#2C2420]/5 sm:hidden"
+        className="flex h-9 w-9 items-center justify-center rounded-full text-white transition-colors hover:bg-white/10 [html.nav-scrolled_&]:text-[#2C2420] [html.nav-scrolled_&]:hover:bg-[#2C2420]/5 sm:hidden"
       >
         {isMenuOpen ? <X size={20} /> : <Menu size={19} />}
       </button>
