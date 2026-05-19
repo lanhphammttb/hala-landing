@@ -15,16 +15,20 @@ const pinyonScript = Pinyon_Script({
 const fraunces = Fraunces({
   variable: '--font-serif',
   subsets: ['latin', 'vietnamese'],
-  weight: ['400', '700'], // chỉ regular + bold là đủ
-  style: ['italic'], // luôn dùng italic trong UI
-  display: 'swap'
+  weight: ['400', '700'],
+  style: ['italic'],
+  display: 'swap',
+  preload: true,
+  adjustFontFallback: true
 });
 
 const beVietnam = Be_Vietnam_Pro({
   variable: '--font-jakarta',
   subsets: ['latin', 'vietnamese'],
-  weight: ['400', '500', '600'], // bỏ 300 và 700
-  display: 'swap'
+  weight: ['400', '500', '600'],
+  display: 'optional',
+  preload: true,
+  adjustFontFallback: true
 });
 
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://litohandmade.com').replace(/\/$/, '');

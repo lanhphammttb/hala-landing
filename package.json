@@ -16,10 +16,10 @@
     "react-dom": "19.2.4"
   },
   "browserslist": [
-    "chrome >= 90",
-    "firefox >= 90",
-    "safari >= 14",
-    "edge >= 90"
+    "chrome >= 94",
+    "firefox >= 94",
+    "safari >= 15.4",
+    "edge >= 94"
   ],
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

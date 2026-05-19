@@ -14,6 +14,7 @@ export default function FleurHero({ seasonal }: FleurHeroProps) {
           alt="Túi len handmade Lito"
           fill
           priority
+          fetchPriority="high"
           sizes="100vw"
           quality={72}
           className="h-full w-full object-cover"
