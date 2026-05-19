@@ -19,9 +19,9 @@ export default function FleurGiftIdeas() {
           <div className="w-full lg:w-1/2">
             <div className="space-y-6">
               <h2 className="font-serif italic text-3xl md:text-5xl text-[#2C2420] leading-none">
-                 Quà Tặng <span className="text-[#C59D5F]">Handmade</span>
+                 Quà Tặng <span className="text-[#A56336]">Handmade</span>
               </h2>
-              <p className="text-sm md:text-base text-[#2C2420]/60 leading-relaxed font-light">
+              <p className="text-sm md:text-base text-[#2C2420]/80 leading-relaxed font-light">
                  Thiết kế riêng theo yêu cầu của bạn, mang đậm dấu ấn cá nhân.
               </p>
               <div className="pt-2">

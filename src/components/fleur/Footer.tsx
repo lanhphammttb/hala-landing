@@ -46,7 +46,7 @@ export default function FleurFooter() {
           </div>
 
           <div>
-            <h4 className="mb-10 text-[11px] font-black uppercase tracking-[0.4em] text-[#C59D5F]">Cửa hàng</h4>
+            <h3 className="mb-10 text-[11px] font-black uppercase tracking-[0.4em] text-[#A56336]">Cửa hàng</h3>
             <ul className="space-y-4">
               {["Tất cả sản phẩm", "Túi xách tay", "Phụ kiện len", "Thú len & Quà tặng", "Hàng mới về"].map((link) => (
                 <li key={link}>
@@ -57,7 +57,7 @@ export default function FleurFooter() {
           </div>
 
           <div>
-            <h4 className="mb-10 text-[11px] font-black uppercase tracking-[0.4em] text-[#C59D5F]">Hỗ trợ khách hàng</h4>
+            <h3 className="mb-10 text-[11px] font-black uppercase tracking-[0.4em] text-[#A56336]">Hỗ trợ khách hàng</h3>
             <ul className="space-y-4">
               {["Hướng dẫn đặt hàng", "Chính sách vận chuyển", "Đổi trả & Hoàn tiền", "Chăm sóc sản phẩm len", "Liên hệ hỗ trợ"].map((link) => (
                 <li key={link}>
@@ -68,9 +68,9 @@ export default function FleurFooter() {
           </div>
 
           <div>
-            <h4 className="mb-10 text-[11px] font-black uppercase tracking-[0.4em] text-[#C59D5F]">Đăng ký nhận tin</h4>
+            <h3 className="mb-10 text-[11px] font-black uppercase tracking-[0.4em] text-[#A56336]">Đăng ký nhận tin</h3>
             <p className="mb-8 text-sm leading-relaxed text-[#2C2420]/60">Nhận thông báo sớm nhất về các bộ sưu tập giới hạn.</p>
-            <div className="group flex border-b border-[#2C2420]/10 pb-2 transition-colors focus-within:border-[#C59D5F]">
+            <div className="group flex items-center border-b border-[#2C2420]/10 transition-colors focus-within:border-[#C59D5F]">
               <input
                 type="email"
                 placeholder="Email của bạn"
@@ -78,12 +78,12 @@ export default function FleurFooter() {
                 onChange={(e) => setEmail(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleSubscribe()}
                 disabled={status === "loading" || status === "success"}
-                className="w-full border-none bg-transparent text-sm text-[#2C2420] outline-none placeholder:text-[#2C2420]/20 disabled:opacity-50"
+                className="min-h-[44px] w-full border-none bg-transparent text-sm text-[#2C2420] outline-none placeholder:text-[#2C2420]/20 disabled:opacity-50"
               />
               <button
                 onClick={handleSubscribe}
                 disabled={status === "loading" || status === "success"}
-                className="text-[10px] font-black uppercase tracking-widest text-[#C59D5F] disabled:opacity-50"
+                className="min-h-[44px] min-w-[44px] text-[10px] font-black uppercase tracking-widest text-[#A56336] disabled:opacity-50"
               >
                 {status === "loading" ? "..." : status === "success" ? "✓" : "Gửi"}
               </button>

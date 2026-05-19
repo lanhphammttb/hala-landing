@@ -16,7 +16,7 @@ export default function FleurProductGrid() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
           <h2 className="font-serif italic text-3xl md:text-4xl text-[#2C2420]">
-            Sản phẩm <span className="text-[#C59D5F]">Nổi bật</span>
+            Sản phẩm <span className="text-[#A56336]">Nổi bật</span>
           </h2>
         </div>
 

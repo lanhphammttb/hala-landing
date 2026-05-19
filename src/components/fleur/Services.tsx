@@ -20,7 +20,7 @@ export default function FleurServices() {
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#C59D5F]/10 text-[#C59D5F] sm:h-10 sm:w-10">
                    <s.icon size={18} strokeWidth={2} />
                 </div>
-                <h3 className="min-w-0 text-[13px] font-bold leading-snug text-[#2C2420] sm:text-sm">{s.title}</h3>
+                <p className="min-w-0 text-[13px] font-bold leading-snug text-[#2C2420] sm:text-sm">{s.title}</p>
              </div>
            ))}
         </div>

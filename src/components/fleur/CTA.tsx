@@ -85,7 +85,7 @@ export default function FleurCTA() {
               <div className="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center text-[#C59D5F] group-hover:bg-[#C59D5F] group-hover:text-[#2C2420] transition-all">
                 {item.icon}
               </div>
-              <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/40 group-hover:text-white transition-colors">
+              <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/60 group-hover:text-white transition-colors">
                 {item.name}
               </span>
             </a>
