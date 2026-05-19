@@ -28,6 +28,7 @@ export default function FleurNavbar() {
                 height={44}
                 sizes="66px"
                 priority
+                fetchPriority="high"
                 className="h-10 w-auto object-contain sm:h-11"
               />
             </a>
