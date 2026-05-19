@@ -1,5 +1,3 @@
-"use client";
-
 import VintageImage from "./VintageImage";
 
 interface Props {

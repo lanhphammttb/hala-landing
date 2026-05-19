@@ -32,7 +32,7 @@ export default function FleurProductGrid() {
                   alt={p.name}
                   fill
                   sizes="(min-width: 1024px) calc(33vw - 56px), calc(50vw - 32px)"
-                  quality={72}
+                  quality={60}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute top-3 left-3">

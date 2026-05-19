@@ -1,9 +1,4 @@
-'use client';
-
 import Image from 'next/image';
-import { useState } from 'react';
-
-const FALLBACK = '/anh2.jpg';
 
 interface Props {
   src: string;
@@ -22,18 +17,15 @@ export default function VintageImage({
   priority = false,
   sizes = '100vw'
 }: Props) {
-  const [imageSrc, setImageSrc] = useState(src);
-
   return (
     <div className="relative w-full h-full overflow-hidden">
       <Image
-        src={imageSrc}
+        src={src}
         alt={alt}
         fill
         priority={priority}
         sizes={sizes}
-        quality={72}
-        onError={() => { if (imageSrc !== FALLBACK) setImageSrc(FALLBACK); }}
+        quality={60}
         className={`absolute inset-0 w-full h-full object-cover ${className}`}
         style={{
           filter: 'sepia(6%) saturate(92%) contrast(97%) brightness(102%)',
